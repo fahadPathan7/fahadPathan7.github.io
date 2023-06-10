@@ -19,6 +19,11 @@ body{
     align-items: center;
 }
 
+.navbar-brand img{
+    height: 40px;
+    width: auto;
+}
+
 .navbar-list ul{
     display: flex;
     align-items: center;
@@ -32,14 +37,32 @@ body{
 
 .navbar-list ul li a{
     font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
     text-decoration: none;
     color: #404040;
     font-weight: bold;
     display: block;
 }
 
+a::after{
+    background-color: #ff3c78;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+.navbar-list ul li a:hover{
+    color: orange;
+}
+
+.navbar-list ul li a:hover::after{
+    width: 100%;
+}
+
 .scroll{
-    background: white;
+    background: rgba(255, 255, 255, 0.174);
     top: -100px;
     border-radius: 20px;
     width: 90%;
@@ -62,4 +85,68 @@ body{
     background: linear-gradient(112.82deg, #a044ff 19.93%, #ad50ca 102.22%);
     -webkit-background-clip: text;
     color: transparent;
+}
+
+.intro{
+    margin-left: 8%;
+    margin-top: 13%;
+}
+
+.intro h1 {
+    font-size: 50px;
+    color: #212121;
+    margin-bottom: 20px;
+}
+
+span{
+    color: orange
+}
+
+.intro p{
+    color: #555;
+    font-size: 18px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+
+}
+
+.intro a{
+    background: #212121;
+    padding: 10px 18px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    display: inline-block;
+    margin: 30px 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.images{
+    width: 45%;
+    height: 80%;
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+}
+
+.images img{
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%);
+    transition: bottom 1s, left 1s;
+}
+
+.images .fahad-img-back{
+    margin-bottom: 30px;
+}
+
+.images:hover .fahad-img{
+    left: 45%;
+}
+
+.images:hover .fahad-img-back{
+    bottom: 40px;
 }
