@@ -1,10 +1,15 @@
-body{
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.navbar{
-    background: none;
+.navbar {
+    background-color: none;
     z-index: 1;
     width: 90%;
     padding: 0px 100px;
@@ -19,23 +24,23 @@ body{
     align-items: center;
 }
 
-.navbar-brand img{
+.navbar-brand img {
     height: 40px;
     width: auto;
 }
 
-.navbar-list ul{
+.navbar-list ul {
     display: flex;
     align-items: center;
     list-style: none;
     padding: 0;
 }
 
-.navbar-list ul li{
+.navbar-list ul li {
     margin-left: 50px;
 }
 
-.navbar-list ul li a{
+.navbar-list ul li a {
     font-size: 14px;
     font-family: 'Open Sans', sans-serif;
     text-decoration: none;
@@ -44,7 +49,7 @@ body{
     display: block;
 }
 
-a::after{
+a::after {
     background-color: #ff3c78;
     height: 3px;
     width: 0;
@@ -53,15 +58,15 @@ a::after{
     transition: 0.3s;
 }
 
-.navbar-list ul li a:hover{
+.navbar-list ul li a:hover {
     color: orange;
 }
 
-.navbar-list ul li a:hover::after{
+.navbar-list ul li a:hover::after {
     width: 100%;
 }
 
-.scroll{
+.scroll {
     background: rgba(255, 255, 255, 0.174);
     top: -100px;
     border-radius: 20px;
@@ -69,16 +74,17 @@ a::after{
     animation: fadedown .4s ease 1s forwards;
 }
 
-@keyframes fadedown{
-    0%{
+@keyframes fadedown {
+    0% {
         top: -100px;
     }
-    100%{
+
+    100% {
         top: 20px;
     }
 }
 
-.navbar-brand{
+.navbar-brand {
     cursor: pointer;
     font-size: 20px;
     font-weight: 700;
@@ -87,9 +93,13 @@ a::after{
     color: transparent;
 }
 
-.intro{
-    margin-left: 8%;
-    margin-top: 13%;
+.home-page{
+    height: 100vh;
+}
+
+.intro {
+    padding-left: 8%;
+    padding-top: 13%;
 }
 
 .intro h1 {
@@ -98,11 +108,11 @@ a::after{
     margin-bottom: 20px;
 }
 
-span{
+span {
     color: orange
 }
 
-.intro p{
+.intro p {
     color: #555;
     font-size: 18px;
     font-family: 'Roboto Mono', monospace;
@@ -110,7 +120,7 @@ span{
 
 }
 
-.intro a{
+.intro a {
     background: #212121;
     padding: 10px 18px;
     text-decoration: none;
@@ -122,7 +132,7 @@ span{
     cursor: pointer;
 }
 
-.images{
+.images {
     width: 45%;
     height: 80%;
     position: absolute;
@@ -130,7 +140,7 @@ span{
     right: 100px;
 }
 
-.images img{
+.images img {
     height: 100%;
     position: absolute;
     left: 50%;
@@ -139,14 +149,42 @@ span{
     transition: bottom 1s, left 1s;
 }
 
-.images .fahad-img-back{
+.images .fahad-img-back {
     margin-bottom: 30px;
 }
 
-.images:hover .fahad-img{
+.images:hover .fahad-img {
     left: 45%;
 }
 
-.images:hover .fahad-img-back{
+.images:hover .fahad-img-back {
     bottom: 40px;
+}
+
+.about{
+    padding: 15% 10% 10% 10%;
+}
+
+.about .title{
+    text-align: center;
+}
+
+.about .content-section{
+    display: flex;
+    justify-content: space-between;
+}
+
+.about .image-section{
+    width: 50%;
+}
+
+.about .image-section img{
+    width: 100%;
+}
+
+.about .content{
+    width: 40%;
+    margin: auto;
+    font-family: 'Titan One', cursive;
+    font-size: 20px;
 }
