@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
@@ -9,10 +9,10 @@ body {
 }
 
 .navbar {
-    background-color: none;
+    background-color: white;
     z-index: 1;
-    width: 90%;
-    padding: 0px 100px;
+    width: 100%;
+    padding: 0 8%;
     box-sizing: border-box;
     position: fixed;
     top: 0;
@@ -93,7 +93,7 @@ a::after {
     color: transparent;
 }
 
-.home-page{
+.home-page {
     height: 100vh;
 }
 
@@ -161,30 +161,189 @@ span {
     bottom: 40px;
 }
 
-.about{
+.about {
     padding: 15% 10% 10% 10%;
 }
 
-.about .title{
+.about .title {
     text-align: center;
 }
 
-.about .content-section{
+.about .content-section {
     display: flex;
     justify-content: space-between;
 }
 
-.about .image-section{
+.about .image-section {
     width: 50%;
 }
 
-.about .image-section img{
+.about .image-section img {
     width: 100%;
 }
 
-.about .content{
+.about .content {
     width: 40%;
     margin: auto;
     font-family: 'Titan One', cursive;
     font-size: 20px;
+}
+
+.text-gray {
+    color: gray;
+}
+
+.skill-section {
+    height: 60vh;
+    padding-top: 8%;
+    padding-left: 15%;
+    padding-right: 15%;
+    background-color: wheat;
+}
+
+.skill-section h1 {
+    font-size: 1.9rem;
+}
+
+.skill-section .box {
+    background: #9c97f1;
+    height: 2px;
+    margin: 80px 0;
+    display: flex;
+}
+
+.skill-section .box .vertical {
+    height: 40px;
+    width: 2px;
+    background-color: #9c97f1;
+    margin: 0 110px;
+}
+
+.vertical-title {
+    position: relative;
+    top: -45px;
+    left: -50px;
+    text-align: center;
+    display: table;
+    font-family: 'Roboto Mono', sans-serif;
+    font-weight: bold;
+}
+
+.skill-section .vertical-icons {
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+    display: table;
+    align-items: center;
+}
+
+.skill-section .vertical-icons img {
+    height: 20px;
+    color: white;
+}
+
+.skill-section .vertical-icons p {
+    color: white;
+    padding: 0 5px;
+}
+
+.skill-section .vertical-icons .icon-c {
+    background: rgba(0, 0, 255, 0.568);
+    padding: 4px;
+    float: left;
+    display: flex;
+    margin-top: 10px;
+    margin-left: -23px;
+}
+
+.skill-section .vertical-icons .icon-cpp {
+    background: rgba(0, 0, 255, 0.727);
+    margin: 5px;
+    padding: 4px;
+    float: left;
+    display: flex;
+    margin-top: 3px;
+    margin-left: -31px;
+}
+
+.skill-section .vertical-icons .icon-html {
+    background-color: rgba(255, 68, 0, 0.932);
+    padding: 4px;
+    float: left;
+    display: flex;
+    margin-top: 10px;
+    margin-left: -42px;
+}
+
+.skill-section .vertical-icons .icon-css {
+    background-color: rgb(135, 175, 235);
+    padding: 4px;
+    float: left;
+    display: flex;
+    margin-top: 3px;
+    margin-left: -34px;
+}
+
+.skill-section .vertical-icons .icon-js {
+    background-color: gray;
+    padding: 4px;
+    float: left;
+    display: flex;
+    margin-top: 3px;
+    margin-left: -51px;
+}
+
+.skill-section .vertical-icons .icon-java {
+    background-color: orange;
+    padding: 4px;
+    float: left;
+    display: flex;
+    margin-top: 10px;
+    margin-left: -34px;
+}
+
+.skill-section .vertical-icons .icon-android {
+    background-color: olivedrab;
+    padding: 4px;
+    float: left;
+    display: flex;
+    margin-top: 3px;
+    margin-left: -70px;
+    width: 130px;
+}
+
+.skill-section .vertical-icons .icon-firebase {
+    background-color: orangered;
+    padding: 4px;
+    float: left;
+    display: flex;
+    margin-top: 10px;
+    margin-left: -44px;
+}
+
+.skill-section .vertical-icons .icon-mysql {
+    background-color: rgba(0, 0, 255, 0.774);
+    padding: 4px;
+    float: left;
+    display: flex;
+    margin-top: 3px;
+    margin-left: -37px;
+}
+
+.skill-section .vertical-icons .icon-git {
+    background-color: orange;
+    padding: 4px;
+    float: left;
+    display: flex;
+    margin-top: 27px;
+    margin-left: -27px;
+}
+
+.skill-section .vertical-icons .icon-github {
+    padding: 4px;
+    float: left;
+    display: flex;
+    margin-top: 3px;
+    margin-left: -40px;
+    background-color: rgb(128, 128, 128);
 }
