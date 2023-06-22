@@ -181,16 +181,18 @@ span {
 }
 
 .text-gray {
+    padding: 0 15%;
     color: gray;
 }
 
 
 .skill-section {
-    padding: 8% 15%;
+    padding: 8% 0;
     background-color: wheat;
 }
 
 .skill-section h1 {
+    padding: 0 15%;
     font-size: 1.9rem;
 }
 
@@ -338,7 +340,7 @@ span {
 }
 
 .projects {
-    padding: 5% 15%;
+    padding: 8% 15%;
 }
 
 .projects-box .content {
@@ -410,19 +412,21 @@ span {
 }
 
 .programming-section {
-    padding: 8% 15%;
+    padding: 8% 0%;
     background-color: wheat;
 }
 
 .small-text {
+    padding: 0% 15%;
     color: gray;
 }
 
 .programming-section h1 {
+    padding: 0% 15%;
     font-size: 1.9rem;
 }
 
-.programming-section .horizontal-icons {
+.programming-section .horizontal-icons{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1034,7 +1038,7 @@ textarea.input {
     .projects-container .projects-box {
         padding: 1rem 1rem;
         border: .15rem solid #1f242d;
-        width: 260px;
+        width: 230px;
         height: 360px;
     }
 
@@ -1280,7 +1284,7 @@ textarea.input {
 
     .about .content {
         width: 100%;
-        font-family: 'Titan One', cursive;
+        font-family: 'poppins', monospace;
         font-size: 15px;
     }
 
@@ -1426,6 +1430,60 @@ textarea.input {
         padding: 0.45rem 1.2rem;
     }
 
+
+
+
+    .programming-section .icon {
+        width: 140px;
+    }
+
+
+    .wrapper .icon {
+        margin: 0 10px;
+    }
+
+    .wrapper .icon span {
+        height: 30px;
+        width: 30px;
+    }
+
+    .wrapper .icon span i {
+        font-size: 15px;
+        line-height: 30px;
+    }
+
+    .wrapper .icon .tooltip {
+        font-size: 12px;
+    }
+
+    .wrapper .icon:hover .tooltip {
+        top: -50px;
+    }
+
+
+    .intro {
+        padding-left: 8%;
+        padding-top: 23%;
+        padding-right: 5%;
+        margin-bottom: 100%;
+    }
+
+    .images {
+        height: 50%;
+    }
+
+    .navbar {
+        height: 50px;
+    }
+
+    .navbar-brand img {
+        height: 30px;
+        width: auto;
+    }
+
+    .navbar ul li a {
+        font-size: 12px;
+    }
 
 }
 
