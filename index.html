@@ -6,86 +6,89 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fahad's Portfolio</title>
-    <link rel="stylesheet" href="style.css">
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yanone+Kaffeesatz:wght@400;600;700&display=swap"
+        rel="stylesheet">
 
+    <!-- Icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="resources/images/signature.png" alt="Fahad's signature">
+        </div>
 
-    <div>
-        <nav class="navbar">
-            <div class="navbar-brand">
-                <img src="resources/images/signature.png">
-            </div>
+        <div class="navbar-list">
+            <ul id="sidemenu">
+                <i class="fas fa-times" onclick="closeMenu()"></i>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact-me">Contact Me</a></li>
+            </ul>
+        </div>
+        <i class="fas fa-bars" onclick="openMenu()"></i>
+    </nav>
 
-            <div class="navbar-list">
-                <ul id="sidemenu">
-                    <i class="fas fa-times" onclick="closeMenu()"></i>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#achievements">Achievements</a></li>
-                    <li><a href="#contact-me">Contact Me</a></li>
-                </ul>
-            </div>
-            <i class="fas fa-bars" onclick="openMenu()"></i>
-        </nav>
-    </div>
-
-
-    <div id="home" class="home-page">
+    <!-- Hero Section -->
+    <section id="home" class="home-page">
         <div class="intro">
             <h1>Hi, I am<br><span>Fahad Pathan</span></h1>
             <p>Undergrad student and Passionate software engineer</p>
-            <a target="_blank" href="resources/pdf/resume.pdf">DOWNLOAD RESUME</a>
+            <a target="_blank" href="resources/pdf/resume.pdf" class="cta-button">DOWNLOAD RESUME</a>
         </div>
 
         <div class="images">
-            <img class="fahad-img-back" src="resources/images/back.png">
+            <img class="fahad-img-back" src="resources/images/back.png" alt="Background shape">
             <img class="fahad-img" src="resources/images/portfolio_pic.png" alt="Fahad's image">
         </div>
-    </div>
+    </section>
 
-
-    <div id="about" class="about">
+    <!-- About Section -->
+    <section id="about" class="about">
         <div class="title">
             <h1>About Me</h1>
         </div>
         <div class="content-section">
             <div class="image-section">
-                <img src="resources/images/undraw_Programming_re_kg9v (1).png">
+                <img src="resources/images/undraw_Programming_re_kg9v (1).png" alt="Programming illustration">
             </div>
             <div class="content">
-                <p><b>I am currently pursuing my B.Sc. degree on Software Engineering in
-                        Shahjalal University of Science and Technology, Sylhet.
-                        I love to code and solve problems.</b>
-                </p>
+                <p>I am currently pursuing my B.Sc. degree in Software Engineering at
+                    Shahjalal University of Science and Technology, Sylhet.
+                    I love to code and solve problems, with a particular focus on creating
+                    efficient and elegant solutions to complex challenges.</p>
             </div>
         </div>
-    </div>
+    </section>
 
-
+    <!-- Skills Section -->
     <section id="skill-section" class="skill-section">
         <span class="text-gray">What I have learnt so far</span>
         <h1>My Skills</h1>
 
         <div class="box">
             <div class="vertical">
-                <div class="vertical-title">Competitve Programming</div>
+                <div class="vertical-title">Competitive Programming</div>
                 <div class="vertical-icons">
-                    <div class="icon-c">
-                        <img src="resources/icons/c.png">
+                    <div class="icon">
+                        <img src="resources/icons/c.png" alt="C programming">
                         <p>C</p>
                     </div>
-                    <div class="icon-cpp">
-                        <img src="resources/icons/c++.png">
+                    <div class="icon">
+                        <img src="resources/icons/c++.png" alt="C++ programming">
                         <p>C++</p>
                     </div>
                 </div>
@@ -94,16 +97,16 @@
             <div class="vertical">
                 <div class="vertical-title">Web Development</div>
                 <div class="vertical-icons">
-                    <div class="icon-html">
-                        <img src="resources/icons/html.png">
+                    <div class="icon">
+                        <img src="resources/icons/html.png" alt="HTML">
                         <p>HTML</p>
                     </div>
-                    <div class="icon-css">
-                        <img src="resources/icons/css.png">
+                    <div class="icon">
+                        <img src="resources/icons/css.png" alt="CSS">
                         <p>CSS</p>
                     </div>
-                    <div class="icon-js">
-                        <img src="resources/icons/javascript.png">
+                    <div class="icon">
+                        <img src="resources/icons/javascript.png" alt="JavaScript">
                         <p>Javascript</p>
                     </div>
                 </div>
@@ -112,12 +115,12 @@
             <div class="vertical">
                 <div class="vertical-title">App Development</div>
                 <div class="vertical-icons">
-                    <div class="icon-java">
-                        <img src="resources/icons/java.png">
+                    <div class="icon">
+                        <img src="resources/icons/java.png" alt="Java">
                         <p>Java</p>
                     </div>
-                    <div class="icon-android">
-                        <img src="resources/icons/android.png">
+                    <div class="icon">
+                        <img src="resources/icons/android.png" alt="Android">
                         <p>Android Studio</p>
                     </div>
                 </div>
@@ -126,26 +129,26 @@
             <div class="vertical">
                 <div class="vertical-title">Database Management</div>
                 <div class="vertical-icons">
-                    <div class="icon-firebase">
-                        <img src="resources/icons/firebase.png">
+                    <div class="icon">
+                        <img src="resources/icons/firebase.png" alt="Firebase">
                         <p>Firebase</p>
                     </div>
-                    <div class="icon-mysql">
-                        <img src="resources/icons/mysql.png">
-                        <p>Mysql</p>
+                    <div class="icon">
+                        <img src="resources/icons/mysql.png" alt="MySQL">
+                        <p>MySQL</p>
                     </div>
                 </div>
             </div>
 
             <div class="vertical">
-                <div class="vertical-title"><br>Collaboration</div>
+                <div class="vertical-title">Collaboration</div>
                 <div class="vertical-icons">
-                    <div class="icon-git">
-                        <img src="resources/icons/git.png">
+                    <div class="icon">
+                        <img src="resources/icons/git.png" alt="Git">
                         <p>Git</p>
                     </div>
-                    <div class="icon-github">
-                        <img id="github-pic" src="resources/icons/github.png">
+                    <div class="icon">
+                        <img src="resources/icons/github.png" alt="GitHub">
                         <p>GitHub</p>
                     </div>
                 </div>
@@ -153,89 +156,84 @@
         </div>
     </section>
 
-
+    <!-- Projects Section -->
     <section id="projects" class="projects">
         <h1>My Projects</h1>
 
         <div class="projects-container">
             <div class="projects-box">
                 <i class='bx bx-game'></i>
-                <div class="content">
-                    <h3>Survive IT</h3>
-                    <p>2D Game.<br>A hero takes the responsibility<br>to save the mystery land
-                        <br><br><b>Language: </b>Java<br><b>Framework: </b>LibGdx
-                    </p>
+                <h3>Survive IT</h3>
+                <p>2D Game where a hero takes the responsibility to save the mystery land</p>
+                <div class="tech-stack">
+                    <span>Java</span>
+                    <span>LibGdx</span>
                 </div>
-                <a target="_blank" href="https://github.com/fahadPathan7/Survive-It" class="btn">Source Code</a>
+                <a target="_blank" href="https://github.com/fahadPathan7/Survive-It" class="btn">View Project</a>
             </div>
 
             <div class="projects-box">
                 <i class='bx bxl-android'></i>
-                <div class="content">
-                    <h3>Connect</h3>
-                    <p>Android Application. In disaster affected areas,
-                        it helps the volunteers to work cooperately<br><br>
-                        <b>Language: </b>Java<br><b>Database: </b>Firebase<br>
-                        <b>Environment: </b>Android Studio
-                    </p>
+                <h3>Connect</h3>
+                <p>Android app helping volunteers work cooperatively in disaster-affected areas</p>
+                <div class="tech-stack">
+                    <span>Java</span>
+                    <span>Firebase</span>
+                    <span>Android Studio</span>
                 </div>
-                <a target="_blank" href="https://github.com/fahadPathan7/Connect" class="btn">Source Code</a>
+                <a target="_blank" href="https://github.com/fahadPathan7/Connect" class="btn">View Project</a>
             </div>
 
             <div class="projects-box">
                 <i class='bx bxs-shopping-bags'></i>
-                <div class="content">
-                    <h3>Super Shop<br>Management</h3>
-                    <p>Command Line Application. Helps to operate a super shop<br><br>
-                        <b>Language: </b>Java<br>
-                        <b>Environment: </b>IntellIj
-                    </p>
+                <h3>Super Shop Management</h3>
+                <p>Command-line application for efficient super shop operations</p>
+                <div class="tech-stack">
+                    <span>Java</span>
+                    <span>IntelliJ</span>
                 </div>
-                <a target="_blank" href="https://github.com/fahadPathan7/Super-Shop-Management" class="btn">Source
-                    Code</a>
+                <a target="_blank" href="https://github.com/fahadPathan7/Super-Shop-Management" class="btn">View
+                    Project</a>
             </div>
 
             <div class="projects-box">
                 <i class='bx bx-user-pin'></i>
-                <div class="content">
-                    <h3>Portfolio</h3>
-                    <p>My personal website<br><br>
-                        <b>Language: </b>Html, CSS<br>
-                        <b>Environment: </b>Vs code
-                    </p>
+                <h3>Portfolio</h3>
+                <p>My personal website showcasing my work and skills</p>
+                <div class="tech-stack">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
                 </div>
-                <a target="_blank" href="https://github.com/fahadPathan7/My_Portfolio" class="btn">Source Code</a>
+                <a target="_blank" href="https://github.com/fahadPathan7/My_Portfolio" class="btn">View Project</a>
             </div>
 
             <div class="projects-box">
                 <i class='bx bxs-data'></i>
-                <div class="content">
-                    <h3>FTMS</h3>
-                    <p>SUST Football Tournament Management System<br><br>
-                        <b>Language: </b>MySql<br>
-                        <b>Environment: </b>Xaamp
-                    </p>
+                <h3>FTMS</h3>
+                <p>SUST Football Tournament Management System</p>
+                <div class="tech-stack">
+                    <span>MySQL</span>
+                    <span>XAMPP</span>
                 </div>
                 <a target="_blank" href="https://github.com/fahadPathan7/Sust-Football-Tournament-Management-System"
-                    class="btn">Source Code</a>
+                    class="btn">View Project</a>
             </div>
 
             <div class="projects-box">
                 <i class='bx bx-book-bookmark'></i>
-                <div class="content">
-                    <h3>CP Notes</h3>
-                    <p>The things I am learning by solving competitive programming
-                        problems<br><br>
-                        <b>Language: </b>Html, CSS<br>
-                        <b>Environment: </b>Vs code
-                    </p>
+                <h3>CP Notes</h3>
+                <p>Documentation of my competitive programming learning journey</p>
+                <div class="tech-stack">
+                    <span>HTML</span>
+                    <span>CSS</span>
                 </div>
-                <a target="_blank" href="https://github.com/fahadPathan7/CP-Notes" class="btn">Source Code</a>
+                <a target="_blank" href="https://github.com/fahadPathan7/CP-Notes" class="btn">View Project</a>
             </div>
         </div>
     </section>
 
-
+    <!-- Programming Profiles Section -->
     <section class="programming-section">
         <span class="small-text">Where I solve problems</span>
         <h1>Programming Profiles</h1>
@@ -243,38 +241,35 @@
         <div class="horizontal-icons">
             <div class="icon">
                 <a target="_blank" href="https://codeforces.com/profile/noOne_07">
-                    <img src="resources/icons/codeforces.png">
+                    <img src="resources/icons/codeforces.png" alt="Codeforces">
                     <p>Codeforces</p>
                 </a>
             </div>
 
             <div class="icon">
                 <a target="_blank" href="https://www.codechef.com/users/fahad005">
-                    <img src="resources/icons/codechef.jpg">
+                    <img src="resources/icons/codechef.jpg" alt="CodeChef">
                     <p>CodeChef</p>
                 </a>
             </div>
 
             <div class="icon">
                 <a target="_blank" href="https://www.stopstalk.com/user/profile/fahad005">
-                    <img src="resources/icons/stopstalk.png">
+                    <img src="resources/icons/stopstalk.png" alt="StopStalk">
                     <p>StopStalk</p>
                 </a>
             </div>
 
             <div class="icon">
                 <a target="_blank" href="https://leetcode.com/fahadpathan56/">
-                    <img src="resources/icons/leetcode.png">
+                    <img src="resources/icons/leetcode.png" alt="LeetCode">
                     <p>LeetCode</p>
                 </a>
-
             </div>
-
-
         </div>
     </section>
 
-
+    <!-- Achievements Section -->
     <section id="achievements" class="achievements">
         <h1>My Achievements</h1>
 
@@ -282,125 +277,116 @@
             <div class="achievements-box">
                 <i class='bx bx-code-alt'></i>
                 <h3>750+</h3>
-                <br><br>
-                <p>Total 750+ problems solved on all programming platforms</p>
+                <p>Problems solved across various competitive programming platforms</p>
             </div>
 
             <div class="achievements-box">
                 <i class='bx bx-code-curly'></i>
                 <h3>Pupil</h3>
-                <br><br>
-                <p>1310 rating on codeforces</p>
+                <p>Achieved 1310 rating on Codeforces</p>
             </div>
 
             <div class="achievements-box">
                 <i class='bx bx-code'></i>
-                <h3>3*</h3>
-                <br><br>
-                <p>3* rated on codechef</p>
+                <h3>3★</h3>
+                <p>Rated 3 stars on CodeChef</p>
             </div>
-
-
         </div>
     </section>
 
-
-
+    <!-- Contact Section -->
     <section id="contact-me" class="contact-me">
         <div class="container">
             <div class="form">
                 <div class="contact-info">
                     <h3 class="title">Let's get in touch</h3>
-
                     <div class="info">
                         <div class="information">
-                            <i id="icon" class='bx bx-map-alt'></i>
+                            <i class='bx bx-map-alt'></i>
                             <p>Mugda, Dhaka - 1214</p>
                         </div>
                         <div class="information">
-                            <i id="icon" class='bx bx-envelope'></i>
+                            <i class='bx bx-envelope'></i>
                             <p>fahadpathan56@gmail.com</p>
                         </div>
                         <div class="information">
-                            <i id="icon" class='bx bxs-phone'></i>
+                            <i class='bx bxs-phone'></i>
                             <p>016-123-63-458</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="contact-form">
-                    <!-- <span class="circle one"></span>
-                <span class="circle two"></span> -->
-
                     <form action="index.html" autocomplete="off">
-                        <h3 class="title">Contact me</h3>
+                        <h3 class="title">Send me a message</h3>
                         <div class="input-container">
-                            <input type="text" name="name" class="input" />
-                            <label for="">Name</label>
-                            <span>Name</span>
+                            <input type="text" name="name" class="input" placeholder="Name" required />
                         </div>
                         <div class="input-container">
-                            <input type="email" name="email" class="input" />
-                            <label for="">Email</label>
-                            <span>Email</span>
+                            <input type="email" name="email" class="input" placeholder="Email" required />
                         </div>
                         <div class="input-container">
-                            <input type="tel" name="phone" class="input" />
-                            <label for="">Phone</label>
-                            <span>Phone</span>
+                            <input type="tel" name="phone" class="input" placeholder="Phone" />
                         </div>
                         <div class="input-container textarea">
-                            <textarea name="message" class="input"></textarea>
-                            <label for="">Message</label>
-                            <span>Message</span>
+                            <textarea name="message" class="input" placeholder="Message" required></textarea>
                         </div>
-                        <input type="submit" value="Send" class="btn" />
+                        <button type="submit" class="btn">Send Message</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-
+    <!-- Social Links Section -->
     <section class="social">
         <div class="wrapper">
             <div class="icon fb">
                 <div class="tooltip">Facebook</div>
-                <a target="_blank" href="https://www.facebook.com/fahadp005/"><span><i
-                            class='bx bxl-facebook'></i></span></a>
+                <span>
+                    <a target="_blank" href="https://www.facebook.com/fahadp005/">
+                        <i class='bx bxl-facebook'></i>
+                    </a>
+                </span>
             </div>
-
-            <!-- <div class="icon twitter">
-                <div class="tooltip">Twitter</div>
-                <span><i class='bx bxl-twitter'></i></span>
-            </div> -->
 
             <div class="icon instagram">
                 <div class="tooltip">Instagram</div>
-                <a target="_blank" href="https://www.instagram.com/_fahad_pathan___/"><span><i
-                            class='bx bxl-instagram'></i></span></a>
+                <span>
+                    <a target="_blank" href="https://www.instagram.com/_fahad_pathan___/">
+                        <i class='bx bxl-instagram'></i>
+                    </a>
+                </span>
             </div>
 
             <div class="icon github">
                 <div class="tooltip">Github</div>
-                <a target="_blank" href="https://github.com/fahadPathan7"><span><i class='bx bxl-github'></i></span></a>
+                <span>
+                    <a target="_blank" href="https://github.com/fahadPathan7">
+                        <i class='bx bxl-github'></i>
+                    </a>
+                </span>
             </div>
 
             <div class="icon linkedin">
                 <div class="tooltip">LinkedIn</div>
-                <a target="_blank" href="https://www.linkedin.com/in/fahad-pathan-0126151a0/"><span><i
-                            class='bx bxl-linkedin'></i></span></a>
+                <span>
+                    <a target="_blank" href="https://www.linkedin.com/in/fahad-pathan-0126151a0/">
+                        <i class='bx bxl-linkedin'></i>
+                    </a>
+                </span>
             </div>
 
             <div class="icon medium">
                 <div class="tooltip">Medium</div>
-                <a target="_blank" href="https://medium.com/@fahadpathan56"><span><i
-                            class='bx bxl-medium'></i></span></a>
+                <span>
+                    <a target="_blank" href="https://medium.com/@fahadpathan56">
+                        <i class='bx bxl-medium'></i>
+                    </a>
+                </span>
             </div>
         </div>
     </section>
-
-
 
     <script src="app.js"></script>
 
