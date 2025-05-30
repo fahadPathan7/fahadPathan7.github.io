@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yanone+Kaffeesatz:wght@400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Icons -->
@@ -20,6 +20,873 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("627RdIOgfnGUHVJH3");
+        })();
+    </script>
+
+    <style>
+        /* Font Variables */
+        :root {
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Montserrat', sans-serif;
+            --font-text: 'Open Sans', sans-serif;
+        }
+
+        /* Global Font Styles */
+        body {
+            font-family: var(--font-text);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-primary);
+        }
+
+        .navbar-list a {
+            font-family: var(--font-secondary);
+            font-weight: 500;
+        }
+
+        .intro h1 {
+            font-family: var(--font-primary);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .intro p {
+            font-family: var(--font-secondary);
+            font-weight: 500;
+        }
+
+        .section-title,
+        .title {
+            font-family: var(--font-primary);
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .btn,
+        .cta-button,
+        .send-button {
+            font-family: var(--font-secondary);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .card h3,
+        .research-card h3,
+        .cert-card h3 {
+            font-family: var(--font-primary);
+            font-weight: 600;
+        }
+
+        .card p,
+        .research-card p,
+        .cert-card p {
+            font-family: var(--font-text);
+        }
+
+        .tech-stack span {
+            font-family: var(--font-secondary);
+            font-weight: 500;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            font-family: var(--font-text);
+        }
+
+        .social .tooltip {
+            font-family: var(--font-secondary);
+            font-weight: 500;
+        }
+
+        /* Core Responsive Styles */
+        :root {
+            --container-width: 1200px;
+            --container-padding: 2rem;
+            --section-spacing: 5rem;
+
+            /* Responsive Breakpoints */
+            --mobile: 480px;
+            --tablet: 768px;
+            --laptop: 1024px;
+            --desktop: 1200px;
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        /* Navigation */
+        @media (max-width: 968px) {
+            .navbar {
+                padding: 1rem;
+            }
+
+            .navbar-list {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: #fff;
+                padding: 3rem 2rem;
+                transition: 0.3s;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+
+            .navbar-list ul {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            #sidemenu.active {
+                right: 0;
+            }
+
+            .navbar .fas {
+                display: block;
+                font-size: 24px;
+            }
+        }
+
+        /* Hero Section */
+        .home-page {
+            padding: 6rem 2rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .home-page {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 4rem 1rem 2rem;
+            }
+
+            .intro {
+                order: 2;
+            }
+
+            .images {
+                order: 1;
+                margin-bottom: 2rem;
+            }
+
+            .intro h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* About Section */
+        .about .content-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .about .content-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about .image-section img {
+                max-width: 80%;
+                margin: 0 auto;
+                display: block;
+            }
+        }
+
+        /* Skills Section */
+        .skill-section .box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .vertical-icons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .vertical {
+                padding: 1.5rem;
+            }
+
+            .vertical-icons {
+                gap: 1rem;
+            }
+        }
+
+        /* Projects Section */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .projects-container {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+        }
+
+        /* Research Section Styles */
+        .research {
+            padding: var(--section-padding);
+            background-color: var(--bg-color);
+        }
+
+        .research h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            color: var(--text-color);
+        }
+
+        .research-profiles {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .research-profile-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            text-decoration: none;
+            flex: 1;
+            max-width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .research-profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .research-profile-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .research-profile-card h3 {
+            color: var(--text-color);
+            font-size: 1.4rem;
+            margin: 0;
+        }
+
+        .research-profile-card p {
+            color: var(--text-color);
+            opacity: 0.8;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .research-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            gap: 2rem;
+        }
+
+        .research-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .research-status {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .research-status.accepted {
+            background: rgba(40, 167, 69, 0.1);
+            color: #28a745;
+        }
+
+        .research-status.pending {
+            background: rgba(255, 193, 7, 0.1);
+            color: #ffc107;
+        }
+
+        .research-card h3 {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            padding-right: 7rem;
+            font-size: 1.2rem;
+            line-height: 1.4;
+        }
+
+        .research-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .research-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .research-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .research-tags span {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .research-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            fill: url(#research-gradient);
+        }
+
+        /* Add gradient definition for the SVG */
+        .research-profiles {
+            position: relative;
+        }
+
+        .research-profiles svg {
+            fill: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .research-profiles {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .research-profile-card {
+                width: 100%;
+            }
+
+            .research-card h3 {
+                padding-right: 0;
+                margin-top: 3rem;
+            }
+
+            .research-status {
+                top: 1rem;
+                right: 1rem;
+            }
+
+            .research-tags {
+                justify-content: center;
+            }
+        }
+
+        /* Work Experience Section Styles */
+        .experience {
+            padding: var(--section-padding);
+            background-color: var(--bg-color);
+            position: relative;
+        }
+
+        .experience h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            color: var(--text-color);
+        }
+
+        .experience-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .experience-box {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .experience-timeline {
+            position: relative;
+            width: 30px;
+            flex-shrink: 0;
+        }
+
+        .timeline-dot {
+            width: 16px;
+            height: 16px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline-line {
+            position: absolute;
+            top: 16px;
+            left: 7px;
+            width: 2px;
+            height: calc(100% + 3rem);
+            background: linear-gradient(var(--primary-color), transparent);
+        }
+
+        .experience-content {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            flex-grow: 1;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-header {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 1.5rem;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-header img {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        .header-main h3 {
+            color: var(--text-color);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-main .company {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .header-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            text-align: right;
+        }
+
+        .header-details span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .experience-description {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .experience-description p {
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .tech-stack span {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .experience-header {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .experience-header img {
+                margin: 0 auto;
+            }
+
+            .header-details {
+                text-align: center;
+            }
+
+            .header-details span {
+                justify-content: center;
+            }
+
+            .tech-stack {
+                justify-content: center;
+            }
+        }
+
+        .paper-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+
+        .paper-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .paper-link i {
+            font-size: 1.1rem;
+        }
+
+        /* Certifications Section Styles */
+        .certifications {
+            padding: var(--section-spacing) 1rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .certifications h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            color: var(--text-color);
+        }
+
+        .certifications-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+
+        .cert-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .cert-badge {
+            position: relative;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            justify-content: center;
+        }
+
+        .cert-badge img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid white;
+            background: white;
+            object-fit: contain;
+        }
+
+        .cert-badge-overlay {
+            position: absolute;
+            bottom: -15px;
+            right: 30px;
+            background: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .cert-badge-overlay i {
+            color: var(--primary-color);
+            font-size: 20px;
+        }
+
+        .cert-content {
+            padding: 2rem;
+        }
+
+        .cert-content h3 {
+            color: var(--text-color);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .cert-content p {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .cert-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cert-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .verify-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .verify-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .certifications {
+                padding: 3rem 0.5rem;
+            }
+
+            .certifications h1 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .certifications-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 0 0.5rem;
+            }
+
+            .cert-badge {
+                padding: 1.5rem;
+            }
+
+            .cert-badge img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .cert-content {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .certifications {
+                padding: 2rem 0.5rem;
+            }
+
+            .certifications h1 {
+                font-size: 1.8rem;
+            }
+
+            .cert-badge {
+                padding: 1.2rem;
+            }
+
+            .cert-badge img {
+                width: 80px;
+                height: 80px;
+                border-width: 3px;
+            }
+
+            .cert-badge-overlay {
+                width: 25px;
+                height: 25px;
+                bottom: -12px;
+                right: 20px;
+            }
+
+            .cert-badge-overlay i {
+                font-size: 16px;
+            }
+
+            .cert-content {
+                padding: 1.2rem;
+            }
+
+            .cert-content h3 {
+                font-size: 1.1rem;
+            }
+
+            .verify-btn {
+                padding: 0.7rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Contact Section */
+        .contact-me .form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-me .form {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Social Links */
+        .social .wrapper {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 480px) {
+            .social .wrapper {
+                gap: 1rem;
+            }
+
+            .social .icon {
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+        /* General Responsive Text */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: calc(1.8rem + 1vw);
+            }
+
+            h2 {
+                font-size: calc(1.5rem + 1vw);
+            }
+
+            h3 {
+                font-size: calc(1.2rem + 1vw);
+            }
+
+            p {
+                font-size: calc(0.9rem + 0.5vw);
+            }
+        }
+
+        /* Spacing Adjustments */
+        @media (max-width: 768px) {
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .section-title {
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -34,8 +901,12 @@
                 <i class="fas fa-times" onclick="closeMenu()"></i>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Me</a></li>
+                <li><a href="#skill-section">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#research">Research</a></li>
                 <li><a href="#contact-me">Contact Me</a></li>
             </ul>
         </div>
@@ -46,7 +917,7 @@
     <section id="home" class="home-page">
         <div class="intro">
             <h1>Hi, I am<br><span>Fahad Pathan</span></h1>
-            <p>Undergrad student and Passionate software engineer</p>
+            <p>Passionate software engineer</p>
             <a target="_blank" href="resources/pdf/resume.pdf" class="cta-button">DOWNLOAD RESUME</a>
         </div>
 
@@ -63,13 +934,18 @@
         </div>
         <div class="content-section">
             <div class="image-section">
-                <img src="resources/images/undraw_Programming_re_kg9v (1).png" alt="Programming illustration">
+                <img src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/code.gif"
+                    alt="Programming illustration">
             </div>
             <div class="content">
-                <p>I am currently pursuing my B.Sc. degree in Software Engineering at
-                    Shahjalal University of Science and Technology, Sylhet.
-                    I love to code and solve problems, with a particular focus on creating
-                    efficient and elegant solutions to complex challenges.</p>
+                <p>I am a Software Engineering graduate from Shahjalal University of Science and Technology (SUST)
+                    with a CGPA of 3.72. Currently working as a Backend Software Engineer at Brainstation-23 and
+                    serving as a Research Assistant at AMIR Lab, focusing on Computer Vision and Deep Learning.</p>
+
+                <p>With experience in solving 1000+ programming problems and expertise in Go, React, and Node.js,
+                    I've developed various real-world applications. My research work in Computer Vision
+                    has led to publications in reputable journals. I am passionate about creating impactful solutions
+                    through technology and continuous learning.</p>
             </div>
         </div>
     </section>
@@ -77,79 +953,234 @@
     <!-- Skills Section -->
     <section id="skill-section" class="skill-section">
         <span class="text-gray">What I have learnt so far</span>
-        <h1>My Skills</h1>
+        <h1>Familiar With</h1>
 
         <div class="box">
             <div class="vertical">
-                <div class="vertical-title">Competitive Programming</div>
+                <div class="vertical-title">Programming Languages</div>
                 <div class="vertical-icons">
                     <div class="icon">
-                        <img src="resources/icons/c.png" alt="C programming">
-                        <p>C</p>
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg"
+                            alt="C++">
+                        <p>C/C++</p>
                     </div>
                     <div class="icon">
-                        <img src="resources/icons/c++.png" alt="C++ programming">
-                        <p>C++</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="vertical">
-                <div class="vertical-title">Web Development</div>
-                <div class="vertical-icons">
-                    <div class="icon">
-                        <img src="resources/icons/html.png" alt="HTML">
-                        <p>HTML</p>
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg"
+                            alt="Go">
+                        <p>Go</p>
                     </div>
                     <div class="icon">
-                        <img src="resources/icons/css.png" alt="CSS">
-                        <p>CSS</p>
-                    </div>
-                    <div class="icon">
-                        <img src="resources/icons/javascript.png" alt="JavaScript">
-                        <p>Javascript</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="vertical">
-                <div class="vertical-title">App Development</div>
-                <div class="vertical-icons">
-                    <div class="icon">
-                        <img src="resources/icons/java.png" alt="Java">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg"
+                            alt="Java">
                         <p>Java</p>
                     </div>
                     <div class="icon">
-                        <img src="resources/icons/android.png" alt="Android">
-                        <p>Android Studio</p>
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
+                            alt="Python">
+                        <p>Python</p>
+                    </div>
+                    <div class="icon">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
+                            alt="JavaScript">
+                        <p>JavaScript</p>
                     </div>
                 </div>
             </div>
 
             <div class="vertical">
-                <div class="vertical-title">Database Management</div>
+                <div class="vertical-title">Frameworks & Libraries</div>
                 <div class="vertical-icons">
                     <div class="icon">
-                        <img src="resources/icons/firebase.png" alt="Firebase">
-                        <p>Firebase</p>
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"
+                            alt="HTML5">
+                        <p>HTML5</p>
                     </div>
                     <div class="icon">
-                        <img src="resources/icons/mysql.png" alt="MySQL">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"
+                            alt="CSS3">
+                        <p>CSS3</p>
+                    </div>
+                    <div class="icon">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg"
+                            alt="Tailwind CSS">
+                        <p>Tailwind CSS</p>
+                    </div>
+                    <div class="icon">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/django/django-plain.svg"
+                            alt="Django">
+                        <p>Django</p>
+                    </div>
+                    <div class="icon">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg"
+                            alt="Express.JS">
+                        <p>Express.JS</p>
+                    </div>
+                    <div class="icon">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+                            alt="React.JS">
+                        <p>React.JS</p>
+                    </div>
+                    <div class="icon">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tensorflow/tensorflow-original.svg"
+                            alt="TensorFlow">
+                        <p>TensorFlow</p>
+                    </div>
+                    <div class="icon">
+                        <img src="https://raw.githubusercontent.com/scikit-learn/scikit-learn/main/doc/logos/scikit-learn-logo.png"
+                            alt="Scikit-learn">
+                        <p>Scikit-learn</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vertical">
+                <div class="vertical-title">Database & Cloud</div>
+                <div class="vertical-icons">
+                    <div class="icon">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg"
+                            alt="MySQL">
                         <p>MySQL</p>
                     </div>
+                    <div class="icon">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg"
+                            alt="MongoDB">
+                        <p>MongoDB</p>
+                    </div>
+                    <div class="icon">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg"
+                            alt="AWS">
+                        <p>AWS</p>
+                    </div>
                 </div>
             </div>
 
             <div class="vertical">
-                <div class="vertical-title">Collaboration</div>
+                <div class="vertical-title">Tools & Technologies</div>
                 <div class="vertical-icons">
                     <div class="icon">
-                        <img src="resources/icons/git.png" alt="Git">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg"
+                            alt="Docker">
+                        <p>Docker</p>
+                    </div>
+                    <div class="icon">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
+                            alt="Git">
                         <p>Git</p>
                     </div>
                     <div class="icon">
-                        <img src="resources/icons/github.png" alt="GitHub">
-                        <p>GitHub</p>
+                        <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="Postman">
+                        <p>Postman</p>
+                    </div>
+                    <div class="icon">
+                        <img src="https://www.vectorlogo.zone/logos/atlassian_jira/atlassian_jira-icon.svg" alt="Jira">
+                        <p>Jira</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vertical">
+                <div class="vertical-title">Data Science Libraries</div>
+                <div class="vertical-icons">
+                    <div class="icon">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pandas/pandas-original.svg"
+                            alt="Pandas">
+                        <p>Pandas</p>
+                    </div>
+                    <div class="icon">
+                        <img src="https://raw.githubusercontent.com/pola-rs/polars-static/master/logos/polars-logo-dark.svg"
+                            alt="Polars">
+                        <p>Polars</p>
+                    </div>
+                    <div class="icon">
+                        <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="Seaborn">
+                        <p>Seaborn</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience" class="experience">
+        <h1>Work Experience</h1>
+
+        <div class="experience-container">
+            <div class="experience-box">
+                <div class="experience-timeline">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-line"></div>
+                </div>
+                <div class="experience-content">
+                    <div class="experience-header">
+                        <img src="resources/images/bs23_logo.png" alt="Brainstation-23">
+                        <div class="header-main">
+                            <h3>Software Engineer</h3>
+                            <span class="company">
+                                <i class='bx bx-buildings'></i>
+                                Brainstation-23
+                            </span>
+                        </div>
+                        <div class="header-details">
+                            <span class="duration">
+                                <i class='bx bx-calendar'></i>
+                                October 2024 - Present
+                            </span>
+                            <span class="location">
+                                <i class='bx bx-map'></i>
+                                Mohakhali, Dhaka
+                            </span>
+                        </div>
+                    </div>
+                    <div class="experience-description">
+                        <p>Currently working on RideAlike, a Canada-based ride-sharing platform that connects vehicle
+                            owners and renters. Building microservices with Go and gRPC.</p>
+                        <div class="tech-stack">
+                            <span>Go</span>
+                            <span>gRPC</span>
+                            <span>MongoDB</span>
+                            <span>Microservices</span>
+                            <span>Docker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-box">
+                <div class="experience-timeline">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-line"></div>
+                </div>
+                <div class="experience-content">
+                    <div class="experience-header">
+                        <img src="resources/images/amir_logo.png" alt="AMIR Lab">
+                        <div class="header-main">
+                            <h3>Research Assistant</h3>
+                            <span class="company">
+                                <i class='bx bx-buildings'></i>
+                                Advanced Machine Intelligence Research Lab (AMIR Lab)
+                            </span>
+                        </div>
+                        <div class="header-details">
+                            <span class="duration">
+                                <i class='bx bx-calendar'></i>
+                                April 2024 - Present
+                            </span>
+                            <span class="location">
+                                <i class='bx bx-map'></i>
+                                Dhaka
+                            </span>
+                        </div>
+                    </div>
+                    <div class="experience-description">
+                        <p>Working on cutting-edge research projects in Computer Vision and Deep Learning.
+                            Focusing on agricultural and medical domains,
+                            contributing to multiple research publications.</p>
+                        <div class="tech-stack">
+                            <span>Computer Vision</span>
+                            <span>Deep Learning</span>
+                            <span>PyTorch</span>
+                            <span>TensorFlow</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -162,20 +1193,49 @@
 
         <div class="projects-container">
             <div class="projects-box">
-                <i class='bx bx-game'></i>
-                <h3>Survive IT</h3>
-                <p>2D Game where a hero takes the responsibility to save the mystery land</p>
+                <i class='bx bx-code-alt'></i>
+                <h3>EcoSync</h3>
+                <p>A comprehensive web app for DNCC's waste management with role-based access, vehicle & facility
+                    management, billing, and route optimization.</p>
                 <div class="tech-stack">
-                    <span>Java</span>
-                    <span>LibGdx</span>
+                    <span>Express.JS</span>
+                    <span>Socket.io</span>
+                    <span>MongoDB</span>
                 </div>
-                <a target="_blank" href="https://github.com/fahadPathan7/Survive-It" class="btn">View Project</a>
+                <a target="_blank" href="https://github.com/fahadPathan7/EcoSync" class="btn">View Project</a>
+            </div>
+
+            <div class="projects-box">
+                <i class='bx bx-football'></i>
+                <h3>SUST FTMS</h3>
+                <p>A web application for managing SUST Football Tournament with teams, schedules, fixtures, and scores
+                    management.</p>
+                <div class="tech-stack">
+                    <span>Golang</span>
+                    <span>MySQL</span>
+                    <span>JWT</span>
+                </div>
+                <a target="_blank" href="https://github.com/fahadPathan7/SUST-FTMS-Backend" class="btn">View Project</a>
+            </div>
+
+            <div class="projects-box">
+                <i class='bx bx-user-voice'></i>
+                <h3>HandyHire</h3>
+                <p>Platform connecting people needing help with handy jobs to those looking for part-time work
+                    opportunities.</p>
+                <div class="tech-stack">
+                    <span>Golang</span>
+                    <span>MySQL</span>
+                    <span>HTML/CSS</span>
+                </div>
+                <a target="_blank" href="https://github.com/fahadPathan7/HandyHire" class="btn">View Project</a>
             </div>
 
             <div class="projects-box">
                 <i class='bx bxl-android'></i>
                 <h3>Connect</h3>
-                <p>Android app helping volunteers work cooperatively in disaster-affected areas</p>
+                <p>Android app for disaster management with volunteer coordination, real-time warnings, and location
+                    tracking.</p>
                 <div class="tech-stack">
                     <span>Java</span>
                     <span>Firebase</span>
@@ -185,86 +1245,14 @@
             </div>
 
             <div class="projects-box">
-                <i class='bx bxs-shopping-bags'></i>
-                <h3>Super Shop Management</h3>
-                <p>Command-line application for efficient super shop operations</p>
+                <i class='bx bx-game'></i>
+                <h3>Survive-IT</h3>
+                <p>An engaging game where the hero protects Wonderland by battling sea and sky monsters.</p>
                 <div class="tech-stack">
                     <span>Java</span>
-                    <span>IntelliJ</span>
+                    <span>LibGDX</span>
                 </div>
-                <a target="_blank" href="https://github.com/fahadPathan7/Super-Shop-Management" class="btn">View
-                    Project</a>
-            </div>
-
-            <div class="projects-box">
-                <i class='bx bx-user-pin'></i>
-                <h3>Portfolio</h3>
-                <p>My personal website showcasing my work and skills</p>
-                <div class="tech-stack">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                </div>
-                <a target="_blank" href="https://github.com/fahadPathan7/My_Portfolio" class="btn">View Project</a>
-            </div>
-
-            <div class="projects-box">
-                <i class='bx bxs-data'></i>
-                <h3>FTMS</h3>
-                <p>SUST Football Tournament Management System</p>
-                <div class="tech-stack">
-                    <span>MySQL</span>
-                    <span>XAMPP</span>
-                </div>
-                <a target="_blank" href="https://github.com/fahadPathan7/Sust-Football-Tournament-Management-System"
-                    class="btn">View Project</a>
-            </div>
-
-            <div class="projects-box">
-                <i class='bx bx-book-bookmark'></i>
-                <h3>CP Notes</h3>
-                <p>Documentation of my competitive programming learning journey</p>
-                <div class="tech-stack">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                </div>
-                <a target="_blank" href="https://github.com/fahadPathan7/CP-Notes" class="btn">View Project</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Programming Profiles Section -->
-    <section class="programming-section">
-        <span class="small-text">Where I solve problems</span>
-        <h1>Programming Profiles</h1>
-
-        <div class="horizontal-icons">
-            <div class="icon">
-                <a target="_blank" href="https://codeforces.com/profile/noOne_07">
-                    <img src="resources/icons/codeforces.png" alt="Codeforces">
-                    <p>Codeforces</p>
-                </a>
-            </div>
-
-            <div class="icon">
-                <a target="_blank" href="https://www.codechef.com/users/fahad005">
-                    <img src="resources/icons/codechef.jpg" alt="CodeChef">
-                    <p>CodeChef</p>
-                </a>
-            </div>
-
-            <div class="icon">
-                <a target="_blank" href="https://www.stopstalk.com/user/profile/fahad005">
-                    <img src="resources/icons/stopstalk.png" alt="StopStalk">
-                    <p>StopStalk</p>
-                </a>
-            </div>
-
-            <div class="icon">
-                <a target="_blank" href="https://leetcode.com/fahadpathan56/">
-                    <img src="resources/icons/leetcode.png" alt="LeetCode">
-                    <p>LeetCode</p>
-                </a>
+                <a target="_blank" href="https://github.com/fahadPathan7/Survive-It" class="btn">View Project</a>
             </div>
         </div>
     </section>
@@ -275,21 +1263,196 @@
 
         <div class="achievements-container">
             <div class="achievements-box">
+                <i class='bx bx-trophy'></i>
+                <h3>AI Olympiad</h3>
+                <p>1st Runner-up in the Tertiary category at DIU AI Olympiad 2025</p>
+            </div>
+
+            <div class="achievements-box">
+                <i class='bx bx-bulb'></i>
+                <h3>Smart Unibator</h3>
+                <p>2nd Runner-up at SUST University Innovation Hub Program 2024</p>
+            </div>
+
+            <div class="achievements-box">
+                <i class='bx bx-code-block'></i>
+                <h3>Code Samurai</h3>
+                <p>Reached the 2nd phase of Code Samurai 2024 at DU</p>
+            </div>
+
+            <div class="achievements-box">
                 <i class='bx bx-code-alt'></i>
-                <h3>750+</h3>
-                <p>Problems solved across various competitive programming platforms</p>
+                <h3>1000+ Problems</h3>
+                <p>Solved over 1000 programming problems across various platforms</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <h1>Certifications</h1>
+        <div class="certifications-container">
+            <div class="cert-card">
+                <div class="cert-badge">
+                    <img src="https://images.credly.com/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png"
+                        alt="AWS Cloud Practitioner">
+                    <div class="cert-badge-overlay">
+                        <i class='bx bx-badge-check'></i>
+                    </div>
+                </div>
+                <div class="cert-content">
+                    <h3>AWS Certified Cloud Practitioner</h3>
+                    <p>Amazon Web Services (AWS)</p>
+                    <div class="cert-meta">
+                        <span><i class='bx bx-calendar'></i>Issued May 2025</span>
+                        <span><i class='bx bx-time'></i>Valid until May 2028</span>
+                    </div>
+                    <a href="https://www.credly.com/badges/78534719-93b5-4780-9a44-6dddac8b119a/public_url"
+                        target="_blank" class="verify-btn">
+                        Verify Certificate
+                        <i class='bx bx-link-external'></i>
+                    </a>
+                </div>
             </div>
 
-            <div class="achievements-box">
-                <i class='bx bx-code-curly'></i>
-                <h3>Pupil</h3>
-                <p>Achieved 1310 rating on Codeforces</p>
+            <div class="cert-card">
+                <div class="cert-badge">
+                    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera.s3.amazonaws.com/media/coursera-logo-square.png"
+                        alt="Coursera Certificate">
+                    <div class="cert-badge-overlay">
+                        <i class='bx bx-badge-check'></i>
+                    </div>
+                </div>
+                <div class="cert-content">
+                    <h3>Supervised Machine Learning: Regression and Classification</h3>
+                    <p>Coursera (Stanford University)</p>
+                    <div class="cert-meta">
+                        <span><i class='bx bx-calendar'></i>Issued October 2023</span>
+                    </div>
+                    <a href="https://www.coursera.org/account/accomplishments/certificate/UVX4WNQZCPKD" target="_blank"
+                        class="verify-btn">
+                        Verify Certificate
+                        <i class='bx bx-link-external'></i>
+                    </a>
+                </div>
             </div>
 
-            <div class="achievements-box">
-                <i class='bx bx-code'></i>
-                <h3>3★</h3>
-                <p>Rated 3 stars on CodeChef</p>
+            <div class="cert-card">
+                <div class="cert-badge">
+                    <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/hackerrank.svg"
+                        alt="HackerRank Certificate">
+                    <div class="cert-badge-overlay">
+                        <i class='bx bx-badge-check'></i>
+                    </div>
+                </div>
+                <div class="cert-content">
+                    <h3>SQL (Basic) Certificate</h3>
+                    <p>HackerRank</p>
+                    <div class="cert-meta">
+                        <span><i class='bx bx-calendar'></i>Issued May 2024</span>
+                    </div>
+                    <a href="https://www.hackerrank.com/certificates/d79fef038a4c" target="_blank" class="verify-btn">
+                        Verify Certificate
+                        <i class='bx bx-link-external'></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="research">
+        <h1>Research Experience</h1>
+        <div class="research-profiles">
+            <a href="https://scholar.google.com/citations?user=ADx2f10AAAAJ&hl=en" target="_blank"
+                class="research-profile-card">
+                <i class='bx bxs-graduation'></i>
+                <h3>Google Scholar</h3>
+                <p>View my publications and citations</p>
+            </a>
+            <a href="https://www.researchgate.net/profile/Fahad-Pathan?ev=prf_overview" target="_blank"
+                class="research-profile-card">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="research-icon">
+                    <path
+                        d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 0 0-.112.437 8.365 8.365 0 0 0-.078.53 9 9 0 0 0-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.121 0 0 0 .014 1.017 9 9 0 0 0 .05.727 7.946 7.946 0 0 0 .077.53h-.005a3.334 3.334 0 0 0 .113.438c.245.744.65 1.303 1.214 1.68.565.376 1.256.564 2.075.564.8 0 1.536-.213 2.105-.603.57-.39.94-.916 1.175-1.65.076-.235.135-.558.177-.93a10.9 10.9 0 0 0 .043-1.207v-.82c0-.095-.047-.142-.142h-3.064c-.094 0-.14.047-.14.141v.956c0 .094.046.14.14.14h1.666c.056 0 .084.03.084.086 0 .36 0 .62-.036.865-.038.244-.1.447-.147.606-.108.385-.348.664-.638.876-.29.212-.738.35-1.227.35-.545 0-.901-.15-1.21-.323-.306-.174-.517-.425-.67-.735-.153-.311-.262-.664-.322-1.059a8.605 8.605 0 0 1-.096-1.287V4.99c0-.432.033-.837.096-1.288.06-.395.169-.748.322-1.059.153-.31.364-.56.67-.734.309-.173.665-.324 1.21-.324.433 0 .756.098 1.073.27.316.17.516.376.67.613.153.236.275.516.361.834.087.321.178.603.27.851.093.245.23.479.41.698.18.22.483.33.91.33h1.814c.292 0 .487-.104.588-.285.102-.191.19-.382.19-.572 0-.19-.057-.377-.094-.564a3.557 3.557 0 0 0-.108-.518 9.463 9.463 0 0 0-.351-.998c-.195-.47-.405-.87-.63-1.207a3.05 3.05 0 0 0-.882-.851c-.347-.242-.71-.408-1.087-.498-.377-.09-.728-.107-1.05-.107z" />
+                    <path
+                        d="M12.807 11.081a3.44 3.44 0 0 0-1.406.244c-.37.151-.684.354-.945.61a2.837 2.837 0 0 0-.614.934c-.15.364-.227.75-.227 1.163 0 .433.077.831.227 1.193.15.363.36.673.63.934.27.261.595.466.977.61.381.145.812.218 1.293.218.474 0 .897-.075 1.271-.223a2.767 2.767 0 0 0 .97-.62 2.905 2.905 0 0 0 .636-.934c.154-.361.232-.76.232-1.193 0-.413-.078-.799-.232-1.163a2.932 2.932 0 0 0-.636-.934 2.813 2.813 0 0 0-.97-.61 3.384 3.384 0 0 0-1.206-.229zM2.41 11.103v8.838h1.472V11.103H2.41zm9.373 1.714c.2 0 .378.05.537.146.16.097.293.227.4.392.108.163.188.346.242.546.053.2.08.404.08.61 0 .209-.027.413-.08.613a1.64 1.64 0 0 1-.242.545 1.192 1.192 0 0 1-.4.392.996.996 0 0 1-.537.146.996.996 0 0 1-.537-.146 1.192 1.192 0 0 1-.4-.392 1.64 1.64 0 0 1-.242-.545 2.463 2.463 0 0 1-.08-.613c0-.206.027-.41.08-.61.054-.2.134-.384.242-.546.107-.165.24-.295.4-.392a.996.996 0 0 1 .537-.146zm-2.759.282v3.544h1.472v-3.544H9.024zm0 4.71v1.326h1.472v-1.326H9.024z" />
+                </svg>
+                <h3>ResearchGate</h3>
+                <p>Follow my research activities</p>
+            </a>
+        </div>
+        <div class="research-container">
+            <div class="research-card">
+                <div class="research-status accepted">
+                    <i class='bx bx-check-circle'></i>
+                    Accepted
+                </div>
+                <h3>Explainable AI-Driven Vision Transformers for Assessing Fruit Freshness via Transfer Learning</h3>
+                <div class="research-meta">
+                    <span class="venue">
+                        <i class='bx bx-building-house'></i>
+                        27th International Conference on Computer and Information Technology (ICCIT)
+                    </span>
+                    <span class="year">
+                        <i class='bx bx-calendar'></i>
+                        2024
+                    </span>
+                </div>
+                <div class="research-tags">
+                    <span>Computer Vision</span>
+                    <span>Deep Learning</span>
+                    <span>XAI</span>
+                </div>
+            </div>
+
+            <div class="research-card">
+                <div class="research-status accepted">
+                    <i class='bx bx-check-circle'></i>
+                    Published
+                </div>
+                <h3>XLTLDisNet: A Novel and Lightweight Approach to Identify Tomato Leaf Diseases with Transparency</h3>
+                <div class="research-meta">
+                    <span class="venue">
+                        <i class='bx bx-book'></i>
+                        Heliyon (Elsevier)
+                    </span>
+                </div>
+                <div class="research-tags">
+                    <span>Deep Learning</span>
+                    <span>Agriculture</span>
+                    <span>Disease Detection</span>
+                </div>
+                <a href="https://www.cell.com/heliyon/fulltext/S2405-8440(25)00955-7" target="_blank"
+                    class="paper-link">
+                    <i class='bx bx-link-external'></i>
+                    View Paper
+                </a>
+            </div>
+
+            <div class="research-card">
+                <div class="research-status accepted">
+                    <i class='bx bx-check-circle'></i>
+                    Published
+                </div>
+                <h3>Deep Learning-based Classification, Detection, and Segmentation of Tomato Leaf Diseases: A
+                    State-of-the-Art Review</h3>
+                <div class="research-meta">
+                    <span class="venue">
+                        <i class='bx bx-book'></i>
+                        Artificial Intelligence in Agriculture (Elsevier)
+                    </span>
+                </div>
+                <div class="research-tags">
+                    <span>Survey</span>
+                    <span>Deep Learning</span>
+                    <span>Agriculture</span>
+                </div>
+                <a href="https://www.sciencedirect.com/science/article/pii/S258972172500025X" target="_blank"
+                    class="paper-link">
+                    <i class='bx bx-link-external'></i>
+                    View Paper
+                </a>
             </div>
         </div>
     </section>
@@ -300,10 +1463,12 @@
             <div class="form">
                 <div class="contact-info">
                     <h3 class="title">Let's get in touch</h3>
+                    <p class="text">Feel free to reach out for collaborations, opportunities, or just a friendly chat!
+                    </p>
                     <div class="info">
                         <div class="information">
                             <i class='bx bx-map-alt'></i>
-                            <p>Mugda, Dhaka - 1214</p>
+                            <p>Moghbazar, Dhaka - 1214</p>
                         </div>
                         <div class="information">
                             <i class='bx bx-envelope'></i>
@@ -317,25 +1482,218 @@
                 </div>
 
                 <div class="contact-form">
-                    <form action="index.html" autocomplete="off">
+                    <form id="contact-form">
                         <h3 class="title">Send me a message</h3>
                         <div class="input-container">
-                            <input type="text" name="name" class="input" placeholder="Name" required />
+                            <input type="text" name="user_name" class="input" placeholder="Name" required />
                         </div>
                         <div class="input-container">
-                            <input type="email" name="email" class="input" placeholder="Email" required />
+                            <input type="email" name="user_email" class="input" placeholder="Email" required />
                         </div>
                         <div class="input-container">
-                            <input type="tel" name="phone" class="input" placeholder="Phone" />
+                            <input type="text" name="subject" class="input" placeholder="Subject" required />
                         </div>
                         <div class="input-container textarea">
                             <textarea name="message" class="input" placeholder="Message" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="submit" class="send-button">
+                            <span class="default">Send Message</span>
+                            <span class="success">
+                                <i class='bx bx-check'></i> Sent Successfully
+                            </span>
+                            <span class="loading">
+                                <i class='bx bx-loader-alt bx-spin'></i> Sending...
+                            </span>
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
+
+        <style>
+            .contact-me {
+                padding: var(--section-padding);
+                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            }
+
+            .contact-me .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 2rem;
+            }
+
+            .contact-me .form {
+                background: white;
+                border-radius: 20px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+                padding: 2rem;
+            }
+
+            .contact-info {
+                padding: 2.3rem 2.2rem;
+                position: relative;
+                background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+                border-radius: 15px;
+                color: white;
+            }
+
+            .contact-info .title {
+                font-size: 1.8rem;
+                margin-bottom: 0.7rem;
+            }
+
+            .contact-info .text {
+                margin: 1.5rem 0 2rem 0;
+                line-height: 1.6;
+            }
+
+            .information {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .information i {
+                font-size: 1.5rem;
+            }
+
+            .contact-form {
+                padding: 2.3rem 2.2rem;
+                position: relative;
+            }
+
+            .contact-form .title {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+                color: var(--text-color);
+            }
+
+            .input-container {
+                position: relative;
+                margin-bottom: 1.5rem;
+            }
+
+            .input {
+                width: 100%;
+                padding: 1rem;
+                border: 2px solid #fafafa;
+                background: #fafafa;
+                font-size: 0.95rem;
+                border-radius: 10px;
+                outline: none;
+                transition: 0.3s;
+            }
+
+            .input:focus {
+                border-color: var(--primary-color);
+                background: white;
+            }
+
+            textarea.input {
+                min-height: 150px;
+                resize: none;
+            }
+
+            .send-button {
+                position: relative;
+                width: 100%;
+                padding: 1rem;
+                background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+                border: none;
+                color: white;
+                font-size: 1rem;
+                border-radius: 10px;
+                cursor: pointer;
+                overflow: hidden;
+                transition: 0.3s;
+            }
+
+            .send-button:hover {
+                transform: translateY(-2px);
+            }
+
+            .send-button span {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: 0.3s;
+            }
+
+            .send-button .default {
+                opacity: 1;
+            }
+
+            .send-button .success,
+            .send-button .loading {
+                opacity: 0;
+            }
+
+            .send-button.success .default,
+            .send-button.loading .default {
+                opacity: 0;
+            }
+
+            .send-button.success .success {
+                opacity: 1;
+            }
+
+            .send-button.loading .loading {
+                opacity: 1;
+            }
+
+            @media (max-width: 768px) {
+                .contact-me .form {
+                    grid-template-columns: 1fr;
+                }
+
+                .contact-info {
+                    padding: 1.5rem;
+                }
+
+                .contact-form {
+                    padding: 1.5rem;
+                }
+            }
+        </style>
+
+        <script>
+            const btn = document.getElementById('contact-form').querySelector('button');
+
+            document.getElementById('contact-form')
+                .addEventListener('submit', function (event) {
+                    event.preventDefault();
+
+                    console.log('Form submission started');
+                    btn.classList.add('loading');
+
+                    const serviceID = 'service_9x9euss';
+                    const templateID = 'template_0vzguat';
+
+                    console.log('Sending with:', { serviceID, templateID });
+                    console.log('Form data:', Object.fromEntries(new FormData(this)));
+
+                    emailjs.sendForm(serviceID, templateID, this)
+                        .then(() => {
+                            console.log('Email sent successfully');
+                            btn.classList.remove('loading');
+                            btn.classList.add('success');
+                            this.reset();
+
+                            setTimeout(() => {
+                                btn.classList.remove('success');
+                            }, 3000);
+                        }, (err) => {
+                            console.error('EmailJS Error:', err);
+                            btn.classList.remove('loading');
+                            alert('Failed to send message. Error: ' + err.text);
+                        });
+                });
+        </script>
     </section>
 
     <!-- Social Links Section -->
