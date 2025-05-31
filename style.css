@@ -909,33 +909,3 @@ textarea.input {
 .certifications {
     background-color: #fff !important;
 }
-
-.status-label {
-    display: block;
-    font-weight: bold;
-    font-size: 1.1rem;
-    color: #28a745;
-    margin-top: 0.2rem;
-}
-
-.research-status.accepted {
-    background: rgba(40, 167, 69, 0.1);
-    color: #1e7e34;
-}
-
-.research-status.published {
-    background: rgba(0, 123, 255, 0.1);
-    color: #0056b3;
-}
-
-.research-status {
-    position: static;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.2rem 0.7rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    margin-bottom: 1.1rem;
-}
