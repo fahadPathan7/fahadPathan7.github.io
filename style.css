@@ -38,14 +38,15 @@ h6 {
 
 /* Navbar Styles */
 .navbar {
-    background-color: rgba(255, 255, 255, 0.95);
+    background: linear-gradient(135deg, #a1c4fdcc 0%, #fbc2ebcc 100%, #fad0c4cc 100%);
     backdrop-filter: blur(10px);
     width: 100%;
     padding: var(--container-padding);
     position: fixed;
     top: 0;
-    left: 50%;
-    transform: translate(-50%);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     height: 80px;
     display: flex;
     justify-content: space-between;
@@ -114,7 +115,19 @@ h6 {
     display: flex;
     align-items: center;
     padding: var(--container-padding);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 240, 245, 0.9) 100%);
+    background: linear-gradient(135deg, #a1c4fd 0%, #fbc2eb 100%, #fad0c4 100%) !important;
+    background-size: 200% 200%;
+    animation: homeGradientMove 12s ease-in-out infinite alternate;
+}
+
+@keyframes homeGradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
 .intro {
@@ -322,7 +335,7 @@ h6 {
 /* Projects Section */
 .projects {
     padding: var(--section-padding);
-    background-color: var(--bg-color);
+    background-color: #fff !important;
 }
 
 .projects h1 {
@@ -784,4 +797,14 @@ textarea.input {
     .wrapper .icon span {
         font-size: 1.2rem;
     }
+}
+
+.problem-solving {
+    background-color: #e9ecef !important;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+.certifications {
+    background-color: #fff !important;
 }

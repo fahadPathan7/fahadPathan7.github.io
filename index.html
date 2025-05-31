@@ -182,11 +182,24 @@
 
         /* Hero Section */
         .home-page {
-            padding: 6rem 2rem 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 2rem;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+            animation: gradientBG 16s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%
+            }
+
+            50% {
+                background-position: 100% 50%
+            }
+
+            100% {
+                background-position: 0% 50%
+            }
         }
 
         @media (max-width: 768px) {
@@ -211,6 +224,11 @@
         }
 
         /* About Section */
+        .about {
+            background: #f8f9fa !important;
+            padding: var(--section-spacing) 1rem;
+        }
+
         .about .content-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -232,6 +250,11 @@
         }
 
         /* Skills Section */
+        .skill-section {
+            background: #e9ecef !important;
+            padding: var(--section-spacing) 1rem;
+        }
+
         .skill-section .box {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -255,6 +278,11 @@
         }
 
         /* Projects Section */
+        .projects {
+            background: #f8f9fa !important;
+            padding: var(--section-spacing) 1rem;
+        }
+
         .projects-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -271,8 +299,8 @@
 
         /* Research Section Styles */
         .research {
-            padding: var(--section-padding);
-            background-color: var(--bg-color);
+            background: #e9ecef !important;
+            padding: var(--section-spacing) 1rem;
         }
 
         .research h1 {
@@ -503,8 +531,8 @@
 
         /* Work Experience Section Styles */
         .experience {
-            padding: var(--section-padding);
-            background-color: var(--bg-color);
+            background: #f8f9fa !important;
+            padding: var(--section-spacing) 1rem;
             position: relative;
         }
 
@@ -683,8 +711,8 @@
 
         /* Certifications Section Styles */
         .certifications {
+            background: #f8f9fa !important;
             padding: var(--section-spacing) 1rem;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         }
 
         .certifications h1 {
@@ -879,8 +907,8 @@
 
         /* Contact Section */
         .contact-me {
-            padding: var(--section-padding);
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: #f8f9fa !important;
+            padding: var(--section-spacing) 1rem;
         }
 
         .contact-me .container {
@@ -1155,8 +1183,8 @@
 
         /* Education Section Styles */
         .education {
+            background: #e9ecef !important;
             padding: var(--section-spacing) 1rem;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         }
 
         .education h1 {
@@ -1267,8 +1295,7 @@
 
         /* Problem Solving Section Styles */
         .problem-solving {
-            padding: var(--section-spacing) 1rem;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: #e9ecef !important;
         }
 
         .problem-solving h1 {
@@ -1450,6 +1477,292 @@
                 font-size: 0.85rem;
             }
         }
+
+        /* --- Cool Enhancements Start --- */
+        /* 1. Animated Gradient Background for Hero Section */
+        .home-page {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+            animation: gradientBG 16s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%
+            }
+
+            50% {
+                background-position: 100% 50%
+            }
+
+            100% {
+                background-position: 0% 50%
+            }
+        }
+
+        /* 2. Fade-in Animation for Sections */
+        section,
+        .projects-box,
+        .cert-card,
+        .research-card,
+        .platform-card,
+        .achievements-box,
+        .education-card,
+        .experience-box {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(.4, 0, .2, 1), transform 0.8s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        section.visible,
+        .projects-box.visible,
+        .cert-card.visible,
+        .research-card.visible,
+        .platform-card.visible,
+        .achievements-box.visible,
+        .education-card.visible,
+        .experience-box.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* 3. Card and Button Hover Effects */
+        .projects-box,
+        .cert-card,
+        .research-card,
+        .platform-card,
+        .achievements-box,
+        .education-card,
+        .experience-content {
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08), 0 1.5px 6px rgba(0, 0, 0, 0.04);
+            transition: box-shadow 0.3s, transform 0.3s;
+            backdrop-filter: blur(2px);
+        }
+
+        .projects-box:hover,
+        .cert-card:hover,
+        .research-card:hover,
+        .platform-card:hover,
+        .achievements-box:hover,
+        .education-card:hover,
+        .experience-content:hover {
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16), 0 3px 12px rgba(0, 0, 0, 0.08);
+            transform: translateY(-8px) scale(1.03);
+        }
+
+        .btn,
+        .cta-button,
+        .send-button,
+        .verify-btn,
+        .paper-link {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: background 0.4s, color 0.4s, box-shadow 0.3s, transform 0.2s;
+        }
+
+        .btn::before,
+        .cta-button::before,
+        .send-button::before,
+        .verify-btn::before,
+        .paper-link::before {
+            content: '';
+            position: absolute;
+            left: -75%;
+            top: 0;
+            width: 150%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            opacity: 0.15;
+            transition: left 0.4s cubic-bezier(.4, 0, .2, 1);
+            z-index: -1;
+        }
+
+        .btn:hover::before,
+        .cta-button:hover::before,
+        .send-button:hover::before,
+        .verify-btn:hover::before,
+        .paper-link:hover::before {
+            left: 0;
+        }
+
+        .btn:hover,
+        .cta-button:hover,
+        .send-button:hover,
+        .verify-btn:hover,
+        .paper-link:hover {
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+            transform: translateY(-2px) scale(1.04);
+        }
+
+        /* 4. Social Icon Animations */
+        .social .icon {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .social .icon:hover {
+            transform: scale(1.18) rotate(-6deg);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+        }
+
+        .social .icon i {
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        .social .icon.fb:hover i {
+            color: #1877f3;
+            text-shadow: 0 0 8px #1877f3;
+        }
+
+        .social .icon.instagram:hover i {
+            color: #e1306c;
+            text-shadow: 0 0 8px #e1306c;
+        }
+
+        .social .icon.github:hover i {
+            color: #333;
+            text-shadow: 0 0 8px #333;
+        }
+
+        .social .icon.linkedin:hover i {
+            color: #0a66c2;
+            text-shadow: 0 0 8px #0a66c2;
+        }
+
+        .social .icon.medium:hover i {
+            color: #00ab6c;
+            text-shadow: 0 0 8px #00ab6c;
+        }
+
+        /* --- Cool Enhancements End --- */
+
+        /* --- Consistent Section Backgrounds Start --- */
+        section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        section:nth-of-type(even) {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%, #f8f9fa 100%);
+            background-blend-mode: lighten;
+        }
+
+        /* Remove individual section backgrounds to ensure consistency */
+        .education,
+        .problem-solving,
+        .certifications,
+        .contact-me,
+        .achievements {
+            background: unset !important;
+        }
+
+        /* Custom consistent background for About Me and Research Experience */
+        .about,
+        .research {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+        }
+
+        /* --- Consistent Section Backgrounds End --- */
+
+        /* Consistent background for all main content sections (except home-page) */
+        .about,
+        .skill-section,
+        .education,
+        .experience,
+        .problem-solving,
+        .projects,
+        .achievements,
+        .certifications,
+        .research,
+        .contact-me {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+        }
+
+        /* --- Section Backgrounds: About Me Alternating --- */
+        .home-page {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+        }
+
+        .about,
+        .education,
+        .projects,
+        .achievements,
+        .certifications,
+        .research {
+            background: #e9ecef !important;
+        }
+
+        .skill-section,
+        .experience,
+        .problem-solving,
+        .contact-me {
+            background: #fff !important;
+        }
+
+        .menu-btn {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 0.6rem 1.5rem;
+            font-size: 1rem;
+            font-family: var(--font-secondary);
+            font-weight: 600;
+            cursor: pointer;
+            margin-left: 1rem;
+            transition: background 0.3s;
+        }
+
+        .menu-btn:hover {
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 80px;
+            right: 2vw;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+            z-index: 10001;
+            min-width: 200px;
+            padding: 1rem 0.5rem;
+        }
+
+        .dropdown-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .dropdown-menu ul li {
+            margin: 0.5rem 0;
+        }
+
+        .dropdown-menu ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.08rem;
+            font-family: var(--font-secondary);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            display: block;
+            border-radius: 8px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .dropdown-menu ul li a:hover {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .dropdown-menu {
+                right: 1vw;
+                min-width: 150px;
+            }
+        }
     </style>
 </head>
 
@@ -1459,10 +1772,9 @@
         <div class="navbar-brand">
             <img src="resources/images/signature.png" alt="Fahad's signature">
         </div>
-
-        <div class="navbar-list">
-            <ul id="sidemenu">
-                <i class="fas fa-times" onclick="closeMenu()"></i>
+        <button id="menu-toggle" class="menu-btn">Menu</button>
+        <div id="dropdown-menu" class="dropdown-menu" style="display: none;">
+            <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#education">Education</a></li>
@@ -1476,7 +1788,6 @@
                 <li><a href="#contact-me">Contact Me</a></li>
             </ul>
         </div>
-        <i class="fas fa-bars" onclick="openMenu()"></i>
     </nav>
 
     <!-- Hero Section -->
@@ -2315,6 +2626,21 @@
                     } : null
                 });
             });
+
+            // --- Cool Enhancements: Fade-in on Scroll ---
+            function revealOnScroll() {
+                const revealEls = document.querySelectorAll('section, .projects-box, .cert-card, .research-card, .platform-card, .achievements-box, .education-card, .experience-box');
+                const windowHeight = window.innerHeight;
+                revealEls.forEach(el => {
+                    const top = el.getBoundingClientRect().top;
+                    if (top < windowHeight - 60) {
+                        el.classList.add('visible');
+                    }
+                });
+            }
+            window.addEventListener('scroll', revealOnScroll);
+            window.addEventListener('load', revealOnScroll);
+            // --- End Cool Enhancements ---
         </script>
     </section>
 
@@ -2377,6 +2703,19 @@
     </footer>
 
     <script src="app.js"></script>
+
+    <script>
+        const menuBtn = document.getElementById('menu-toggle');
+        const dropdown = document.getElementById('dropdown-menu');
+        menuBtn.addEventListener('click', function () {
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        });
+        document.addEventListener('click', function (e) {
+            if (!menuBtn.contains(e.target) && !dropdown.contains(e.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+    </script>
 
 </body>
 
