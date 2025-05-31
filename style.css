@@ -774,7 +774,11 @@ textarea.input {
     }
 
     .images {
-        display: none !important;
+        width: 270px !important;
+        height: 270px !important;
+        display: block;
+        position: static;
+        margin: 0 auto;
     }
 
     .intro {
@@ -824,7 +828,7 @@ textarea.input {
     }
 
     .intro {
-        margin-left: 0;
+        margin-left: 120px;
     }
 }
 

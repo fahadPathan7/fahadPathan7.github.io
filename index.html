@@ -184,8 +184,7 @@
         .home-page {
             position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
-            animation: gradientBG 16s ease infinite;
+            background: linear-gradient(135deg, #a1c4fdcc 0%, #fbc2ebcc 50%, #fad0c4cc 100%) !important;
         }
 
         @keyframes gradientBG {
@@ -220,6 +219,21 @@
 
             .intro h1 {
                 font-size: 2.5rem;
+            }
+        }
+
+        /* Hide images on very small screens */
+        @media (max-width: 768px) {
+            .images {
+                display: none;
+            }
+
+            .intro {
+                margin-top: 3rem;
+            }
+
+            .home-page {
+                padding: 3rem 1rem 2rem;
             }
         }
 
@@ -1483,8 +1497,7 @@
         .home-page {
             position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
-            animation: gradientBG 16s ease infinite;
+            background: linear-gradient(135deg, #a1c4fdcc 0%, #fbc2ebcc 50%, #fad0c4cc 100%) !important;
         }
 
         @keyframes gradientBG {
@@ -1681,21 +1694,21 @@
 
         /* --- Section Backgrounds: About Me Alternating --- */
         .home-page {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+            background: linear-gradient(135deg, #a1c4fdcc 0%, #fbc2ebcc 50%, #fad0c4cc 100%) !important;
         }
 
         .about,
         .education,
-        .projects,
+        .problem-solving,
         .achievements,
-        .certifications,
         .research {
             background: #e9ecef !important;
         }
 
         .skill-section,
         .experience,
-        .problem-solving,
+        .projects,
+        .certifications,
         .contact-me {
             background: #fff !important;
         }
@@ -2420,7 +2433,7 @@
                 <div class="research-card">
                     <div class="research-status accepted">
                         <i class='bx bx-check-circle'></i>
-                        <span class="status-label">Accepted</span>
+                        Accepted
                     </div>
                     <h3>Explainable AI-Driven Vision Transformers for Assessing Fruit Freshness via Transfer Learning
                     </h3>
@@ -2444,7 +2457,7 @@
                 <div class="research-card">
                     <div class="research-status accepted">
                         <i class='bx bx-check-circle'></i>
-                        <span class="status-label">Published</span>
+                        Published
                     </div>
                     <h3>XLTLDisNet: A Novel and Lightweight Approach to Identify Tomato Leaf Diseases with Transparency
                     </h3>
@@ -2469,7 +2482,7 @@
                 <div class="research-card">
                     <div class="research-status accepted">
                         <i class='bx bx-check-circle'></i>
-                        <span class="status-label">Published</span>
+                        Published
                     </div>
                     <h3>Deep Learning-based Classification, Detection, and Segmentation of Tomato Leaf Diseases: A
                         State-of-the-Art Review</h3>
