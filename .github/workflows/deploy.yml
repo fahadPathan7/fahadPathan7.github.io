@@ -1,0 +1,26 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # or your default branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Create config file
+        run: |
+          echo "const emailConfig = {
+            PUBLIC_KEY: '${{ secrets.EMAILJS_PUBLIC_KEY }}',
+            SERVICE_ID: '${{ secrets.EMAILJS_SERVICE_ID }}',
+            TEMPLATE_ID: '${{ secrets.EMAILJS_TEMPLATE_ID }}'
+          };" > config.js
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: . # The folder the action should deploy

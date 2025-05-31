@@ -23,9 +23,10 @@
 
     <!-- EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="config.js"></script>
     <script type="text/javascript">
         (function () {
-            emailjs.init("627RdIOgfnGUHVJH3");
+            emailjs.init(emailConfig.PUBLIC_KEY);
         })();
     </script>
 
@@ -269,6 +270,34 @@
             color: var(--text-color);
         }
 
+        .research-subsection {
+            margin-bottom: 5rem;
+        }
+
+        .research-subsection:last-child {
+            margin-bottom: 0;
+        }
+
+        .research-subsection h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--text-color);
+            position: relative;
+        }
+
+        .research-subsection h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border-radius: 3px;
+        }
+
         .research-profiles {
             max-width: 1200px;
             margin: 0 auto 4rem;
@@ -276,6 +305,22 @@
             display: flex;
             justify-content: center;
             gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .research-subsection {
+                margin-bottom: 3rem;
+            }
+
+            .research-subsection h2 {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
+
+            .research h1 {
+                font-size: 2rem;
+                margin-bottom: 3rem;
+            }
         }
 
         .research-profile-card {
@@ -1095,6 +1140,304 @@
                 margin-bottom: 2rem;
             }
         }
+
+        /* Education Section Styles */
+        .education {
+            padding: var(--section-spacing) 1rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .education h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            color: var(--text-color);
+        }
+
+        .education-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        .education-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .education-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .education-header i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .education-title h3 {
+            color: var(--text-color);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-title p {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .education-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .education-details span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        .education-details i {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .education {
+                padding: 3rem 0.5rem;
+            }
+
+            .education h1 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .education-container {
+                padding: 0 1rem;
+            }
+
+            .education-card {
+                padding: 1.5rem;
+            }
+
+            .education-header {
+                gap: 1rem;
+            }
+
+            .education-title h3 {
+                font-size: 1.2rem;
+            }
+
+            .education-details {
+                gap: 1rem;
+                flex-direction: column;
+            }
+        }
+
+        /* Problem Solving Section Styles */
+        .problem-solving {
+            padding: var(--section-spacing) 1rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .problem-solving h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .problem-solving .section-description {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            font-size: 1.1rem;
+        }
+
+        .platform-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        .platform-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .platform-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .platform-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .platform-header img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .platform-header h3 {
+            color: var(--text-color);
+            font-size: 1.3rem;
+            margin: 0;
+        }
+
+        .platform-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .handles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .handles a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .handles a:hover {
+            color: var(--secondary-color);
+        }
+
+        .handles a::after {
+            content: '→';
+            opacity: 0;
+            transform: translateX(-5px);
+            transition: all 0.3s ease;
+        }
+
+        .handles a:hover::after {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        .rating i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .problem-solving {
+                padding: 3rem 0.5rem;
+            }
+
+            .problem-solving h1 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .problem-solving .section-description {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+                padding: 0 1rem;
+            }
+
+            .platform-container {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+                gap: 1.5rem;
+            }
+
+            .platform-card {
+                padding: 1.5rem;
+            }
+
+            .platform-header img {
+                width: 35px;
+                height: 35px;
+            }
+
+            .platform-header h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Footer Styles */
+        .footer {
+            padding: 2rem 1rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            text-align: center;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .last-updated {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            color: var(--text-color);
+            font-size: 0.9rem;
+            font-family: var(--font-secondary);
+        }
+
+        .last-updated i {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                padding: 1.5rem 1rem;
+            }
+
+            .last-updated {
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 
@@ -1110,8 +1453,10 @@
                 <i class="fas fa-times" onclick="closeMenu()"></i>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Me</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#skill-section">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#problem-solving">Problem Solving</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#certifications">Certifications</a></li>
@@ -1169,9 +1514,14 @@
                 <div class="vertical-title">Programming Languages</div>
                 <div class="vertical-icons">
                     <div class="icon">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg"
+                            alt="C">
+                        <p>C</p>
+                    </div>
+                    <div class="icon">
                         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg"
                             alt="C++">
-                        <p>C/C++</p>
+                        <p>C++</p>
                     </div>
                     <div class="icon">
                         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg"
@@ -1197,7 +1547,36 @@
             </div>
 
             <div class="vertical">
-                <div class="vertical-title">Frameworks & Libraries</div>
+                <div class="vertical-title">Frameworks</div>
+                <div class="vertical-icons">
+                    <div class="icon">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/django/django-plain.svg"
+                            alt="Django">
+                        <p>Django</p>
+                    </div>
+                    <div class="icon">
+                        <img src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" alt="FastAPI">
+                        <p>FastAPI</p>
+                    </div>
+                    <div class="icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Flask_logo.svg" alt="Flask">
+                        <p>Flask</p>
+                    </div>
+                    <div class="icon">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg"
+                            alt="Express.JS">
+                        <p>Express.JS</p>
+                    </div>
+                    <div class="icon">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+                            alt="React.JS">
+                        <p>React.JS</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vertical">
+                <div class="vertical-title">Libraries</div>
                 <div class="vertical-icons">
                     <div class="icon">
                         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"
@@ -1215,21 +1594,6 @@
                         <p>Tailwind CSS</p>
                     </div>
                     <div class="icon">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/django/django-plain.svg"
-                            alt="Django">
-                        <p>Django</p>
-                    </div>
-                    <div class="icon">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg"
-                            alt="Express.JS">
-                        <p>Express.JS</p>
-                    </div>
-                    <div class="icon">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
-                            alt="React.JS">
-                        <p>React.JS</p>
-                    </div>
-                    <div class="icon">
                         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tensorflow/tensorflow-original.svg"
                             alt="TensorFlow">
                         <p>TensorFlow</p>
@@ -1238,6 +1602,16 @@
                         <img src="https://raw.githubusercontent.com/scikit-learn/scikit-learn/main/doc/logos/scikit-learn-logo.png"
                             alt="Scikit-learn">
                         <p>Scikit-learn</p>
+                    </div>
+                    <div class="icon">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg"
+                            alt="CMUX">
+                        <p>CMUX</p>
+                    </div>
+                    <div class="icon">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg"
+                            alt="GMUX">
+                        <p>GMUX</p>
                     </div>
                 </div>
             </div>
@@ -1304,6 +1678,57 @@
                         <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="Seaborn">
                         <p>Seaborn</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <h1>Education</h1>
+        <div class="education-container">
+            <div class="education-card">
+                <div class="education-header">
+                    <i class='bx bxs-graduation'></i>
+                    <div class="education-title">
+                        <h3>Shahjalal University of Science and Technology</h3>
+                        <p>B.Sc. in Software Engineering</p>
+                    </div>
+                </div>
+                <div class="education-details">
+                    <span class="year"><i class='bx bx-calendar'></i>2020 - 2024</span>
+                    <span class="location"><i class='bx bx-map'></i>Sylhet</span>
+                    <span class="grade"><i class='bx bx-medal'></i>CGPA: 3.72</span>
+                </div>
+            </div>
+
+            <div class="education-card">
+                <div class="education-header">
+                    <i class='bx bxs-school'></i>
+                    <div class="education-title">
+                        <h3>Notre Dame College</h3>
+                        <p>Higher Secondary School Certificate</p>
+                    </div>
+                </div>
+                <div class="education-details">
+                    <span class="year"><i class='bx bx-calendar'></i>2017 - 2019</span>
+                    <span class="location"><i class='bx bx-map'></i>Dhaka</span>
+                    <span class="grade"><i class='bx bx-medal'></i>GPA: 5.00</span>
+                </div>
+            </div>
+
+            <div class="education-card">
+                <div class="education-header">
+                    <i class='bx bxs-school'></i>
+                    <div class="education-title">
+                        <h3>Motijheel Govt. Boys' High School</h3>
+                        <p>Secondary School Certificate</p>
+                    </div>
+                </div>
+                <div class="education-details">
+                    <span class="year"><i class='bx bx-calendar'></i>2015 - 2017</span>
+                    <span class="location"><i class='bx bx-map'></i>Dhaka</span>
+                    <span class="grade"><i class='bx bx-medal'></i>GPA: 5.00</span>
                 </div>
             </div>
         </div>
@@ -1390,6 +1815,74 @@
                             <span>PyTorch</span>
                             <span>TensorFlow</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Solving Section -->
+    <section id="problem-solving" class="problem-solving">
+        <h1>Problem Solving</h1>
+        <p class="section-description">Solved over 1000 programming problems on various online problem solving
+            platforms.</p>
+
+        <div class="platform-container">
+            <div class="platform-card">
+                <div class="platform-header">
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/free-code-forces-3628695-3029920.png"
+                        alt="Codeforces">
+                    <h3>Codeforces</h3>
+                </div>
+                <div class="platform-details">
+                    <div class="handles">
+                        <a href="https://codeforces.com/profile/PhoenixBlaze" target="_blank">PhoenixBlaze</a>
+                        <a href="https://codeforces.com/profile/CoderX7" target="_blank">CoderX7</a>
+                    </div>
+                    <div class="rating">
+                        <i class='bx bx-line-chart'></i>
+                        <span>Max Rating: 1386</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="platform-card">
+                <div class="platform-header">
+                    <img src="https://cdn.codechef.com/sites/default/files/uploads/pictures/811b20a47eac52b10c90ab82e0628e21.png"
+                        alt="CodeChef">
+                    <h3>CodeChef</h3>
+                </div>
+                <div class="platform-details">
+                    <div class="handles">
+                        <a href="https://www.codechef.com/users/fahad005" target="_blank">fahad005</a>
+                    </div>
+                    <div class="rating">
+                        <i class='bx bx-line-chart'></i>
+                        <span>Max Rating: 1709</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="platform-card">
+                <div class="platform-header">
+                    <img src="https://www.stopstalk.com/static/images/stopstalk-logo.png" alt="StopStalk">
+                    <h3>StopStalk</h3>
+                </div>
+                <div class="platform-details">
+                    <div class="handles">
+                        <a href="https://www.stopstalk.com/user/profile/fahad005" target="_blank">fahad005</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="platform-card">
+                <div class="platform-header">
+                    <img src="https://leetcode.com/static/images/LeetCode_logo_rvs.png" alt="LeetCode">
+                    <h3>LeetCode</h3>
+                </div>
+                <div class="platform-details">
+                    <div class="handles">
+                        <a href="https://leetcode.com/u/fahadpathan56/" target="_blank">fahadpathan56</a>
                     </div>
                 </div>
             </div>
@@ -1572,96 +2065,108 @@
     <!-- Research Section -->
     <section id="research" class="research">
         <h1>Research Experience</h1>
-        <div class="research-profiles">
-            <a href="https://scholar.google.com/citations?user=ADx2f10AAAAJ&hl=en" target="_blank"
-                class="research-profile-card">
-                <i class='bx bxs-graduation'></i>
-                <h3>Google Scholar</h3>
-                <p>View my publications and citations</p>
-            </a>
-            <a href="https://www.researchgate.net/profile/Fahad-Pathan?ev=prf_overview" target="_blank"
-                class="research-profile-card">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="research-icon">
-                    <path
-                        d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 0 0-.112.437 8.365 8.365 0 0 0-.078.53 9 9 0 0 0-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.121 0 0 0 .014 1.017 9 9 0 0 0 .05.727 7.946 7.946 0 0 0 .077.53h-.005a3.334 3.334 0 0 0 .113.438c.245.744.65 1.303 1.214 1.68.565.376 1.256.564 2.075.564.8 0 1.536-.213 2.105-.603.57-.39.94-.916 1.175-1.65.076-.235.135-.558.177-.93a10.9 10.9 0 0 0 .043-1.207v-.82c0-.095-.047-.142-.142h-3.064c-.094 0-.14.047-.14.141v.956c0 .094.046.14.14.14h1.666c.056 0 .084.03.084.086 0 .36 0 .62-.036.865-.038.244-.1.447-.147.606-.108.385-.348.664-.638.876-.29.212-.738.35-1.227.35-.545 0-.901-.15-1.21-.323-.306-.174-.517-.425-.67-.735-.153-.311-.262-.664-.322-1.059a8.605 8.605 0 0 1-.096-1.287V4.99c0-.432.033-.837.096-1.288.06-.395.169-.748.322-1.059.153-.31.364-.56.67-.734.309-.173.665-.324 1.21-.324.433 0 .756.098 1.073.27.316.17.516.376.67.613.153.236.275.516.361.834.087.321.178.603.27.851.093.245.23.479.41.698.18.22.483.33.91.33h1.814c.292 0 .487-.104.588-.285.102-.191.19-.382.19-.572 0-.19-.057-.377-.094-.564a3.557 3.557 0 0 0-.108-.518 9.463 9.463 0 0 0-.351-.998c-.195-.47-.405-.87-.63-1.207a3.05 3.05 0 0 0-.882-.851c-.347-.242-.71-.408-1.087-.498-.377-.09-.728-.107-1.05-.107z" />
-                    <path
-                        d="M12.807 11.081a3.44 3.44 0 0 0-1.406.244c-.37.151-.684.354-.945.61a2.837 2.837 0 0 0-.614.934c-.15.364-.227.75-.227 1.163 0 .433.077.831.227 1.193.15.363.36.673.63.934.27.261.595.466.977.61.381.145.812.218 1.293.218.474 0 .897-.075 1.271-.223a2.767 2.767 0 0 0 .97-.62 2.905 2.905 0 0 0 .636-.934c.154-.361.232-.76.232-1.193 0-.413-.078-.799-.232-1.163a2.932 2.932 0 0 0-.636-.934 2.813 2.813 0 0 0-.97-.61 3.384 3.384 0 0 0-1.206-.229zM2.41 11.103v8.838h1.472V11.103H2.41zm9.373 1.714c.2 0 .378.05.537.146.16.097.293.227.4.392.108.163.188.346.242.546.053.2.08.404.08.61 0 .209-.027.413-.08.613a1.64 1.64 0 0 1-.242.545 1.192 1.192 0 0 1-.4.392.996.996 0 0 1-.537.146.996.996 0 0 1-.537-.146 1.192 1.192 0 0 1-.4-.392 1.64 1.64 0 0 1-.242-.545 2.463 2.463 0 0 1-.08-.613c0-.206.027-.41.08-.61.054-.2.134-.384.242-.546.107-.165.24-.295.4-.392a.996.996 0 0 1 .537-.146zm-2.759.282v3.544h1.472v-3.544H9.024zm0 4.71v1.326h1.472v-1.326H9.024z" />
-                </svg>
-                <h3>ResearchGate</h3>
-                <p>Follow my research activities</p>
-            </a>
+
+        <!-- Research Profiles Subsection -->
+        <div class="research-subsection">
+            <h2>Research Profiles</h2>
+            <div class="research-profiles">
+                <a href="https://scholar.google.com/citations?user=ADx2f10AAAAJ&hl=en" target="_blank"
+                    class="research-profile-card">
+                    <i class='bx bxs-graduation'></i>
+                    <h3>Google Scholar</h3>
+                    <p>View my publications and citations</p>
+                </a>
+                <a href="https://www.researchgate.net/profile/Fahad-Pathan?ev=prf_overview" target="_blank"
+                    class="research-profile-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="research-icon">
+                        <path
+                            d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 0 0-.112.437 8.365 8.365 0 0 0-.078.53 9 9 0 0 0-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.121 0 0 0 .014 1.017 9 9 0 0 0 .05.727 7.946 7.946 0 0 0 .077.53h-.005a3.334 3.334 0 0 0 .113.438c.245.744.65 1.303 1.214 1.68.565.376 1.256.564 2.075.564.8 0 1.536-.213 2.105-.603.57-.39.94-.916 1.175-1.65.076-.235.135-.558.177-.93a10.9 10.9 0 0 0 .043-1.207v-.82c0-.095-.047-.142-.142-.142h-3.064c-.094 0-.14.047-.14.141v.956c0 .094.046.14.14.14h1.666c.056 0 .084.03.084.086 0 .36 0 .62-.036.865-.038.244-.1.447-.147.606-.108.385-.348.664-.638.876-.29.212-.738.35-1.227.35-.545 0-.901-.15-1.21-.323-.306-.174-.517-.425-.67-.735-.153-.311-.262-.664-.322-1.059a8.605 8.605 0 0 1-.096-1.287V4.99c0-.432.033-.837.096-1.288.06-.395.169-.748.322-1.059.153-.31.364-.56.67-.734.309-.173.665-.324 1.21-.324.433 0 .756.098 1.073.27.316.17.516.376.67.613.153.236.275.516.361.834.087.321.178.603.27.851.093.245.23.479.41.698.18.22.483.33.91.33h1.814c.292 0 .487-.104.588-.285.102-.191.19-.382.19-.572 0-.19-.057-.377-.094-.564a3.557 3.557 0 0 0-.108-.518 9.463 9.463 0 0 0-.351-.998c-.195-.47-.405-.87-.63-1.207a3.05 3.05 0 0 0-.882-.851c-.347-.242-.71-.408-1.087-.498-.377-.09-.728-.107-1.05-.107z" />
+                        <path
+                            d="M12.807 11.081a3.44 3.44 0 0 0-1.406.244c-.37.151-.684.354-.945.61a2.837 2.837 0 0 0-.614.934c-.15.364-.227.75-.227 1.163 0 .433.077.831.227 1.193.15.363.36.673.63.934.27.261.595.466.977.61.381.145.812.218 1.293.218.474 0 .897-.075 1.271-.223a2.767 2.767 0 0 0 .97-.62 2.905 2.905 0 0 0 .636-.934c.154-.361.232-.76.232-1.193 0-.413-.078-.799-.232-1.163a2.932 2.932 0 0 0-.636-.934 2.813 2.813 0 0 0-.97-.61 3.384 3.384 0 0 0-1.206-.229zM2.41 11.103v8.838h1.472V11.103H2.41zm9.373 1.714c.2 0 .378.05.537.146.16.097.293.227.4.392.108.163.188.346.242.546.053.2.08.404.08.61 0 .209-.027.413-.08.613a1.64 1.64 0 0 1-.242.545 1.192 1.192 0 0 1-.4.392.996.996 0 0 1-.537.146.996.996 0 0 1-.537-.146 1.192 1.192 0 0 1-.4-.392 1.64 1.64 0 0 1-.242-.545 2.463 2.463 0 0 1-.08-.613c0-.206.027-.41.08-.61.054-.2.134-.384.242-.546.107-.165.24-.295.4-.392a.996.996 0 0 1 .537-.146zm-2.759.282v3.544h1.472v-3.544H9.024zm0 4.71v1.326h1.472v-1.326H9.024z" />
+                    </svg>
+                    <h3>ResearchGate</h3>
+                    <p>Follow my research activities</p>
+                </a>
+            </div>
         </div>
-        <div class="research-container">
-            <div class="research-card">
-                <div class="research-status accepted">
-                    <i class='bx bx-check-circle'></i>
-                    Accepted
-                </div>
-                <h3>Explainable AI-Driven Vision Transformers for Assessing Fruit Freshness via Transfer Learning</h3>
-                <div class="research-meta">
-                    <span class="venue">
-                        <i class='bx bx-building-house'></i>
-                        27th International Conference on Computer and Information Technology (ICCIT)
-                    </span>
-                    <span class="year">
-                        <i class='bx bx-calendar'></i>
-                        2024
-                    </span>
-                </div>
-                <div class="research-tags">
-                    <span>Computer Vision</span>
-                    <span>Deep Learning</span>
-                    <span>XAI</span>
-                </div>
-            </div>
 
-            <div class="research-card">
-                <div class="research-status accepted">
-                    <i class='bx bx-check-circle'></i>
-                    Published
+        <!-- Research Publications Subsection -->
+        <div class="research-subsection">
+            <h2>Research Publications</h2>
+            <div class="research-container">
+                <div class="research-card">
+                    <div class="research-status accepted">
+                        <i class='bx bx-check-circle'></i>
+                        Accepted
+                    </div>
+                    <h3>Explainable AI-Driven Vision Transformers for Assessing Fruit Freshness via Transfer Learning
+                    </h3>
+                    <div class="research-meta">
+                        <span class="venue">
+                            <i class='bx bx-building-house'></i>
+                            27th International Conference on Computer and Information Technology (ICCIT)
+                        </span>
+                        <span class="year">
+                            <i class='bx bx-calendar'></i>
+                            2024
+                        </span>
+                    </div>
+                    <div class="research-tags">
+                        <span>Computer Vision</span>
+                        <span>Deep Learning</span>
+                        <span>XAI</span>
+                    </div>
                 </div>
-                <h3>XLTLDisNet: A Novel and Lightweight Approach to Identify Tomato Leaf Diseases with Transparency</h3>
-                <div class="research-meta">
-                    <span class="venue">
-                        <i class='bx bx-book'></i>
-                        Heliyon (Elsevier)
-                    </span>
-                </div>
-                <div class="research-tags">
-                    <span>Deep Learning</span>
-                    <span>Agriculture</span>
-                    <span>Disease Detection</span>
-                </div>
-                <a href="https://www.cell.com/heliyon/fulltext/S2405-8440(25)00955-7" target="_blank"
-                    class="paper-link">
-                    <i class='bx bx-link-external'></i>
-                    View Paper
-                </a>
-            </div>
 
-            <div class="research-card">
-                <div class="research-status accepted">
-                    <i class='bx bx-check-circle'></i>
-                    Published
+                <div class="research-card">
+                    <div class="research-status accepted">
+                        <i class='bx bx-check-circle'></i>
+                        Published
+                    </div>
+                    <h3>XLTLDisNet: A Novel and Lightweight Approach to Identify Tomato Leaf Diseases with Transparency
+                    </h3>
+                    <div class="research-meta">
+                        <span class="venue">
+                            <i class='bx bx-book'></i>
+                            Heliyon (Elsevier)
+                        </span>
+                    </div>
+                    <div class="research-tags">
+                        <span>Deep Learning</span>
+                        <span>Agriculture</span>
+                        <span>Disease Detection</span>
+                    </div>
+                    <a href="https://www.cell.com/heliyon/fulltext/S2405-8440(25)00955-7" target="_blank"
+                        class="paper-link">
+                        <i class='bx bx-link-external'></i>
+                        View Paper
+                    </a>
                 </div>
-                <h3>Deep Learning-based Classification, Detection, and Segmentation of Tomato Leaf Diseases: A
-                    State-of-the-Art Review</h3>
-                <div class="research-meta">
-                    <span class="venue">
-                        <i class='bx bx-book'></i>
-                        Artificial Intelligence in Agriculture (Elsevier)
-                    </span>
+
+                <div class="research-card">
+                    <div class="research-status accepted">
+                        <i class='bx bx-check-circle'></i>
+                        Published
+                    </div>
+                    <h3>Deep Learning-based Classification, Detection, and Segmentation of Tomato Leaf Diseases: A
+                        State-of-the-Art Review</h3>
+                    <div class="research-meta">
+                        <span class="venue">
+                            <i class='bx bx-book'></i>
+                            Artificial Intelligence in Agriculture (Elsevier)
+                        </span>
+                    </div>
+                    <div class="research-tags">
+                        <span>Survey</span>
+                        <span>Deep Learning</span>
+                        <span>Agriculture</span>
+                    </div>
+                    <a href="https://www.sciencedirect.com/science/article/pii/S258972172500025X" target="_blank"
+                        class="paper-link">
+                        <i class='bx bx-link-external'></i>
+                        View Paper
+                    </a>
                 </div>
-                <div class="research-tags">
-                    <span>Survey</span>
-                    <span>Deep Learning</span>
-                    <span>Agriculture</span>
-                </div>
-                <a href="https://www.sciencedirect.com/science/article/pii/S258972172500025X" target="_blank"
-                    class="paper-link">
-                    <i class='bx bx-link-external'></i>
-                    View Paper
-                </a>
             </div>
         </div>
     </section>
@@ -1729,8 +2234,8 @@
                     console.log('Form submission started');
                     btn.classList.add('loading');
 
-                    const serviceID = 'service_9x9euss';
-                    const templateID = 'template_0vzguat';
+                    const serviceID = emailConfig.SERVICE_ID;
+                    const templateID = emailConfig.TEMPLATE_ID;
 
                     console.log('Sending with:', { serviceID, templateID });
                     console.log('Form data:', Object.fromEntries(new FormData(this)));
@@ -1803,6 +2308,14 @@
             </div>
         </div>
     </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="last-updated">
+            <i class='bx bx-time-five'></i>
+            Last Updated: June 2025
+        </div>
+    </footer>
 
     <script src="app.js"></script>
 

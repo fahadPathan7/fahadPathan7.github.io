@@ -1,0 +1,14 @@
+# Configuration files
+config.js
+.env
+
+# Dependencies
+node_modules/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
