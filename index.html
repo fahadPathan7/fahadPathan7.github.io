@@ -26,7 +26,19 @@
     <script src="config.js"></script>
     <script type="text/javascript">
         (function () {
-            emailjs.init(emailConfig.PUBLIC_KEY);
+            try {
+                if (!emailConfig) {
+                    throw new Error('EmailJS configuration not found');
+                }
+                if (!emailConfig.PUBLIC_KEY) {
+                    throw new Error('EmailJS PUBLIC_KEY not found');
+                }
+                console.log('Initializing EmailJS...');
+                emailjs.init(emailConfig.PUBLIC_KEY);
+                console.log('EmailJS initialized successfully');
+            } catch (error) {
+                console.error('Error initializing EmailJS:', error);
+            }
         })();
     </script>
 
@@ -2226,36 +2238,65 @@
 
         <script>
             const btn = document.getElementById('contact-form').querySelector('button');
+            const form = document.getElementById('contact-form');
 
-            document.getElementById('contact-form')
-                .addEventListener('submit', function (event) {
-                    event.preventDefault();
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
 
-                    console.log('Form submission started');
-                    btn.classList.add('loading');
+                // Validate configuration
+                if (!emailConfig || !emailConfig.SERVICE_ID || !emailConfig.TEMPLATE_ID) {
+                    console.error('EmailJS configuration error:', {
+                        hasConfig: !!emailConfig,
+                        serviceId: emailConfig?.SERVICE_ID,
+                        templateId: emailConfig?.TEMPLATE_ID
+                    });
+                    alert('Email service configuration error. Please try again later.');
+                    return;
+                }
 
-                    const serviceID = emailConfig.SERVICE_ID;
-                    const templateID = emailConfig.TEMPLATE_ID;
+                console.log('Form submission started');
+                btn.classList.add('loading');
 
-                    console.log('Sending with:', { serviceID, templateID });
-                    console.log('Form data:', Object.fromEntries(new FormData(this)));
+                const serviceID = emailConfig.SERVICE_ID;
+                const templateID = emailConfig.TEMPLATE_ID;
 
-                    emailjs.sendForm(serviceID, templateID, this)
-                        .then(() => {
-                            console.log('Email sent successfully');
-                            btn.classList.remove('loading');
-                            btn.classList.add('success');
-                            this.reset();
+                // Log the form data
+                const formData = new FormData(this);
+                console.log('Form data:', Object.fromEntries(formData));
+                console.log('Sending with:', { serviceID, templateID });
 
-                            setTimeout(() => {
-                                btn.classList.remove('success');
-                            }, 3000);
-                        }, (err) => {
-                            console.error('EmailJS Error:', err);
-                            btn.classList.remove('loading');
-                            alert('Failed to send message. Error: ' + err.text);
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then((response) => {
+                        console.log('Email sent successfully:', response);
+                        btn.classList.remove('loading');
+                        btn.classList.add('success');
+                        this.reset();
+
+                        setTimeout(() => {
+                            btn.classList.remove('success');
+                        }, 3000);
+                    })
+                    .catch((err) => {
+                        console.error('EmailJS Error Details:', {
+                            error: err,
+                            message: err.text,
+                            serviceID: serviceID,
+                            templateID: templateID
                         });
+                        btn.classList.remove('loading');
+                        alert(`Failed to send message. Error: ${err.text}\nPlease check console for more details.`);
+                    });
+            });
+
+            // Add load event listener to check configuration
+            window.addEventListener('load', function () {
+                console.log('Checking EmailJS configuration:', {
+                    hasConfig: !!window.emailConfig,
+                    publicKey: emailConfig?.PUBLIC_KEY ? 'Set' : 'Not set',
+                    serviceId: emailConfig?.SERVICE_ID ? 'Set' : 'Not set',
+                    templateId: emailConfig?.TEMPLATE_ID ? 'Set' : 'Not set'
                 });
+            });
         </script>
     </section>
 
