@@ -28,11 +28,33 @@ jobs:
 
       - name: Create config file
         run: |
-          echo "const emailConfig = {
-            PUBLIC_KEY: '${{ secrets.EMAILJS_PUBLIC_KEY }}',
-            SERVICE_ID: '${{ secrets.EMAILJS_SERVICE_ID }}',
-            TEMPLATE_ID: '${{ secrets.EMAILJS_TEMPLATE_ID }}'
-          };" > config.js
+          # Validate secrets exist
+          if [ -z "${{ secrets.EMAILJS_PUBLIC_KEY }}" ] || [ -z "${{ secrets.EMAILJS_SERVICE_ID }}" ] || [ -z "${{ secrets.EMAILJS_TEMPLATE_ID }}" ]; then
+            echo "Error: One or more EmailJS secrets are missing"
+            exit 1
+          fi
+
+          # Create config file with proper JSON formatting
+          cat > config.js << 'EOL'
+          const emailConfig = {
+            PUBLIC_KEY: "${{ secrets.EMAILJS_PUBLIC_KEY }}",
+            SERVICE_ID: "${{ secrets.EMAILJS_SERVICE_ID }}",
+            TEMPLATE_ID: "${{ secrets.EMAILJS_TEMPLATE_ID }}"
+          };
+          console.log('EmailJS Config loaded:', {
+            hasPublicKey: !!emailConfig.PUBLIC_KEY,
+            hasServiceId: !!emailConfig.SERVICE_ID,
+            hasTemplateId: !!emailConfig.TEMPLATE_ID
+          });
+          EOL
+
+          # Verify file was created
+          if [ ! -f config.js ]; then
+            echo "Error: config.js was not created"
+            exit 1
+          fi
+
+          echo "Config file created successfully"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
