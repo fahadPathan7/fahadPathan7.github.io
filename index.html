@@ -246,8 +246,32 @@
 
         /* About Section */
         .about {
-            background: #f8f9fa !important;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
             padding: var(--section-spacing) 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .about::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
         }
 
         .about .content-section {
@@ -255,6 +279,161 @@
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about .image-section {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 28px;
+            padding: 2.5rem;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            transition: transform 0.4s ease;
+        }
+
+        .about .image-section:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .about .image-section img {
+            width: 100%;
+            border-radius: 16px;
+            display: block;
+        }
+
+        .about .content {
+            color: #ffffff;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 2.5rem;
+            border-radius: 24px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .about .content p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .about .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about .stats-section .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .about .content .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .about .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem 1.5rem;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .about .stat-card:hover::before {
+            left: 100%;
+        }
+
+        .about .stat-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .about .stats-section .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .about .stats-section .stat-label {
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #f8f9fa;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+        }
+
+        .about .content .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .about .content .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .about .stat-card:hover .stat-number {
+            transform: scale(1.08);
+            color: #ffffff;
+            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Statistics Section - Dedicated Space */
+        .about .stats-section {
+            margin-top: 3rem;
+            padding: 2.5rem;
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 24px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .about .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 1rem;
+            right: 1rem;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
         }
 
         @media (max-width: 768px) {
@@ -267,6 +446,44 @@
                 max-width: 80%;
                 margin: 0 auto;
                 display: block;
+            }
+
+            .about .stats-section {
+                margin-top: 2rem;
+                padding: 2rem 1.5rem;
+            }
+
+            .about .stats-section .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+
+            .about .stats-section::before {
+                top: 6px;
+                left: 0.75rem;
+                right: 0.75rem;
+            }
+
+            .about .content .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+
+            .about .stats-section .stat-number {
+                font-size: 2rem;
+            }
+
+            .about .stats-section .stat-label {
+                font-size: 0.9rem;
+            }
+
+            .about .content .stat-number {
+                font-size: 1.6rem;
+            }
+
+            .about .content .stat-label {
+                font-size: 0.8rem;
             }
         }
 
@@ -309,6 +526,60 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             padding: 2rem;
+        }
+
+        .projects-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 24px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .projects-box i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .projects-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .projects-box p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 0;
+        }
+
+        .projects-box .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .projects-box .tech-stack span {
+            background: #f0f0f0;
+            color: #374151;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .projects-box .btn {
+            margin-top: auto;
+            font-size: 0.85rem;
+            padding: 0.6rem 1.2rem;
+            text-align: center;
+            display: block;
         }
 
         @media (max-width: 768px) {
@@ -368,6 +639,119 @@
             gap: 2rem;
         }
 
+        /* Research Category Toggle */
+        .research-categories {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .research-category-btn {
+            padding: 1rem 2rem;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #666;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .research-category-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .research-category-btn.active {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .research-category-btn i {
+            font-size: 1.2rem;
+        }
+
+        .research-category-content {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .research-category-content.active {
+            display: block;
+        }
+
+        /* Experience Category Toggle */
+        .experience-categories {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .experience-category-btn {
+            padding: 1rem 2rem;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #666;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .experience-category-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-category-btn.active {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .experience-category-btn i {
+            font-size: 1.2rem;
+        }
+
+        .experience-category-content {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .experience-category-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         @media (max-width: 768px) {
             .research-subsection {
                 margin-bottom: 3rem;
@@ -381,6 +765,24 @@
             .research h1 {
                 font-size: 2rem;
                 margin-bottom: 3rem;
+            }
+
+            .research-categories {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .research-category-btn {
+                justify-content: center;
+            }
+
+            .experience-categories {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .experience-category-btn {
+                justify-content: center;
             }
         }
 
@@ -474,6 +876,7 @@
         .research-card h3 {
             color: var(--text-color);
             margin-bottom: 1.5rem;
+            margin-top: 2.5rem;
             padding-right: 7rem;
             font-size: 1.2rem;
             line-height: 1.4;
@@ -511,9 +914,8 @@
         }
 
         .research-icon {
-            width: 2.5rem;
-            height: 2.5rem;
-            fill: url(#research-gradient);
+            font-size: 2.5rem;
+            color: var(--primary-color);
         }
 
         /* Add gradient definition for the SVG */
@@ -758,6 +1160,221 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Achievements Section Styles */
+        .achievements-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+            padding: 0 1rem;
+        }
+
+        .achievement-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .achievement-links .verify-btn {
+            font-size: 0.85rem;
+            padding: 1rem 1.2rem;
+        }
+
+        .achievements-box {
+            background: linear-gradient(145deg, #ffffff 0%, #fafafa 100%);
+            border-radius: 28px;
+            overflow: visible;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(236, 72, 153, 0.15);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 2rem 2rem 0.5rem 2rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .achievements-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ec4899 0%, #a855f7 50%, #3b82f6 100%);
+            border-radius: 28px 28px 0 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .achievements-box:hover::before {
+            opacity: 1;
+        }
+
+        .achievements-box:hover {
+            transform: translateY(-12px) scale(1.015);
+            box-shadow: 0 20px 60px rgba(236, 72, 153, 0.2), 0 8px 20px rgba(0, 0, 0, 0.1);
+            border-color: rgba(236, 72, 153, 0.3);
+        }
+
+        .achievement-date {
+            position: absolute;
+            top: 2rem;
+            right: 1.5rem;
+            background: linear-gradient(135deg, #fce7f3 0%, #f3e8ff 100%);
+            color: #7c3aed;
+            padding: 0.7rem 1.3rem;
+            border-radius: 14px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+            border: 1px solid rgba(236, 72, 153, 0.2);
+            z-index: 2;
+            transition: all 0.3s ease;
+            min-width: fit-content;
+        }
+
+        .achievements-box:hover .achievement-date {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(124, 58, 237, 0.25);
+        }
+
+        .achievement-date span {
+            display: flex;
+            align-items: baseline;
+            gap: 0.8rem;
+            line-height: 1.2;
+        }
+
+        .achievement-date i {
+            font-size: 1rem;
+            color: #ec4899;
+            flex-shrink: 0;
+            line-height: 1;
+            vertical-align: baseline;
+            margin-bottom: 0.1rem;
+        }
+
+        .achievements-box i.bx-trophy,
+        .achievements-box i.bx-bulb {
+            position: absolute;
+            top: 1.8rem;
+            left: 1.8rem;
+            font-size: 2.8rem;
+            color: #ec4899;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.12), rgba(168, 85, 247, 0.12));
+            border-radius: 18px;
+            margin-bottom: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 12px rgba(236, 72, 153, 0.15);
+            z-index: 1;
+        }
+
+        .achievements-box:hover i.bx-trophy,
+        .achievements-box:hover i.bx-bulb {
+            transform: scale(1.15) rotate(8deg);
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(168, 85, 247, 0.2));
+            box-shadow: 0 8px 20px rgba(236, 72, 153, 0.25);
+        }
+
+        .achievements-box h3 {
+            color: #1f2937;
+            font-size: 1.5rem;
+            margin: 7rem 0 0 0;
+            font-weight: 800;
+            letter-spacing: -0.4px;
+            line-height: 1.3;
+            text-align: center;
+            padding-top: 0.5rem;
+        }
+
+        .achievements-box p:first-of-type {
+            color: #ec4899;
+            font-weight: 800;
+            margin: 0.5rem 0 1rem 0;
+            font-size: 1.1rem;
+            letter-spacing: -0.2px;
+            text-align: center;
+        }
+
+        .achievement-org {
+            color: #4b5563;
+            font-size: 0.92rem;
+            margin: 0 0 1.4rem 0;
+            font-weight: 600;
+            line-height: 1.6;
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.06), rgba(168, 85, 247, 0.06));
+            padding: 1rem 1.2rem;
+            border-radius: 14px;
+            border-left: 4px solid #ec4899;
+            box-shadow: 0 2px 8px rgba(236, 72, 153, 0.08);
+        }
+
+        .achievement-desc {
+            color: #374151;
+            font-size: 0.98rem;
+            line-height: 1.75;
+            margin: 0 0 1.4rem 0;
+            flex-grow: 1;
+            font-weight: 400;
+        }
+
+        .achievement-links {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-top: auto;
+            margin-bottom: 0;
+            padding-bottom: 0;
+            justify-content: center;
+        }
+
+        .achievement-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.4rem;
+            background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
+            color: white;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 14px rgba(236, 72, 153, 0.3);
+            letter-spacing: 0.2px;
+            line-height: 1;
+            margin-bottom: 1rem;
+            height: auto;
+        }
+
+        .achievement-links a:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 24px rgba(236, 72, 153, 0.4);
+            background: linear-gradient(135deg, #f43f5e 0%, #9333ea 100%);
+        }
+
+        .achievement-links a i {
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+            position: relative;
+            top: 0.1em;
+        }
+
+        .achievement-links a:hover i {
+            transform: translateX(3px);
         }
 
         .cert-card:hover {
@@ -802,6 +1419,9 @@
 
         .cert-content {
             padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
         }
 
         .cert-content h3 {
@@ -821,7 +1441,7 @@
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .cert-meta span {
@@ -831,6 +1451,66 @@
             color: var(--text-color);
             opacity: 0.8;
             font-size: 0.9rem;
+        }
+
+        /* IELTS Scores Section */
+        .ielts-scores {
+            margin: 1.2rem 0;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.08), rgba(168, 85, 247, 0.08));
+            border-radius: 16px;
+            border: 1px solid rgba(236, 72, 153, 0.15);
+            box-shadow: 0 2px 8px rgba(236, 72, 153, 0.1);
+        }
+
+        .ielts-scores-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .ielts-score-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .ielts-score-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(236, 72, 153, 0.15);
+        }
+
+        .ielts-score-item.overall {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.12), rgba(168, 85, 247, 0.12));
+            border: 2px solid rgba(236, 72, 153, 0.3);
+        }
+
+        .ielts-score-label {
+            font-weight: 700;
+            color: #374151;
+            font-size: 1rem;
+            min-width: 1.2rem;
+        }
+
+        .ielts-score-value {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: #ec4899;
+            background: linear-gradient(135deg, #ec4899, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .ielts-score-item.overall .ielts-score-value {
+            font-size: 1.3rem;
         }
 
         .verify-btn {
@@ -846,6 +1526,7 @@
             transition: transform 0.3s ease;
             width: 100%;
             justify-content: center;
+            margin-top: auto;
         }
 
         .verify-btn:hover {
@@ -1797,8 +2478,8 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Me</a></li>
-                <li><a href="#education">Education</a></li>
                 <li><a href="#skill-section">Skills</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#problem-solving">Problem Solving</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -1836,13 +2517,35 @@
             </div>
             <div class="content">
                 <p>I am a Software Engineering graduate from Shahjalal University of Science and Technology (SUST)
-                    with a CGPA of 3.72. Currently working as a Backend Software Engineer at Brainstation-23 and
+                    with a CGPA of 3.73. Currently working as a Software Engineer at Brain Station 23 and
                     serving as a Research Assistant at AMIR Lab, focusing on Computer Vision and Deep Learning.</p>
 
-                <p>With experience in solving 1000+ programming problems and expertise in Go, React, and Node.js,
-                    I've developed various real-world applications. My research work in Computer Vision
+                <p>With experience in solving 1000+ programming problems and expertise in Go, React, Python, and Node.js,
+                    I've developed various real-world applications. I hold 2 AWS certifications validating my expertise
+                    in cloud architecture and services. My research work in Computer Vision
                     has led to publications in reputable journals. I am passionate about creating impactful solutions
                     through technology and continuous learning.</p>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Research Publications</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">AWS Certifications</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Problems Solved</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
             </div>
         </div>
     </section>
@@ -1947,14 +2650,14 @@
                         <p>Scikit-learn</p>
                     </div>
                     <div class="icon">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg"
-                            alt="CMUX">
-                        <p>CMUX</p>
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/opencv/opencv-original.svg"
+                            alt="OpenCV">
+                        <p>OpenCV</p>
                     </div>
                     <div class="icon">
-                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg"
-                            alt="GMUX">
-                        <p>GMUX</p>
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/matplotlib/matplotlib-original.svg"
+                            alt="Matplotlib">
+                        <p>Matplotlib</p>
                     </div>
                 </div>
             </div>
@@ -1976,6 +2679,11 @@
                         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg"
                             alt="AWS">
                         <p>AWS</p>
+                    </div>
+                    <div class="icon">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original.svg"
+                            alt="Redis">
+                        <p>Redis</p>
                     </div>
                 </div>
             </div>
@@ -2039,9 +2747,9 @@
                     </div>
                 </div>
                 <div class="education-details">
-                    <span class="year"><i class='bx bx-calendar'></i>2020 - 2024</span>
+                    <span class="year"><i class='bx bx-calendar'></i>2020 - 2025</span>
                     <span class="location"><i class='bx bx-map'></i>Sylhet</span>
-                    <span class="grade"><i class='bx bx-medal'></i>CGPA: 3.72</span>
+                    <span class="grade"><i class='bx bx-medal'></i>CGPA: 3.73</span>
                 </div>
             </div>
 
@@ -2081,82 +2789,212 @@
     <section id="experience" class="experience">
         <h1>Work Experience</h1>
 
-        <div class="experience-container">
-            <div class="experience-box">
-                <div class="experience-timeline">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-line"></div>
-                </div>
-                <div class="experience-content">
-                    <div class="experience-header">
-                        <img src="resources/images/bs23_logo.png" alt="Brainstation-23">
-                        <div class="header-main">
-                            <h3>Software Engineer</h3>
-                            <span class="company">
-                                <i class='bx bx-buildings'></i>
-                                Brainstation-23
-                            </span>
+        <!-- Category Toggle Buttons -->
+        <div class="experience-categories">
+            <button class="experience-category-btn active" onclick="showExperienceCategory('brainstation')">
+                <i class='bx bx-buildings'></i>
+                Brain Station 23
+            </button>
+            <button class="experience-category-btn" onclick="showExperienceCategory('amirl')">
+                <i class='bx bx-flask'></i>
+                AMIR Lab
+            </button>
+        </div>
+
+        <!-- Brain Station 23 Category -->
+        <div id="brainstation" class="experience-category-content active">
+            <div class="experience-container">
+                <!-- Software Engineer II -->
+                <div class="experience-box">
+                    <div class="experience-timeline">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <img src="resources/images/bs23_logo.png" alt="Brainstation-23">
+                            <div class="header-main">
+                                <h3>Software Engineer II</h3>
+                                <span class="company">
+                                    <i class='bx bx-buildings'></i>
+                                    Brain Station 23
+                                </span>
+                            </div>
+                            <div class="header-details">
+                                <span class="duration">
+                                    <i class='bx bx-calendar'></i>
+                                    01/07/2025 - CURRENT
+                                </span>
+                                <span class="location">
+                                    <i class='bx bx-map'></i>
+                                    DHAKA, BANGLADESH
+                                </span>
+                            </div>
                         </div>
-                        <div class="header-details">
-                            <span class="duration">
-                                <i class='bx bx-calendar'></i>
-                                October 2024 - Present
-                            </span>
-                            <span class="location">
-                                <i class='bx bx-map'></i>
-                                Mohakhali, Dhaka
-                            </span>
+                        <div class="experience-description">
+                            <div class="tech-stack">
+                                <span>Go</span>
+                                <span>Python</span>
+                                <span>gRPC</span>
+                                <span>Docker</span>
+                                <span>AWS</span>
+                                <span>Distributed Architecture</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="experience-description">
-                        <p>Currently working on RideAlike, a Canada-based ride-sharing platform that connects vehicle
-                            owners and renters. Building microservices with Go and gRPC.</p>
-                        <div class="tech-stack">
-                            <span>Go</span>
-                            <span>gRPC</span>
-                            <span>MongoDB</span>
-                            <span>Microservices</span>
-                            <span>Docker</span>
+                </div>
+
+                <!-- Software Engineer I -->
+                <div class="experience-box">
+                    <div class="experience-timeline">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <img src="resources/images/bs23_logo.png" alt="Brainstation-23">
+                            <div class="header-main">
+                                <h3>Software Engineer I</h3>
+                                <span class="company">
+                                    <i class='bx bx-buildings'></i>
+                                    Brain Station 23
+                                </span>
+                            </div>
+                            <div class="header-details">
+                                <span class="duration">
+                                    <i class='bx bx-calendar'></i>
+                                    01/04/2025 - 30/06/2025
+                                </span>
+                                <span class="location">
+                                    <i class='bx bx-map'></i>
+                                    DHAKA, BANGLADESH
+                                </span>
+                            </div>
+                        </div>
+                        <div class="experience-description">
+                            <div class="tech-stack">
+                                <span>Go</span>
+                                <span>gRPC</span>
+                                <span>Distributed Architecture</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trainee (Internship) -->
+                <div class="experience-box">
+                    <div class="experience-timeline">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <img src="resources/images/bs23_logo.png" alt="Brainstation-23">
+                            <div class="header-main">
+                                <h3>Trainee (Internship)</h3>
+                                <span class="company">
+                                    <i class='bx bx-buildings'></i>
+                                    Brain Station 23
+                                </span>
+                            </div>
+                            <div class="header-details">
+                                <span class="duration">
+                                    <i class='bx bx-calendar'></i>
+                                    01/10/2024 - 31/03/2025
+                                </span>
+                                <span class="location">
+                                    <i class='bx bx-map'></i>
+                                    DHAKA, BANGLADESH
+                                </span>
+                            </div>
+                        </div>
+                        <div class="experience-description">
+                            <div class="tech-stack">
+                                <span>Go</span>
+                                <span>gRPC</span>
+                                <span>Distributed Architecture</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="experience-box">
-                <div class="experience-timeline">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-line"></div>
-                </div>
-                <div class="experience-content">
-                    <div class="experience-header">
-                        <img src="resources/images/amir_logo.png" alt="AMIR Lab">
-                        <div class="header-main">
-                            <h3>Research Assistant</h3>
-                            <span class="company">
-                                <i class='bx bx-buildings'></i>
-                                Advanced Machine Intelligence Research Lab (AMIR Lab)
-                            </span>
+        <!-- AMIR Lab Category -->
+        <div id="amirl" class="experience-category-content">
+            <div class="experience-container">
+                <!-- Current Research Assistant Position -->
+                <div class="experience-box">
+                    <div class="experience-timeline">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <img src="resources/images/amir_logo.png" alt="AMIR Lab">
+                            <div class="header-main">
+                                <h3>Research Assistant</h3>
+                                <span class="company">
+                                    <i class='bx bx-buildings'></i>
+                                    Advanced Machine Intelligence Research Lab (AMIRL)
+                                </span>
+                            </div>
+                            <div class="header-details">
+                                <span class="duration">
+                                    <i class='bx bx-calendar'></i>
+                                    01/12/2024 - CURRENT
+                                </span>
+                                <span class="location">
+                                    <i class='bx bx-map'></i>
+                                    DHAKA, BANGLADESH
+                                </span>
+                            </div>
                         </div>
-                        <div class="header-details">
-                            <span class="duration">
-                                <i class='bx bx-calendar'></i>
-                                April 2024 - Present
-                            </span>
-                            <span class="location">
-                                <i class='bx bx-map'></i>
-                                Dhaka
-                            </span>
+                        <div class="experience-description">
+                            <div class="tech-stack">
+                                <span>Computer Vision</span>
+                                <span>Medical Imaging</span>
+                                <span>Environmental Monitoring</span>
+                                <span>Precision Agriculture</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="experience-description">
-                        <p>Working on cutting-edge research projects in Computer Vision and Deep Learning.
-                            Focusing on agricultural and medical domains,
-                            contributing to multiple research publications.</p>
-                        <div class="tech-stack">
-                            <span>Computer Vision</span>
-                            <span>Deep Learning</span>
-                            <span>PyTorch</span>
-                            <span>TensorFlow</span>
+                </div>
+
+                <!-- Previous Research Intern Position -->
+                <div class="experience-box">
+                    <div class="experience-timeline">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <img src="resources/images/amir_logo.png" alt="AMIR Lab">
+                            <div class="header-main">
+                                <h3>Research Intern</h3>
+                                <span class="company">
+                                    <i class='bx bx-buildings'></i>
+                                    Advanced Machine Intelligence Research Lab (AMIRL)
+                                </span>
+                            </div>
+                            <div class="header-details">
+                                <span class="duration">
+                                    <i class='bx bx-calendar'></i>
+                                    01/04/2024 - 30/11/2024
+                                </span>
+                                <span class="location">
+                                    <i class='bx bx-map'></i>
+                                    DHAKA, BANGLADESH
+                                </span>
+                            </div>
+                        </div>
+                        <div class="experience-description">
+                            <div class="tech-stack">
+                                <span>Computer Vision</span>
+                                <span>Vision Transformers</span>
+                                <span>Transfer Learning</span>
+                                <span>Image Classification</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2308,27 +3146,35 @@
 
         <div class="achievements-container">
             <div class="achievements-box">
+                <div class="achievement-date">
+                    <span><i class='bx bx-calendar'></i>03/05/2025</span>
+                </div>
                 <i class='bx bx-trophy'></i>
                 <h3>AI Olympiad</h3>
-                <p>1st Runner-up in the Tertiary category at DIU AI Olympiad 2025</p>
+                <p>1st Runner-up (Tertiary category)</p>
+                <p class="achievement-org">Daffodil International Professional Training Institute & Daffodil International University</p>
+                <p class="achievement-desc">Demonstrated a custom built Deep Learning model that can predict real-time AQI value of air from smartphone-captured images.</p>
+                <div class="achievement-links">
+                    <a href="https://www.prothomalo.com/amp/story/education/campus/pdbkx8hxp4" target="_blank" class="verify-btn">
+                        See Details
+                    </a>
+                </div>
             </div>
 
             <div class="achievements-box">
+                <div class="achievement-date">
+                    <span><i class='bx bx-calendar'></i>04/05/2024</span>
+                </div>
                 <i class='bx bx-bulb'></i>
-                <h3>Smart Unibator</h3>
-                <p>2nd Runner-up at SUST University Innovation Hub Program 2024</p>
-            </div>
-
-            <div class="achievements-box">
-                <i class='bx bx-code-block'></i>
-                <h3>Code Samurai</h3>
-                <p>Reached the 2nd phase of Code Samurai 2024 at DU</p>
-            </div>
-
-            <div class="achievements-box">
-                <i class='bx bx-code-alt'></i>
-                <h3>1000+ Problems</h3>
-                <p>Solved over 1000 programming problems across various platforms</p>
+                <h3>University Innovation Hub</h3>
+                <p>Winner</p>
+                <p class="achievement-org">Bangladesh Hi-Tech Park Authority (BHTPA)</p>
+                <p class="achievement-desc">Presented "InterviewMate", an AI-based interview preparation platform designed to support Bangladeshi undergraduate students.</p>
+                <div class="achievement-links">
+                    <a href="https://www.uihp.org/contents/10" target="_blank" class="verify-btn">
+                        See Details
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -2337,6 +3183,71 @@
     <section id="certifications" class="certifications">
         <h1>Certifications</h1>
         <div class="certifications-container">
+            <div class="cert-card">
+                <div class="cert-badge">
+                    <img src="resources/images/ielts.png"
+                        alt="IELTS Certificate">
+                    <div class="cert-badge-overlay">
+                        <i class='bx bx-badge-check'></i>
+                    </div>
+                </div>
+                <div class="cert-content">
+                    <h3>IELTS Academic</h3>
+                    <p>IDP Education</p>
+                    <div class="cert-meta">
+                        <span><i class='bx bx-calendar'></i>Issued November 2025</span>
+                        <span><i class='bx bx-time'></i>Valid until November 2027</span>
+                    </div>
+                    <div class="ielts-scores">
+                        <div class="ielts-scores-grid">
+                            <div class="ielts-score-item overall">
+                                <span class="ielts-score-label">Overall</span>
+                                <span class="ielts-score-value">8.0</span>
+                            </div>
+                            <div class="ielts-score-item">
+                                <span class="ielts-score-label">L</span>
+                                <span class="ielts-score-value">8.5</span>
+                            </div>
+                            <div class="ielts-score-item">
+                                <span class="ielts-score-label">R</span>
+                                <span class="ielts-score-value">8.5</span>
+                            </div>
+                            <div class="ielts-score-item">
+                                <span class="ielts-score-label">W</span>
+                                <span class="ielts-score-value">7.5</span>
+                            </div>
+                            <div class="ielts-score-item">
+                                <span class="ielts-score-label">S</span>
+                                <span class="ielts-score-value">6.5</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-badge">
+                    <img src="resources/images/solutions-architect.png"
+                        alt="AWS Solutions Architect Associate">
+                    <div class="cert-badge-overlay">
+                        <i class='bx bx-badge-check'></i>
+                    </div>
+                </div>
+                <div class="cert-content">
+                    <h3>AWS Certified Solutions Architect – Associate</h3>
+                    <p>Amazon Web Services (AWS)</p>
+                    <div class="cert-meta">
+                        <span><i class='bx bx-calendar'></i>Issued August 2025</span>
+                        <span><i class='bx bx-time'></i>Valid until August 2028</span>
+                    </div>
+                    <a href="https://www.credly.com/badges/f4de4258-da70-427c-9c74-019a30cd6142"
+                        target="_blank" class="verify-btn">
+                        View Certificate
+                        <i class='bx bx-link-external'></i>
+                    </a>
+                </div>
+            </div>
+
             <div class="cert-card">
                 <div class="cert-badge">
                     <img src="https://images.credly.com/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png"
@@ -2354,7 +3265,7 @@
                     </div>
                     <a href="https://www.credly.com/badges/78534719-93b5-4780-9a44-6dddac8b119a/public_url"
                         target="_blank" class="verify-btn">
-                        Verify Certificate
+                        View Certificate
                         <i class='bx bx-link-external'></i>
                     </a>
                 </div>
@@ -2376,7 +3287,7 @@
                     </div>
                     <a href="https://www.coursera.org/account/accomplishments/certificate/UVX4WNQZCPKD" target="_blank"
                         class="verify-btn">
-                        Verify Certificate
+                        View Certificate
                         <i class='bx bx-link-external'></i>
                     </a>
                 </div>
@@ -2397,7 +3308,7 @@
                         <span><i class='bx bx-calendar'></i>Issued May 2024</span>
                     </div>
                     <a href="https://www.hackerrank.com/certificates/d79fef038a4c" target="_blank" class="verify-btn">
-                        Verify Certificate
+                        View Certificate
                         <i class='bx bx-link-external'></i>
                     </a>
                 </div>
@@ -2421,12 +3332,7 @@
                 </a>
                 <a href="https://www.researchgate.net/profile/Fahad-Pathan?ev=prf_overview" target="_blank"
                     class="research-profile-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="research-icon">
-                        <path
-                            d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 0 0-.112.437 8.365 8.365 0 0 0-.078.53 9 9 0 0 0-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.121 0 0 0 .014 1.017 9 9 0 0 0 .05.727 7.946 7.946 0 0 0 .077.53h-.005a3.334 3.334 0 0 0 .113.438c.245.744.65 1.303 1.214 1.68.565.376 1.256.564 2.075.564.8 0 1.536-.213 2.105-.603.57-.39.94-.916 1.175-1.65.076-.235.135-.558.177-.93a10.9 10.9 0 0 0 .043-1.207v-.82c0-.095-.047-.142-.142-.142h-3.064c-.094 0-.14.047-.14.141v.956c0 .094.046.14.14.14h1.666c.056 0 .084.03.084.086 0 .36 0 .62-.036.865-.038.244-.1.447-.147.606-.108.385-.348.664-.638.876-.29.212-.738.35-1.227.35-.545 0-.901-.15-1.21-.323-.306-.174-.517-.425-.67-.735-.153-.311-.262-.664-.322-1.059a8.605 8.605 0 0 1-.096-1.287V4.99c0-.432.033-.837.096-1.288.06-.395.169-.748.322-1.059.153-.31.364-.56.67-.734.309-.173.665-.324 1.21-.324.433 0 .756.098 1.073.27.316.17.516.376.67.613.153.236.275.516.361.834.087.321.178.603.27.851.093.245.23.479.41.698.18.22.483.33.91.33h1.814c.292 0 .487-.104.588-.285.102-.191.19-.382.19-.572 0-.19-.057-.377-.094-.564a3.557 3.557 0 0 0-.108-.518 9.463 9.463 0 0 0-.351-.998c-.195-.47-.405-.87-.63-1.207a3.05 3.05 0 0 0-.882-.851c-.347-.242-.71-.408-1.087-.498-.377-.09-.728-.107-1.05-.107z" />
-                        <path
-                            d="M12.807 11.081a3.44 3.44 0 0 0-1.406.244c-.37.151-.684.354-.945.61a2.837 2.837 0 0 0-.614.934c-.15.364-.227.75-.227 1.163 0 .433.077.831.227 1.193.15.363.36.673.63.934.27.261.595.466.977.61.381.145.812.218 1.293.218.474 0 .897-.075 1.271-.223a2.767 2.767 0 0 0 .97-.62 2.905 2.905 0 0 0 .636-.934c.154-.361.232-.76.232-1.193 0-.413-.078-.799-.232-1.163a2.932 2.932 0 0 0-.636-.934 2.813 2.813 0 0 0-.97-.61 3.384 3.384 0 0 0-1.206-.229zM2.41 11.103v8.838h1.472V11.103H2.41zm9.373 1.714c.2 0 .378.05.537.146.16.097.293.227.4.392.108.163.188.346.242.546.053.2.08.404.08.61 0 .209-.027.413-.08.613a1.64 1.64 0 0 1-.242.545 1.192 1.192 0 0 1-.4.392.996.996 0 0 1-.537.146.996.996 0 0 1-.537-.146 1.192 1.192 0 0 1-.4-.392 1.64 1.64 0 0 1-.242-.545 2.463 2.463 0 0 1-.08-.613c0-.206.027-.41.08-.61.054-.2.134-.384.242-.546.107-.165.24-.295.4-.392a.996.996 0 0 1 .537-.146zm-2.759.282v3.544h1.472v-3.544H9.024zm0 4.71v1.326h1.472v-1.326H9.024z" />
-                    </svg>
+                    <i class='bx bx-book research-icon'></i>
                     <h3>ResearchGate</h3>
                     <p>Follow my research activities</p>
                 </a>
@@ -2436,79 +3342,139 @@
         <!-- Research Publications Subsection -->
         <div class="research-subsection">
             <h2>Research Publications</h2>
-            <div class="research-container">
-                <div class="research-card">
-                    <div class="research-status accepted">
-                        <i class='bx bx-check-circle'></i>
-                        Accepted
+
+            <!-- Category Toggle Buttons -->
+            <div class="research-categories">
+                <button class="research-category-btn active" onclick="showCategory('journals')">
+                    <i class='bx bx-book'></i>
+                    Journals
+                </button>
+                <button class="research-category-btn" onclick="showCategory('conferences')">
+                    <i class='bx bx-building-house'></i>
+                    Conferences
+                </button>
+            </div>
+
+            <!-- Journals Category -->
+            <div id="journals" class="research-category-content active">
+                <div class="research-container">
+                    <div class="research-card">
+                        <div class="research-status accepted">
+                            <i class='bx bx-check-circle'></i>
+                            Published
+                        </div>
+                        <h3>XLTLDisNet: A Novel and Lightweight Approach to Identify Tomato Leaf Diseases with Transparency
+                        </h3>
+                        <div class="research-meta">
+                            <span class="venue">
+                                <i class='bx bx-book'></i>
+                                Heliyon (Elsevier)
+                            </span>
+                            <span class="year">
+                                <i class='bx bx-calendar'></i>
+                                2025
+                            </span>
+                        </div>
+                        <div class="research-tags">
+                            <span>Deep Learning</span>
+                            <span>Agriculture</span>
+                            <span>Disease Detection</span>
+                            <span>XAI</span>
+                        </div>
+                        <a href="https://www.cell.com/heliyon/fulltext/S2405-8440(25)00955-7" target="_blank"
+                            class="paper-link">
+                            <i class='bx bx-link-external'></i>
+                            View Paper
+                        </a>
                     </div>
-                    <h3>Explainable AI-Driven Vision Transformers for Assessing Fruit Freshness via Transfer Learning
-                    </h3>
-                    <div class="research-meta">
-                        <span class="venue">
-                            <i class='bx bx-building-house'></i>
-                            27th International Conference on Computer and Information Technology (ICCIT)
-                        </span>
-                        <span class="year">
-                            <i class='bx bx-calendar'></i>
-                            2024
-                        </span>
-                    </div>
-                    <div class="research-tags">
-                        <span>Computer Vision</span>
-                        <span>Deep Learning</span>
-                        <span>XAI</span>
+
+                    <div class="research-card">
+                        <div class="research-status accepted">
+                            <i class='bx bx-check-circle'></i>
+                            Published
+                        </div>
+                        <h3>Deep Learning-based Classification, Detection, and Segmentation of Tomato Leaf Diseases: A
+                            State-of-the-Art Review</h3>
+                        <div class="research-meta">
+                            <span class="venue">
+                                <i class='bx bx-book'></i>
+                                Artificial Intelligence in Agriculture (Elsevier)
+                            </span>
+                            <span class="year">
+                                <i class='bx bx-calendar'></i>
+                                2025
+                            </span>
+                        </div>
+                        <div class="research-tags">
+                            <span>Survey</span>
+                            <span>Deep Learning</span>
+                            <span>Agriculture</span>
+                        </div>
+                        <a href="https://www.sciencedirect.com/science/article/pii/S258972172500025X" target="_blank"
+                            class="paper-link">
+                            <i class='bx bx-link-external'></i>
+                            View Paper
+                        </a>
                     </div>
                 </div>
+            </div>
 
-                <div class="research-card">
-                    <div class="research-status accepted">
-                        <i class='bx bx-check-circle'></i>
-                        Published
+            <!-- Conferences Category -->
+            <div id="conferences" class="research-category-content">
+                <div class="research-container">
+                    <div class="research-card">
+                        <div class="research-status accepted">
+                            <i class='bx bx-check-circle'></i>
+                            Accepted
+                        </div>
+                        <h3>XEndoSIS: Explainable Endoscopic Surgical Tool Segmentation via Dual Attention Mechanism
+                        </h3>
+                        <div class="research-meta">
+                            <span class="venue">
+                                <i class='bx bx-building-house'></i>
+                                28th International Conference on Computer and Information Technology (ICCIT)
+                            </span>
+                            <span class="year">
+                                <i class='bx bx-calendar'></i>
+                                2025
+                            </span>
+                        </div>
+                        <div class="research-tags">
+                            <span>Computer Vision</span>
+                            <span>Medical Imaging</span>
+                            <span>Image Segmentation</span>
+                            <span>XAI</span>
+                        </div>
                     </div>
-                    <h3>XLTLDisNet: A Novel and Lightweight Approach to Identify Tomato Leaf Diseases with Transparency
-                    </h3>
-                    <div class="research-meta">
-                        <span class="venue">
-                            <i class='bx bx-book'></i>
-                            Heliyon (Elsevier)
-                        </span>
-                    </div>
-                    <div class="research-tags">
-                        <span>Deep Learning</span>
-                        <span>Agriculture</span>
-                        <span>Disease Detection</span>
-                    </div>
-                    <a href="https://www.cell.com/heliyon/fulltext/S2405-8440(25)00955-7" target="_blank"
-                        class="paper-link">
-                        <i class='bx bx-link-external'></i>
-                        View Paper
-                    </a>
-                </div>
 
-                <div class="research-card">
-                    <div class="research-status accepted">
-                        <i class='bx bx-check-circle'></i>
-                        Published
+                    <div class="research-card">
+                        <div class="research-status accepted">
+                            <i class='bx bx-check-circle'></i>
+                            Published
+                        </div>
+                        <h3>Explainable AI-Driven Vision Transformers for Assessing Fruit Freshness via Transfer Learning
+                        </h3>
+                        <div class="research-meta">
+                            <span class="venue">
+                                <i class='bx bx-building-house'></i>
+                                27th International Conference on Computer and Information Technology (ICCIT)
+                            </span>
+                            <span class="year">
+                                <i class='bx bx-calendar'></i>
+                                2024
+                            </span>
+                        </div>
+                        <div class="research-tags">
+                            <span>Computer Vision</span>
+                            <span>Deep Learning</span>
+                            <span>XAI</span>
+                        </div>
+                        <a href="https://ieeexplore.ieee.org/abstract/document/11021956" target="_blank"
+                            class="paper-link">
+                            <i class='bx bx-link-external'></i>
+                            View Paper
+                        </a>
                     </div>
-                    <h3>Deep Learning-based Classification, Detection, and Segmentation of Tomato Leaf Diseases: A
-                        State-of-the-Art Review</h3>
-                    <div class="research-meta">
-                        <span class="venue">
-                            <i class='bx bx-book'></i>
-                            Artificial Intelligence in Agriculture (Elsevier)
-                        </span>
-                    </div>
-                    <div class="research-tags">
-                        <span>Survey</span>
-                        <span>Deep Learning</span>
-                        <span>Agriculture</span>
-                    </div>
-                    <a href="https://www.sciencedirect.com/science/article/pii/S258972172500025X" target="_blank"
-                        class="paper-link">
-                        <i class='bx bx-link-external'></i>
-                        View Paper
-                    </a>
                 </div>
             </div>
         </div>
@@ -2525,7 +3491,7 @@
                     <div class="info">
                         <div class="information">
                             <i class='bx bx-map-alt'></i>
-                            <p>Moghbazar, Dhaka - 1214</p>
+                            <p>Moghbazar, Dhaka - 1217</p>
                         </div>
                         <div class="information">
                             <i class='bx bx-envelope'></i>
@@ -2718,7 +3684,7 @@
     <footer class="footer">
         <div class="last-updated">
             <i class='bx bx-time-five'></i>
-            Last Updated: June 2025
+            Updated: January 2026
         </div>
     </footer>
 
@@ -2735,6 +3701,44 @@
                 dropdown.style.display = 'none';
             }
         });
+    </script>
+
+    <script>
+        function showCategory(categoryId) {
+            // Hide all category content
+            document.querySelectorAll('.research-category-content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            document.querySelectorAll('.research-category-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected category
+            document.getElementById(categoryId).classList.add('active');
+
+            // Add active class to clicked button
+            event.currentTarget.classList.add('active');
+        }
+
+        function showExperienceCategory(categoryId) {
+            // Hide all category content
+            document.querySelectorAll('.experience-category-content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            document.querySelectorAll('.experience-category-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected category
+            document.getElementById(categoryId).classList.add('active');
+
+            // Add active class to clicked button
+            event.currentTarget.classList.add('active');
+        }
     </script>
 
 </body>
