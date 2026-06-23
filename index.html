@@ -21,34 +21,6 @@
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- EmailJS -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="config.js"></script>
-    <script type="text/javascript">
-        /* --- Hard-coded EmailJS configuration (requested) --- */
-        window.emailConfig = {
-            PUBLIC_KEY: '627RdIOgfnGUHVJH3',
-            SERVICE_ID: 'service_9x9euss',
-            TEMPLATE_ID: 'template_0vzguat'
-        };
-
-        (function () {
-            try {
-                if (!emailConfig) {
-                    throw new Error('EmailJS configuration not found');
-                }
-                if (!emailConfig.PUBLIC_KEY) {
-                    throw new Error('EmailJS PUBLIC_KEY not found');
-                }
-                console.log('Initializing EmailJS...');
-                emailjs.init(emailConfig.PUBLIC_KEY);
-                console.log('EmailJS initialized successfully');
-            } catch (error) {
-                console.error('Error initializing EmailJS:', error);
-            }
-        })();
-    </script>
-
     <style>
         /* Font Variables */
         :root {
@@ -603,7 +575,7 @@
         }
 
         .research-subsection {
-            margin-bottom: 5rem;
+            margin-bottom: 3.5rem;
         }
 
         .research-subsection:last-child {
@@ -613,7 +585,7 @@
         .research-subsection h2 {
             text-align: center;
             font-size: 2rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2.25rem;
             color: var(--text-color);
             position: relative;
         }
@@ -631,36 +603,39 @@
         }
 
         .research-profiles {
-            max-width: 1200px;
-            margin: 0 auto 4rem;
+            max-width: 1280px;
+            margin: 0 auto 3rem;
             padding: 0 2rem;
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 2.25rem;
         }
 
         /* Research Category Toggle */
         .research-categories {
             max-width: 1200px;
-            margin: 0 auto 3rem;
+            margin: 0 auto 1.6rem;
             padding: 0 2rem;
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 1rem;
         }
 
         .research-category-btn {
-            padding: 1rem 2rem;
+            min-width: 170px;
+            min-height: 44px;
+            padding: 0.65rem 2rem;
             background: white;
             border: 2px solid #e0e0e0;
-            border-radius: 12px;
+            border-radius: 999px;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             color: #666;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 0.5rem;
         }
 
@@ -787,28 +762,82 @@
         }
 
         .research-profile-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            background: linear-gradient(180deg, #ffffff 0%, #fbfbff 100%);
+            padding: 1.35rem 1.8rem;
+            border-radius: 18px;
+            border: 2px solid rgba(255, 60, 120, 0.16);
+            box-shadow: 0 10px 28px rgba(64, 64, 64, 0.09), 0 2px 0 rgba(255, 255, 255, 0.9) inset;
             text-align: center;
             text-decoration: none;
             flex: 1;
-            max-width: 300px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex-basis: 370px;
+            max-width: 390px;
+            min-height: 166px;
+            cursor: pointer;
+            transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 1rem;
+            justify-content: space-between;
+            gap: 0.55rem;
+            isolation: isolate;
         }
 
-        .research-profile-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        .research-profile-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: linear-gradient(135deg, rgba(255, 60, 120, 0.1), rgba(160, 68, 255, 0.12));
+            opacity: 0;
+            transition: opacity 0.22s ease;
+            pointer-events: none;
+            z-index: 0;
         }
 
-        .research-profile-card i {
-            font-size: 2.5rem;
+        .research-profile-card>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .research-profile-card:hover,
+        .research-profile-card:focus-visible {
+            transform: translateY(-4px);
+            border-color: rgba(255, 60, 120, 0.55);
+            box-shadow: 0 18px 36px rgba(160, 68, 255, 0.16), 0 6px 16px rgba(64, 64, 64, 0.1);
+            outline: none;
+        }
+
+        .research-profile-card:hover::before,
+        .research-profile-card:focus-visible::before {
+            opacity: 1;
+        }
+
+        .research-profile-card:active {
+            transform: translateY(-1px) scale(0.99);
+            box-shadow: 0 8px 18px rgba(64, 64, 64, 0.12);
+        }
+
+        .research-profile-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(255, 60, 120, 0.14), rgba(160, 68, 255, 0.16));
+            box-shadow: 0 8px 18px rgba(160, 68, 255, 0.14);
+            transition: transform 0.22s ease;
+        }
+
+        .research-profile-card:hover .research-profile-icon,
+        .research-profile-card:focus-visible .research-profile-icon {
+            transform: scale(1.05);
+        }
+
+        .research-profile-icon i {
+            font-size: 1.9rem;
             color: var(--primary-color);
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             -webkit-background-clip: text;
@@ -817,7 +846,7 @@
 
         .research-profile-card h3 {
             color: var(--text-color);
-            font-size: 1.4rem;
+            font-size: 1.32rem;
             margin: 0;
         }
 
@@ -828,17 +857,52 @@
             font-size: 0.9rem;
         }
 
+        .research-profile-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.45rem;
+            min-height: 40px;
+            width: 100%;
+            margin-top: 0.1rem;
+            padding: 0.6rem 1rem;
+            border-radius: 999px;
+            color: #fff;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            font-size: 0.88rem;
+            font-weight: 700;
+            letter-spacing: 0;
+            box-shadow: 0 10px 22px rgba(160, 68, 255, 0.24);
+            transition: transform 0.22s ease, box-shadow 0.22s ease;
+        }
+
+        .research-profile-action i {
+            font-size: 1.05rem;
+            line-height: 1;
+            transition: transform 0.22s ease;
+        }
+
+        .research-profile-card:hover .research-profile-action,
+        .research-profile-card:focus-visible .research-profile-action {
+            box-shadow: 0 14px 26px rgba(160, 68, 255, 0.32);
+        }
+
+        .research-profile-card:hover .research-profile-action i,
+        .research-profile-card:focus-visible .research-profile-action i {
+            transform: translateX(3px);
+        }
+
         .research-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
             display: grid;
-            gap: 2rem;
+            gap: 1.25rem;
         }
 
         .research-card {
             background: white;
-            padding: 2rem;
+            padding: 1.45rem 1.7rem;
             border-radius: 20px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             position: relative;
@@ -852,14 +916,14 @@
 
         .research-status {
             position: absolute;
-            top: 1.5rem;
+            top: 1.35rem;
             right: 1.5rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 0.9rem;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.86rem;
             font-weight: 500;
         }
 
@@ -875,8 +939,8 @@
 
         .research-card h3 {
             color: var(--text-color);
-            margin-bottom: 1.5rem;
-            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            margin-top: 1.75rem;
             padding-right: 7rem;
             font-size: 1.2rem;
             line-height: 1.4;
@@ -885,8 +949,8 @@
         .research-meta {
             display: flex;
             flex-direction: column;
-            gap: 0.8rem;
-            margin-bottom: 1.5rem;
+            gap: 0.55rem;
+            margin-bottom: 1rem;
         }
 
         .research-meta span {
@@ -901,16 +965,25 @@
         .research-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.8rem;
+            gap: 0.6rem;
+            flex: 1;
         }
 
         .research-tags span {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
-            padding: 0.4rem 1rem;
+            padding: 0.32rem 0.85rem;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.86rem;
             font-weight: 500;
+        }
+
+        .research-card-footer {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 0.25rem;
         }
 
         .research-icon {
@@ -939,7 +1012,7 @@
 
             .research-card h3 {
                 padding-right: 0;
-                margin-top: 3rem;
+                margin-top: 2.6rem;
             }
 
             .research-status {
@@ -948,6 +1021,15 @@
             }
 
             .research-tags {
+                justify-content: flex-start;
+            }
+
+            .research-card-footer {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .research-card-footer .paper-link {
                 justify-content: center;
             }
         }
@@ -1113,14 +1195,16 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
+            margin-top: 0;
+            padding: 0.45rem 0.95rem;
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
             text-decoration: none;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.86rem;
             font-weight: 500;
+            white-space: nowrap;
+            flex-shrink: 0;
             transition: transform 0.3s ease;
         }
 
@@ -1451,6 +1535,7 @@
             color: var(--text-color);
             opacity: 0.8;
             font-size: 0.9rem;
+            overflow-wrap: anywhere;
         }
 
         /* IELTS Scores Section */
@@ -1607,234 +1692,495 @@
             }
         }
 
-        /* Contact Section */
+        /* Contact Section — Unique Bento UI */
         .contact-me {
-            background: #f8f9fa !important;
-            padding: var(--section-spacing) 1rem;
+            background: #fafbff !important;
+            padding: calc(var(--section-spacing) * 1.3) 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-me::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.06) 0%, transparent 70%);
+            pointer-events: none;
         }
 
         .contact-me .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 2rem;
         }
 
-        .contact-me .form {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        .bento-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .bento-header .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(59, 130, 246, 0.08));
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            padding: 0.5rem 1.2rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #7c3aed;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        .bento-header .section-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #0f172a;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+        }
+
+        .bento-header p {
+            color: #64748b;
+            font-size: 1.1rem;
+            max-width: 480px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Bento Grid — 5 columns for precision */
+        .bento-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            grid-template-columns: repeat(5, 1fr);
+            grid-auto-rows: auto;
+            gap: 1.25rem;
+        }
+
+        .bento-card {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            z-index: 1;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.08);
+            border-color: rgba(139, 92, 246, 0.12);
+        }
+
+        /* ── Main Contact Card ── */
+        .main-card {
+            grid-column: 1 / 4;
+            grid-row: 1 / 3;
+            background: #0f172a;
+            color: #ffffff;
+            justify-content: space-between;
+            border: none;
+            box-shadow: 0 24px 56px rgba(15, 23, 42, 0.25);
+            min-height: 420px;
+        }
+
+        .main-card::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -20%;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 65%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .main-card::after {
+            content: '';
+            position: absolute;
+            bottom: -35%;
+            left: -15%;
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 65%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Orbital ring decoration */
+        .main-card .orbital-ring {
+            position: absolute;
+            top: 50%;
+            right: -60px;
+            width: 200px;
+            height: 200px;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .main-card .orbital-ring::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 12px;
+            height: 12px;
+            background: rgba(165, 180, 252, 0.5);
+            border-radius: 50%;
+            animation: orbit 8s linear infinite;
+        }
+
+        @keyframes orbit {
+            from { transform: rotate(0deg) translateX(88px) rotate(0deg); }
+            to { transform: rotate(360deg) translateX(88px) rotate(-360deg); }
+        }
+
+        .main-card-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .availability-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            padding: 0.45rem 1rem;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #34d399;
+            width: fit-content;
+            margin-bottom: 2rem;
+        }
+
+        .availability-badge .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: #34d399;
+            border-radius: 50%;
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.4); }
+            50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(52, 211, 153, 0); }
+        }
+
+        .main-card h3 {
+            font-size: 2.6rem;
+            line-height: 1.08;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: #ffffff;
+            background: none;
+            -webkit-background-clip: unset;
+            -webkit-text-fill-color: unset;
+        }
+
+        .main-card h3 .gradient-word {
+            background: linear-gradient(135deg, #a78bfa, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .focus-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: auto;
+        }
+
+        .focus-tags span {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #cbd5e1;
+            transition: all 0.3s ease;
+        }
+
+        .focus-tags span:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: #f1f5f9;
+        }
+
+        .email-wrapper {
+            margin-top: 2.5rem;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 0.5rem 0.5rem 1.4rem;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            backdrop-filter: blur(20px);
+            gap: 0.8rem;
+        }
+
+        .email-address {
+            font-size: 1.05rem;
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #e2e8f0;
+        }
+
+        .btn-copy-email {
+            background: #ffffff;
+            color: #0f172a;
+            border: none;
+            padding: 0.75rem 1.6rem;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            white-space: nowrap;
+        }
+
+        .btn-copy-email:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 24px rgba(255,255,255,0.2);
+        }
+
+        .copy-status {
+            color: #a5b4fc;
+            font-size: 0.82rem;
+            margin-top: 0.8rem;
+            min-height: 1rem;
+            text-align: right;
+            padding-right: 1.5rem;
+            font-weight: 500;
+        }
+
+        /* ── Location Card ── */
+        .location-card {
+            grid-column: 4 / 6;
+            background: linear-gradient(160deg, #f8fafc 0%, #eef2ff 100%);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
             padding: 2rem;
         }
 
-        .contact-info {
-            padding: 2.3rem 2.2rem;
-            position: relative;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            border-radius: 15px;
-            color: white;
-        }
-
-        .contact-info .title {
-            font-size: 1.8rem;
-            margin-bottom: 0.7rem;
-        }
-
-        .contact-info .text {
-            margin: 1.5rem 0 2rem 0;
-            line-height: 1.6;
-        }
-
-        .information {
+        .location-pin-anim {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .information i {
-            font-size: 1.5rem;
-        }
-
-        .contact-form {
-            padding: 2.3rem 2.2rem;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: #ffffff;
+            margin: 0 auto 1.2rem;
             position: relative;
+            animation: float-pin 3s ease-in-out infinite;
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
         }
 
-        .contact-form .title {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            color: var(--text-color);
-        }
-
-        .input-container {
-            position: relative;
-            margin-bottom: 1.5rem;
-        }
-
-        .input {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #fafafa;
-            background: #fafafa;
-            font-size: 0.95rem;
-            border-radius: 10px;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        .input:focus {
-            border-color: var(--primary-color);
-            background: white;
-        }
-
-        textarea.input {
-            min-height: 150px;
-            resize: none;
-        }
-
-        .send-button {
-            position: relative;
-            width: 100%;
-            padding: 1rem;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            border: none;
-            color: white;
-            font-size: 1rem;
-            border-radius: 10px;
-            cursor: pointer;
-            overflow: hidden;
-            transition: 0.3s;
-        }
-
-        .send-button:hover {
-            transform: translateY(-2px);
-        }
-
-        .send-button span {
+        .location-pin-anim::after {
+            content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            transition: 0.3s;
+            width: 84px;
+            height: 84px;
+            border-radius: 50%;
+            border: 2px solid rgba(99, 102, 241, 0.15);
+            animation: ping-ring 3s ease-in-out infinite;
         }
 
-        .send-button .default {
-            opacity: 1;
+        @keyframes float-pin {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
         }
 
-        .send-button .success,
-        .send-button .loading {
-            opacity: 0;
+        @keyframes ping-ring {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.15); opacity: 0; }
         }
 
-        .send-button.success .default,
-        .send-button.loading .default {
-            opacity: 0;
+        .location-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
         }
 
-        .send-button.success .success {
-            opacity: 1;
+        .location-city {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -0.5px;
         }
 
-        .send-button.loading .loading {
-            opacity: 1;
+        .location-country {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #94a3b8;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        @media (max-width: 968px) {
-            .contact-me .form {
-                grid-template-columns: 1fr;
-            }
+        /* ── Email CTA Card ── */
+        .email-cta-card {
+            grid-column: 4 / 6;
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #a855f7 100%);
+            background-size: 200% 200%;
+            animation: gradient-shift 6s ease infinite;
+            color: #ffffff;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 12px 32px rgba(79, 70, 229, 0.25);
+        }
 
-            .contact-info,
-            .contact-form {
-                padding: 1.5rem;
-            }
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-            .contact-info .title,
-            .contact-form .title {
-                font-size: 1.6rem;
-                margin-bottom: 1.5rem;
-            }
+        .email-cta-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 48px rgba(79, 70, 229, 0.35);
+            border-color: transparent;
+        }
 
-            .contact-info .text {
-                margin: 1rem 0 1.5rem 0;
-                font-size: 0.95rem;
-            }
+        .email-cta-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: #ffffff;
+            margin-bottom: 1.2rem;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-            .information {
-                margin-bottom: 1.2rem;
-            }
+        .email-cta-card:hover .email-cta-icon {
+            transform: scale(1.15) rotate(-10deg);
+            background: rgba(255, 255, 255, 0.25);
+        }
 
-            .information i {
-                font-size: 1.3rem;
-            }
+        .email-cta-text {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-            .information p {
-                font-size: 0.95rem;
+        .email-cta-text span {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        .email-cta-text i {
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+
+        .email-cta-card:hover .email-cta-text i {
+            transform: translateX(6px);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 1024px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .main-card {
+                grid-column: span 2;
+                grid-row: span 1;
+                min-height: 380px;
+            }
+            .location-card {
+                grid-column: span 1;
+            }
+            .email-cta-card {
+                grid-column: span 1;
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 640px) {
             .contact-me {
-                padding: 3rem 1rem;
+                padding: calc(var(--section-spacing)) 1rem;
             }
-
-            .contact-me .container {
-                padding: 0 1rem;
+            .bento-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
             }
-
-            .contact-me .form {
-                padding: 1.2rem;
-                gap: 1.5rem;
+            .main-card, .location-card, .email-cta-card {
+                grid-column: span 1;
             }
-
-            .contact-info,
-            .contact-form {
-                padding: 1.2rem;
+            .main-card {
+                min-height: auto;
+                padding: 2rem;
             }
-
-            .contact-info .title,
-            .contact-form .title {
-                font-size: 1.4rem;
-                margin-bottom: 1.2rem;
+            .main-card h3 {
+                font-size: 2rem;
             }
-
-            .contact-info .text {
-                font-size: 0.9rem;
-                margin: 0.8rem 0 1.2rem 0;
+            .email-wrapper {
+                flex-direction: column;
+                padding: 1rem;
+                gap: 0.8rem;
+                align-items: stretch;
+                border-radius: 20px;
             }
-
-            .information {
-                margin-bottom: 1rem;
+            .btn-copy-email {
+                justify-content: center;
+                padding: 0.9rem;
             }
-
-            .information i {
-                font-size: 1.2rem;
+            .bento-header .section-title {
+                font-size: 2.4rem;
             }
-
-            .information p {
-                font-size: 0.9rem;
+            .bento-header {
+                margin-bottom: 2.5rem;
             }
-
-            .input {
-                padding: 0.8rem;
-                font-size: 0.9rem;
-            }
-
-            textarea.input {
-                min-height: 120px;
-            }
-
-            .send-button {
-                padding: 0.8rem;
-                font-size: 0.95rem;
+            .bento-card {
+                padding: 1.8rem;
+                border-radius: 24px;
             }
         }
-
-        /* Social Links */
+\n        /* Social Links */
         .social .wrapper {
             display: flex;
             justify-content: center;
@@ -3250,6 +3596,28 @@
 
             <div class="cert-card">
                 <div class="cert-badge">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg"
+                        alt="KodeKloud Docker Training Certificate">
+                    <div class="cert-badge-overlay">
+                        <i class='bx bx-badge-check'></i>
+                    </div>
+                </div>
+                <div class="cert-content">
+                    <h3>Docker Training Course for the Absolute Beginner</h3>
+                    <p>KodeKloud</p>
+                    <div class="cert-meta">
+                        <span><i class='bx bx-calendar'></i>Issued September 13, 2025</span>
+                    </div>
+                    <a href="https://learn.kodekloud.com/certificate/1851a17d-e5ba-4964-879a-aa055eb3b8c6"
+                        target="_blank" class="verify-btn">
+                        View Certificate
+                        <i class='bx bx-link-external'></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-badge">
                     <img src="https://images.credly.com/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png"
                         alt="AWS Cloud Practitioner">
                     <div class="cert-badge-overlay">
@@ -3325,16 +3693,28 @@
             <h2>Research Profiles</h2>
             <div class="research-profiles">
                 <a href="https://scholar.google.com/citations?user=ADx2f10AAAAJ&hl=en" target="_blank"
-                    class="research-profile-card">
-                    <i class='bx bxs-graduation'></i>
+                    rel="noopener noreferrer" class="research-profile-card" aria-label="Open Google Scholar profile">
+                    <span class="research-profile-icon">
+                        <i class='bx bxs-graduation'></i>
+                    </span>
                     <h3>Google Scholar</h3>
                     <p>View my publications and citations</p>
+                    <span class="research-profile-action">
+                        View profile
+                        <i class='bx bx-link-external'></i>
+                    </span>
                 </a>
                 <a href="https://www.researchgate.net/profile/Fahad-Pathan?ev=prf_overview" target="_blank"
-                    class="research-profile-card">
-                    <i class='bx bx-book research-icon'></i>
+                    rel="noopener noreferrer" class="research-profile-card" aria-label="Open ResearchGate profile">
+                    <span class="research-profile-icon">
+                        <i class='bx bx-book research-icon'></i>
+                    </span>
                     <h3>ResearchGate</h3>
                     <p>Follow my research activities</p>
+                    <span class="research-profile-action">
+                        View profile
+                        <i class='bx bx-link-external'></i>
+                    </span>
                 </a>
             </div>
         </div>
@@ -3363,6 +3743,38 @@
                             <i class='bx bx-check-circle'></i>
                             Published
                         </div>
+                        <h3>Advances in Alzheimer's disease diagnosis with machine learning and deep learning techniques:
+                            a comprehensive review</h3>
+                        <div class="research-meta">
+                            <span class="venue">
+                                <i class='bx bx-book'></i>
+                                Artificial Intelligence Review (Springer Nature)
+                            </span>
+                            <span class="year">
+                                <i class='bx bx-calendar'></i>
+                                2026
+                            </span>
+                        </div>
+                        <div class="research-card-footer">
+                            <div class="research-tags">
+                                <span>Survey</span>
+                                <span>Machine Learning</span>
+                                <span>Deep Learning</span>
+                                <span>Medical Imaging</span>
+                            </div>
+                            <a href="https://link.springer.com/article/10.1007/s10462-025-11476-4" target="_blank"
+                                class="paper-link">
+                                <i class='bx bx-link-external'></i>
+                                View Paper
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="research-card">
+                        <div class="research-status accepted">
+                            <i class='bx bx-check-circle'></i>
+                            Published
+                        </div>
                         <h3>XLTLDisNet: A Novel and Lightweight Approach to Identify Tomato Leaf Diseases with Transparency
                         </h3>
                         <div class="research-meta">
@@ -3375,17 +3787,19 @@
                                 2025
                             </span>
                         </div>
-                        <div class="research-tags">
-                            <span>Deep Learning</span>
-                            <span>Agriculture</span>
-                            <span>Disease Detection</span>
-                            <span>XAI</span>
+                        <div class="research-card-footer">
+                            <div class="research-tags">
+                                <span>Deep Learning</span>
+                                <span>Agriculture</span>
+                                <span>Disease Detection</span>
+                                <span>XAI</span>
+                            </div>
+                            <a href="https://www.cell.com/heliyon/fulltext/S2405-8440(25)00955-7" target="_blank"
+                                class="paper-link">
+                                <i class='bx bx-link-external'></i>
+                                View Paper
+                            </a>
                         </div>
-                        <a href="https://www.cell.com/heliyon/fulltext/S2405-8440(25)00955-7" target="_blank"
-                            class="paper-link">
-                            <i class='bx bx-link-external'></i>
-                            View Paper
-                        </a>
                     </div>
 
                     <div class="research-card">
@@ -3405,16 +3819,18 @@
                                 2025
                             </span>
                         </div>
-                        <div class="research-tags">
-                            <span>Survey</span>
-                            <span>Deep Learning</span>
-                            <span>Agriculture</span>
+                        <div class="research-card-footer">
+                            <div class="research-tags">
+                                <span>Survey</span>
+                                <span>Deep Learning</span>
+                                <span>Agriculture</span>
+                            </div>
+                            <a href="https://www.sciencedirect.com/science/article/pii/S258972172500025X" target="_blank"
+                                class="paper-link">
+                                <i class='bx bx-link-external'></i>
+                                View Paper
+                            </a>
                         </div>
-                        <a href="https://www.sciencedirect.com/science/article/pii/S258972172500025X" target="_blank"
-                            class="paper-link">
-                            <i class='bx bx-link-external'></i>
-                            View Paper
-                        </a>
                     </div>
                 </div>
             </div>
@@ -3425,7 +3841,7 @@
                     <div class="research-card">
                         <div class="research-status accepted">
                             <i class='bx bx-check-circle'></i>
-                            Accepted
+                            Published
                         </div>
                         <h3>XEndoSIS: Explainable Endoscopic Surgical Tool Segmentation via Dual Attention Mechanism
                         </h3>
@@ -3439,11 +3855,18 @@
                                 2025
                             </span>
                         </div>
-                        <div class="research-tags">
-                            <span>Computer Vision</span>
-                            <span>Medical Imaging</span>
-                            <span>Image Segmentation</span>
-                            <span>XAI</span>
+                        <div class="research-card-footer">
+                            <div class="research-tags">
+                                <span>Computer Vision</span>
+                                <span>Medical Imaging</span>
+                                <span>Image Segmentation</span>
+                                <span>XAI</span>
+                            </div>
+                            <a href="https://ieeexplore.ieee.org/abstract/document/11491783" target="_blank"
+                                class="paper-link">
+                                <i class='bx bx-link-external'></i>
+                                View Paper
+                            </a>
                         </div>
                     </div>
 
@@ -3464,16 +3887,18 @@
                                 2024
                             </span>
                         </div>
-                        <div class="research-tags">
-                            <span>Computer Vision</span>
-                            <span>Deep Learning</span>
-                            <span>XAI</span>
+                        <div class="research-card-footer">
+                            <div class="research-tags">
+                                <span>Computer Vision</span>
+                                <span>Deep Learning</span>
+                                <span>XAI</span>
+                            </div>
+                            <a href="https://ieeexplore.ieee.org/abstract/document/11021956" target="_blank"
+                                class="paper-link">
+                                <i class='bx bx-link-external'></i>
+                                View Paper
+                            </a>
                         </div>
-                        <a href="https://ieeexplore.ieee.org/abstract/document/11021956" target="_blank"
-                            class="paper-link">
-                            <i class='bx bx-link-external'></i>
-                            View Paper
-                        </a>
                     </div>
                 </div>
             </div>
@@ -3483,134 +3908,72 @@
     <!-- Contact Section -->
     <section id="contact-me" class="contact-me">
         <div class="container">
-            <div class="form">
-                <div class="contact-info">
-                    <h3 class="title">Let's get in touch</h3>
-                    <p class="text">Feel free to reach out for collaborations, opportunities, or just a friendly chat!
-                    </p>
-                    <div class="info">
-                        <div class="information">
-                            <i class='bx bx-map-alt'></i>
-                            <p>Moghbazar, Dhaka - 1217</p>
+            <div class="bento-header">
+                <span class="section-label"><i class='bx bx-message-dots'></i> Get in Touch</span>
+                <h2 class="section-title">Let's Connect</h2>
+                <p>Open to research, engineering collaborations, and new opportunities.</p>
+            </div>
+            
+            <div class="bento-grid">
+                <!-- Main Contact Card -->
+                <div class="bento-card main-card">
+                    <div class="orbital-ring"></div>
+                    <div class="main-card-content">
+                        <div class="availability-badge">
+                            <span class="pulse-dot"></span>
+                            Available for opportunities
                         </div>
-                        <div class="information">
-                            <i class='bx bx-envelope'></i>
-                            <p>fahadpathan56@gmail.com</p>
+                        <h3>Got a project in<br>mind? <span class="gradient-word">Let's talk.</span></h3>
+                        <div class="focus-tags">
+                            <span>Research</span>
+                            <span>Software Engineering</span>
+                            <span>AI & Cloud</span>
                         </div>
-                        <div class="information">
-                            <i class='bx bxs-phone'></i>
-                            <p>016-123-63-458</p>
+                        <div class="email-wrapper">
+                            <span class="email-address" id="contact-email">fahadpathan56@gmail.com</span>
+                            <button type="button" class="btn-copy-email" data-copy-email="fahadpathan56@gmail.com">
+                                <i class='bx bx-copy'></i> Copy
+                            </button>
                         </div>
+                        <p class="copy-status" aria-live="polite"></p>
                     </div>
                 </div>
 
-                <div class="contact-form">
-                    <form id="contact-form">
-                        <h3 class="title">Send me a message</h3>
-                        <div class="input-container">
-                            <input type="text" name="user_name" class="input" placeholder="Name" required />
-                        </div>
-                        <div class="input-container">
-                            <input type="email" name="user_email" class="input" placeholder="Email" required />
-                        </div>
-                        <div class="input-container">
-                            <input type="text" name="subject" class="input" placeholder="Subject" required />
-                        </div>
-                        <div class="input-container textarea">
-                            <textarea name="message" class="input" placeholder="Message" required></textarea>
-                        </div>
-                        <button type="submit" class="send-button">
-                            <span class="default">Send Message</span>
-                            <span class="success">
-                                <i class='bx bx-check'></i> Sent Successfully
-                            </span>
-                            <span class="loading">
-                                <i class='bx bx-loader-alt bx-spin'></i> Sending...
-                            </span>
-                        </button>
-                    </form>
+                <!-- Location Card -->
+                <div class="bento-card location-card">
+                    <div class="location-pin-anim">
+                        <i class='bx bx-current-location'></i>
+                    </div>
+                    <div class="location-text">
+                        <span class="location-city">Dhaka</span>
+                        <span class="location-country">Bangladesh</span>
+                    </div>
                 </div>
+
+                <!-- Email CTA Card -->
+                <a href="https://mail.google.com/mail/?view=cm&to=fahadpathan56@gmail.com&su=Hello+from+your+portfolio" target="_blank" rel="noopener noreferrer" class="bento-card email-cta-card">
+                    <div class="email-cta-icon">
+                        <i class='bx bx-send'></i>
+                    </div>
+                    <div class="email-cta-text">
+                        <span>Send me an email</span>
+                        <i class='bx bx-right-arrow-alt'></i>
+                    </div>
+                </a>
             </div>
         </div>
-
         <script>
-            // Validate EmailJS is loaded
-            if (typeof emailjs === 'undefined') {
-                console.error('EmailJS library not loaded');
-                alert('Email service not available. Please try again later.');
-            }
+            const copyEmailButton = document.querySelector('[data-copy-email]');
+            const copyStatus = document.querySelector('.copy-status');
 
-            const btn = document.getElementById('contact-form').querySelector('button');
-            const form = document.getElementById('contact-form');
-
-            // Function to validate email configuration
-            function validateEmailConfig() {
-                if (!window.emailConfig) {
-                    console.error('EmailJS config not found');
-                    return false;
-                }
-
-                const requiredKeys = ['PUBLIC_KEY', 'SERVICE_ID', 'TEMPLATE_ID'];
-                const missingKeys = requiredKeys.filter(key => !emailConfig[key]);
-
-                if (missingKeys.length > 0) {
-                    console.error('Missing EmailJS config keys:', missingKeys);
-                    return false;
-                }
-
-                return true;
-            }
-
-            form.addEventListener('submit', async function (event) {
-                event.preventDefault();
-
-                if (!validateEmailConfig()) {
-                    alert('Email service configuration error. Please try again later.');
-                    return;
-                }
-
+            copyEmailButton?.addEventListener('click', async () => {
+                const email = copyEmailButton.dataset.copyEmail;
                 try {
-                    btn.classList.add('loading');
-                    console.log('Sending email with config:', {
-                        serviceId: emailConfig.SERVICE_ID,
-                        templateId: emailConfig.TEMPLATE_ID,
-                        formData: Object.fromEntries(new FormData(this))
-                    });
-
-                    const response = await emailjs.sendForm(
-                        emailConfig.SERVICE_ID,
-                        emailConfig.TEMPLATE_ID,
-                        this
-                    );
-
-                    console.log('Email sent successfully:', response);
-                    btn.classList.remove('loading');
-                    btn.classList.add('success');
-                    this.reset();
-
-                    setTimeout(() => {
-                        btn.classList.remove('success');
-                    }, 3000);
-
+                    await navigator.clipboard.writeText(email);
+                    copyStatus.textContent = 'Email copied to clipboard.';
                 } catch (error) {
-                    console.error('Failed to send email:', error);
-                    btn.classList.remove('loading');
-                    alert(`Failed to send message: ${error.text || 'Unknown error'}\nPlease check console for details.`);
+                    copyStatus.textContent = email;
                 }
-            });
-
-            // Check configuration on page load
-            window.addEventListener('load', function () {
-                const configStatus = validateEmailConfig();
-                console.log('EmailJS Configuration Status:', {
-                    configPresent: !!window.emailConfig,
-                    isValid: configStatus,
-                    config: window.emailConfig ? {
-                        hasPublicKey: !!emailConfig.PUBLIC_KEY,
-                        hasServiceId: !!emailConfig.SERVICE_ID,
-                        hasTemplateId: !!emailConfig.TEMPLATE_ID
-                    } : null
-                });
             });
 
             // --- Cool Enhancements: Fade-in on Scroll ---
