@@ -83,15 +83,13 @@
     <link rel="icon" type="image/webp" href="resources/images/signature.webp">
     <link rel="apple-touch-icon" href="resources/images/signature.webp">
 
-    <link rel="preload" href="resources/images/portfolio_pic_com.webp" as="image" fetchpriority="high">
+    <link rel="preload" as="image" href="resources/images/portfolio_pic_com_mobile.webp" imagesrcset="resources/images/portfolio_pic_com_mobile.webp 500w, resources/images/portfolio_pic_com.webp 1900w" imagesizes="(max-width: 600px) 500px, 450px" fetchpriority="high">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://unpkg.com">
-    <link rel="preconnect" href="https://raw.githubusercontent.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
 
     <!-- Icons -->
     <link rel="preload" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -3846,7 +3844,7 @@
     <header>
     <nav class="navbar" aria-label="Main navigation">
         <div class="navbar-brand">
-            <img src="resources/images/signature.webp" alt="Fahad Pathan's signature logo" width="309" height="102">
+            <img src="resources/images/signature.webp" alt="Fahad Pathan's signature logo" width="309" height="102" fetchpriority="high">
         </div>
         <button id="menu-toggle" class="menu-btn" aria-label="Open navigation menu">
             <i class='bx bx-menu-alt-right'></i>
@@ -3897,7 +3895,7 @@
         </div>
 
         <div class="images">
-            <img class="fahad-img" src="resources/images/portfolio_pic_com.webp" alt="Fahad Pathan - Software Engineer and AI Researcher" fetchpriority="high" loading="eager" width="450" height="450">
+            <img class="fahad-img" src="resources/images/portfolio_pic_com.webp" srcset="resources/images/portfolio_pic_com_mobile.webp 500w, resources/images/portfolio_pic_com.webp 1900w" sizes="(max-width: 600px) 500px, 450px" alt="Fahad Pathan - Software Engineer and AI Researcher" fetchpriority="high" loading="eager" width="450" height="450">
         </div>
     </section>
 
@@ -3911,7 +3909,7 @@
             <div class="image-section">
                 <div class="image-wrapper">
                     <img loading="lazy" decoding="async" src="resources/images/about_illustration.webp"
-                        alt="Fahad Pathan's developer workspace illustration" width="1024" height="1024">
+                        srcset="resources/images/about_illustration_mobile.webp 500w, resources/images/about_illustration.webp 1024w" sizes="(max-width: 600px) 500px, 1024px" alt="Fahad Pathan's developer workspace illustration" width="1024" height="1024">
                     <div class="image-badge">
                         <i class='bx bx-code-alt'></i>
                         <span>Always Learning</span>
