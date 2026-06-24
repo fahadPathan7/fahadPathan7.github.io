@@ -99,10 +99,6 @@
             font-family: var(--font-text);
         }
 
-        .social .tooltip {
-            font-family: var(--font-secondary);
-            font-weight: 500;
-        }
 
         /* Core Responsive Styles */
         :root {
@@ -250,8 +246,15 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(20px, 20px); }
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(20px, 20px);
+            }
         }
 
         .about .title {
@@ -268,8 +271,17 @@
         }
 
         @keyframes shimmer {
-            0%, 100% { opacity: 1; transform: scaleX(1); }
-            50% { opacity: 0.7; transform: scaleX(0.95); }
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scaleX(1);
+            }
+
+            50% {
+                opacity: 0.7;
+                transform: scaleX(0.95);
+            }
         }
 
         .about .subtitle-about {
@@ -285,6 +297,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -337,8 +350,15 @@
         }
 
         @keyframes shine {
-            0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+
+            0%,
+            100% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+
+            50% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
         }
 
         .about .image-section:hover .image-wrapper {
@@ -380,8 +400,15 @@
         }
 
         @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
         }
 
         .about .image-badge i {
@@ -511,14 +538,14 @@
             box-shadow: 0 8px 24px rgba(99, 102, 241, 0.1);
         }
 
-        .about .highlight-box > i {
+        .about .highlight-box>i {
             font-size: 2.5rem;
             color: #6366f1;
             flex-shrink: 0;
             transition: transform 0.3s ease;
         }
 
-        .about .highlight-box:hover > i {
+        .about .highlight-box:hover>i {
             transform: scale(1.15) rotate(5deg);
         }
 
@@ -665,9 +692,11 @@
                 gap: 2.5rem;
                 padding: 2.5rem 3rem;
             }
+
             .about .image-section {
                 flex: 0 0 240px;
             }
+
             .about .stats-grid {
                 gap: 1.5rem;
             }
@@ -678,17 +707,21 @@
                 flex-direction: column;
                 margin-bottom: 3rem;
             }
+
             .about .image-section {
                 max-width: 450px;
                 margin: 0 auto;
                 width: 100%;
             }
+
             .about .quick-stats {
                 flex-direction: row;
             }
+
             .about .quick-stat-item {
                 flex: 1;
             }
+
             .about .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -699,30 +732,38 @@
                 padding: 2rem 1.5rem;
                 gap: 2rem;
             }
+
             .about .quick-stats {
                 flex-direction: column;
             }
+
             .about .stats-grid {
                 gap: 1.2rem;
             }
+
             .about .stat-number {
                 font-size: 2rem;
             }
+
             .about .stat-card {
                 padding: 2rem 1.5rem;
             }
+
             .about .stat-label {
                 font-size: 0.8rem;
             }
+
             .about .highlight-box {
                 flex-direction: column;
                 text-align: center;
                 align-items: center;
                 padding: 1.5rem;
             }
-            .about .highlight-box > i {
+
+            .about .highlight-box>i {
                 font-size: 2rem;
             }
+
             .about .skills-highlight {
                 justify-content: center;
             }
@@ -732,12 +773,15 @@
             .about .content-section {
                 padding: 1.5rem;
             }
+
             .about .stat-card {
                 padding: 1.8rem 1.2rem;
             }
+
             .about .stat-number {
                 font-size: 1.8rem;
             }
+
             .about .stat-label {
                 font-size: 0.75rem;
             }
@@ -2261,10 +2305,10 @@
             line-height: 1.7;
         }
 
-        /* Bento Grid — 5 columns for precision */
+        /* Bento Grid — 6 columns for precision */
         .bento-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(6, 1fr);
             grid-auto-rows: auto;
             gap: 1.25rem;
         }
@@ -2272,7 +2316,7 @@
         .bento-card {
             background: #ffffff;
             border-radius: 28px;
-            padding: 2.5rem;
+            padding: 2rem;
             position: relative;
             overflow: hidden;
             border: 1px solid rgba(0, 0, 0, 0.05);
@@ -2292,14 +2336,14 @@
 
         /* ── Main Contact Card ── */
         .main-card {
-            grid-column: 1 / 4;
-            grid-row: 1 / 3;
+            grid-column: 1 / 5;
+            grid-row: 1 / 4;
             background: #0f172a;
             color: #ffffff;
             justify-content: space-between;
             border: none;
             box-shadow: 0 24px 56px rgba(15, 23, 42, 0.25);
-            min-height: 420px;
+            min-height: 380px;
         }
 
         .main-card::before {
@@ -2410,7 +2454,7 @@
         }
 
         .main-card h3 {
-            font-size: 2.6rem;
+            font-size: 2.4rem;
             line-height: 1.08;
             margin-bottom: 1.5rem;
             font-weight: 800;
@@ -2431,7 +2475,16 @@
             display: flex;
             flex-wrap: wrap;
             gap: 0.6rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .main-card-desc {
+            color: #94a3b8;
+            font-size: 1.05rem;
+            line-height: 1.6;
             margin-bottom: auto;
+            max-width: 95%;
+            font-weight: 400;
         }
 
         .focus-tags span {
@@ -2506,12 +2559,12 @@
 
         /* ── Location Card ── */
         .location-card {
-            grid-column: 4 / 6;
+            grid-column: 5 / 7;
             background: linear-gradient(160deg, #f8fafc 0%, #eef2ff 100%);
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 2rem;
+            padding: 1.5rem;
         }
 
         .location-pin-anim {
@@ -2589,7 +2642,7 @@
 
         /* ── Email CTA Card ── */
         .email-cta-card {
-            grid-column: 4 / 6;
+            grid-column: 5 / 7;
             background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
             background-size: 200% 200%;
             animation: gradient-shift 6s ease infinite;
@@ -2600,7 +2653,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 2rem;
+            padding: 1.5rem;
             border: none;
             cursor: pointer;
             box-shadow: 0 12px 32px rgba(79, 70, 229, 0.25);
@@ -2686,6 +2739,10 @@
             .email-cta-card {
                 grid-column: span 1;
             }
+
+            .social-card {
+                grid-column: span 2;
+            }
         }
 
         @media (max-width: 640px) {
@@ -2700,7 +2757,8 @@
 
             .main-card,
             .location-card,
-            .email-cta-card {
+            .email-cta-card,
+            .social-card {
                 grid-column: span 1;
             }
 
@@ -2740,24 +2798,112 @@
             }
         }
 
-        \n
-
-        /* Social Links */
-        .social .wrapper {
-            display: flex;
+        /* Social Card inside Bento Grid */
+        .social-card {
+            grid-column: 5 / 7;
+            align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 1.5rem;
+            gap: 1.25rem;
+            padding: 1.5rem;
+            background: linear-gradient(160deg, #f8fafc 0%, #eef2ff 100%);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .social-card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .pulse-dot-cool {
+            width: 8px;
+            height: 8px;
+            background: #8b5cf6;
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 0 10px #8b5cf6;
+            animation: pulse-cool 2s infinite;
+        }
+
+        @keyframes pulse-cool {
+            0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4); }
+            70% { box-shadow: 0 0 0 8px rgba(139, 92, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+        }
+
+        .social-card-label {
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #a78bfa, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.01em;
+            white-space: nowrap;
+        }
+
+        .social-icons-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .social-icon-link {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: #475569;
+            text-decoration: none;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        .social-icon-link:hover {
+            transform: translateY(-4px) scale(1.08);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-icon-link.fb:hover {
+            color: #1877f3;
+            border-color: rgba(24, 119, 243, 0.3);
+            box-shadow: 0 8px 24px rgba(24, 119, 243, 0.2);
+        }
+
+        .social-icon-link.instagram:hover {
+            color: #e1306c;
+            border-color: rgba(225, 48, 108, 0.3);
+            box-shadow: 0 8px 24px rgba(225, 48, 108, 0.2);
+        }
+
+        .social-icon-link.github:hover {
+            color: #24292e;
+            border-color: rgba(36, 41, 46, 0.3);
+            box-shadow: 0 8px 24px rgba(36, 41, 46, 0.15);
+        }
+
+        .social-icon-link.linkedin:hover {
+            color: #0a66c2;
+            border-color: rgba(10, 102, 194, 0.3);
+            box-shadow: 0 8px 24px rgba(10, 102, 194, 0.2);
         }
 
         @media (max-width: 480px) {
-            .social .wrapper {
+            .social-card {
+                flex-direction: column !important;
                 gap: 1rem;
+                padding: 1.25rem 1.5rem;
             }
 
-            .social .icon {
-                width: 45px;
-                height: 45px;
+            .social-icon-link {
+                width: 42px;
+                height: 42px;
+                font-size: 1.15rem;
             }
         }
 
@@ -3259,44 +3405,7 @@
             transform: translateY(-2px);
         }
 
-        /* 4. Social Icon Animations */
-        .social .icon {
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
 
-        .social .icon:hover {
-            transform: scale(1.18) rotate(-6deg);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
-        }
-
-        .social .icon i {
-            transition: color 0.3s, text-shadow 0.3s;
-        }
-
-        .social .icon.fb:hover i {
-            color: #1877f3;
-            text-shadow: 0 0 8px #1877f3;
-        }
-
-        .social .icon.instagram:hover i {
-            color: #e1306c;
-            text-shadow: 0 0 8px #e1306c;
-        }
-
-        .social .icon.github:hover i {
-            color: #333;
-            text-shadow: 0 0 8px #333;
-        }
-
-        .social .icon.linkedin:hover i {
-            color: #0a66c2;
-            text-shadow: 0 0 8px #0a66c2;
-        }
-
-        .social .icon.medium:hover i {
-            color: #00ab6c;
-            text-shadow: 0 0 8px #00ab6c;
-        }
 
         /* --- Cool Enhancements End --- */
 
@@ -3698,13 +3807,14 @@
         <div class="content-section">
             <div class="image-section">
                 <div class="image-wrapper">
-                    <img loading="lazy" decoding="async" src="resources/images/about_illustration.png" alt="Developer Workspace Illustration">
+                    <img loading="lazy" decoding="async" src="resources/images/about_illustration.png"
+                        alt="Developer Workspace Illustration">
                     <div class="image-badge">
                         <i class='bx bx-code-alt'></i>
                         <span>Always Learning</span>
                     </div>
                 </div>
-                
+
                 <div class="quick-stats">
                     <div class="quick-stat-item">
                         <div class="quick-stat-icon">
@@ -3715,7 +3825,7 @@
                             <span class="quick-stat-label">University</span>
                         </div>
                     </div>
-                    
+
                     <div class="quick-stat-item">
                         <div class="quick-stat-icon">
                             <i class='bx bxs-briefcase-alt-2'></i>
@@ -3725,7 +3835,7 @@
                             <span class="quick-stat-label">Software Engineer</span>
                         </div>
                     </div>
-                    
+
                     <div class="quick-stat-item">
                         <div class="quick-stat-icon">
                             <i class='bx bx-brain'></i>
@@ -3742,7 +3852,11 @@
                     <i class='bx bxs-user'></i>
                     <div>
                         <h3>Who I Am</h3>
-                        <p>I am a Software Engineer, Researcher, and Product Builder who enjoys taking on challenges and turning ambitious ideas into practical solutions. I love to explore new technologies, learn how things work, and step outside my comfort zone to keep growing. My work spans software engineering, artificial intelligence, research, and product development, giving me the opportunity to approach problems from different perspectives.</p>
+                        <p>I am a Software Engineer, Researcher, and Product Builder who enjoys taking on challenges and
+                            turning ambitious ideas into practical solutions. I love to explore new technologies, learn
+                            how things work, and step outside my comfort zone to keep growing. My work spans software
+                            engineering, artificial intelligence, research, and product development, giving me the
+                            opportunity to approach problems from different perspectives.</p>
                     </div>
                 </div>
 
@@ -3750,7 +3864,11 @@
                     <i class='bx bxs-rocket'></i>
                     <div>
                         <h3>What Drives Me</h3>
-                        <p>I enjoy solving problems that do not have straightforward answers. Challenges motivate me to think differently, experiment with new ideas, and take risks that lead to growth. Whether I am building software, conducting research, or creating products, I focus on building solutions that are simple, scalable, and useful. More than titles or technologies, I value curiosity, adaptability, and continuous learning.</p>
+                        <p>I enjoy solving problems that do not have straightforward answers. Challenges motivate me to
+                            think differently, experiment with new ideas, and take risks that lead to growth. Whether I
+                            am building software, conducting research, or creating products, I focus on building
+                            solutions that are simple, scalable, and useful. More than titles or technologies, I value
+                            curiosity, adaptability, and continuous learning.</p>
                     </div>
                 </div>
 
@@ -3841,32 +3959,38 @@
                 <div class="vertical-title">Programming Languages</div>
                 <div class="vertical-icons">
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg"
                             alt="C">
                         <p>C</p>
                     </div>
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg"
                             alt="C++">
                         <p>C++</p>
                     </div>
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg"
                             alt="Go">
                         <p>Go</p>
                     </div>
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg"
                             alt="Java">
                         <p>Java</p>
                     </div>
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
                             alt="Python">
                         <p>Python</p>
                     </div>
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
                             alt="JavaScript">
                         <p>JavaScript</p>
                     </div>
@@ -3877,31 +4001,37 @@
                 <div class="vertical-title">AI/ML</div>
                 <div class="vertical-icons">
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pandas/pandas-original.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pandas/pandas-original.svg"
                             alt="Pandas">
                         <p>Pandas</p>
                     </div>
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/pola-rs/polars-static/master/logos/polars-logo-dark.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://raw.githubusercontent.com/pola-rs/polars-static/master/logos/polars-logo-dark.svg"
                             alt="Polars">
                         <p>Polars</p>
                     </div>
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="Seaborn">
+                        <img loading="lazy" decoding="async"
+                            src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="Seaborn">
                         <p>Seaborn</p>
                     </div>
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tensorflow/tensorflow-original.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tensorflow/tensorflow-original.svg"
                             alt="TensorFlow">
                         <p>TensorFlow</p>
                     </div>
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/scikit-learn/scikit-learn/main/doc/logos/scikit-learn-logo.png"
+                        <img loading="lazy" decoding="async"
+                            src="https://raw.githubusercontent.com/scikit-learn/scikit-learn/main/doc/logos/scikit-learn-logo.png"
                             alt="Scikit-learn">
                         <p>Scikit-learn</p>
                     </div>
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/opencv/opencv-original.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/opencv/opencv-original.svg"
                             alt="OpenCV">
                         <p>OpenCV</p>
                     </div>
@@ -3913,12 +4043,14 @@
                 <div class="vertical-title">Cloud</div>
                 <div class="vertical-icons">
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg"
                             alt="AWS">
                         <p>AWS</p>
                     </div>
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg"
                             alt="Azure">
                         <p>Azure</p>
                     </div>
@@ -3929,22 +4061,26 @@
                 <div class="vertical-title">Database</div>
                 <div class="vertical-icons">
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg"
                             alt="MySQL">
                         <p>MySQL</p>
                     </div>
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg"
                             alt="MongoDB">
                         <p>MongoDB</p>
                     </div>
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original.svg"
                             alt="Redis">
                         <p>Redis</p>
                     </div>
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
                             alt="PostgreSQL">
                         <p>PostgreSQL</p>
                     </div>
@@ -3955,11 +4091,13 @@
                 <div class="vertical-title">Payment Gateways</div>
                 <div class="vertical-icons">
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://www.vectorlogo.zone/logos/stripe/stripe-icon.svg" alt="Stripe">
+                        <img loading="lazy" decoding="async"
+                            src="https://www.vectorlogo.zone/logos/stripe/stripe-icon.svg" alt="Stripe">
                         <p>Stripe</p>
                     </div>
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://avatars.githubusercontent.com/u/105373340?s=200&v=4" alt="Polar.sh">
+                        <img loading="lazy" decoding="async"
+                            src="https://avatars.githubusercontent.com/u/105373340?s=200&v=4" alt="Polar.sh">
                         <p>Polar.sh</p>
                     </div>
                 </div>
@@ -3969,17 +4107,20 @@
                 <div class="vertical-title">Libraries</div>
                 <div class="vertical-icons">
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"
                             alt="HTML5">
                         <p>HTML5</p>
                     </div>
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"
                             alt="CSS3">
                         <p>CSS3</p>
                     </div>
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg"
                             alt="Tailwind CSS">
                         <p>Tailwind CSS</p>
                     </div>
@@ -3990,27 +4131,32 @@
                 <div class="vertical-title">Frameworks</div>
                 <div class="vertical-icons">
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/django/django-plain.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/django/django-plain.svg"
                             alt="Django">
                         <p>Django</p>
                     </div>
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg"
                             alt="FastAPI">
                         <p>FastAPI</p>
                     </div>
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg"
                             alt="Flask">
                         <p>Flask</p>
                     </div>
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg"
                             alt="Express.JS">
                         <p>Express.JS</p>
                     </div>
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
                             alt="React.JS">
                         <p>React.JS</p>
                     </div>
@@ -4021,21 +4167,25 @@
                 <div class="vertical-title">Tools & Technologies</div>
                 <div class="vertical-icons">
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg"
                             alt="Docker">
                         <p>Docker</p>
                     </div>
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
+                        <img loading="lazy" decoding="async"
+                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
                             alt="Git">
                         <p>Git</p>
                     </div>
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="Postman">
+                        <img loading="lazy" decoding="async"
+                            src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="Postman">
                         <p>Postman</p>
                     </div>
                     <div class="icon">
-                        <img loading="lazy" decoding="async" src="https://www.vectorlogo.zone/logos/atlassian_jira/atlassian_jira-icon.svg" alt="Jira">
+                        <img loading="lazy" decoding="async"
+                            src="https://www.vectorlogo.zone/logos/atlassian_jira/atlassian_jira-icon.svg" alt="Jira">
                         <p>Jira</p>
                     </div>
                 </div>
@@ -4121,7 +4271,8 @@
                     </div>
                     <div class="experience-content">
                         <div class="experience-header">
-                            <img loading="lazy" decoding="async" src="resources/images/bs23_logo.png" alt="Brainstation-23">
+                            <img loading="lazy" decoding="async" src="resources/images/bs23_logo.png"
+                                alt="Brainstation-23">
                             <div class="header-main">
                                 <h3>Software Engineer II</h3>
                                 <span class="company">
@@ -4161,7 +4312,8 @@
                     </div>
                     <div class="experience-content">
                         <div class="experience-header">
-                            <img loading="lazy" decoding="async" src="resources/images/bs23_logo.png" alt="Brainstation-23">
+                            <img loading="lazy" decoding="async" src="resources/images/bs23_logo.png"
+                                alt="Brainstation-23">
                             <div class="header-main">
                                 <h3>Software Engineer I</h3>
                                 <span class="company">
@@ -4198,7 +4350,8 @@
                     </div>
                     <div class="experience-content">
                         <div class="experience-header">
-                            <img loading="lazy" decoding="async" src="resources/images/bs23_logo.png" alt="Brainstation-23">
+                            <img loading="lazy" decoding="async" src="resources/images/bs23_logo.png"
+                                alt="Brainstation-23">
                             <div class="header-main">
                                 <h3>Trainee (Internship)</h3>
                                 <span class="company">
@@ -4320,7 +4473,8 @@
         <div class="platform-container">
             <div class="platform-card">
                 <div class="platform-header">
-                    <img loading="lazy" decoding="async" src="https://cdn.iconscout.com/icon/free/png-256/free-code-forces-3628695-3029920.png"
+                    <img loading="lazy" decoding="async"
+                        src="https://cdn.iconscout.com/icon/free/png-256/free-code-forces-3628695-3029920.png"
                         alt="Codeforces">
                     <h3>Codeforces</h3>
                 </div>
@@ -4338,7 +4492,8 @@
 
             <div class="platform-card">
                 <div class="platform-header">
-                    <img loading="lazy" decoding="async" src="https://cdn.codechef.com/sites/default/files/uploads/pictures/811b20a47eac52b10c90ab82e0628e21.png"
+                    <img loading="lazy" decoding="async"
+                        src="https://cdn.codechef.com/sites/default/files/uploads/pictures/811b20a47eac52b10c90ab82e0628e21.png"
                         alt="CodeChef">
                     <h3>CodeChef</h3>
                 </div>
@@ -4355,7 +4510,8 @@
 
             <div class="platform-card">
                 <div class="platform-header">
-                    <img loading="lazy" decoding="async" src="https://www.stopstalk.com/static/images/stopstalk-logo.png" alt="StopStalk">
+                    <img loading="lazy" decoding="async"
+                        src="https://www.stopstalk.com/static/images/stopstalk-logo.png" alt="StopStalk">
                     <h3>StopStalk</h3>
                 </div>
                 <div class="platform-details">
@@ -4367,7 +4523,8 @@
 
             <div class="platform-card">
                 <div class="platform-header">
-                    <img loading="lazy" decoding="async" src="https://leetcode.com/static/images/LeetCode_logo_rvs.png" alt="LeetCode">
+                    <img loading="lazy" decoding="async" src="https://leetcode.com/static/images/LeetCode_logo_rvs.png"
+                        alt="LeetCode">
                     <h3>LeetCode</h3>
                 </div>
                 <div class="platform-details">
@@ -4386,9 +4543,11 @@
         <div class="projects-container">
             <div class="projects-box">
                 <div class="project-animated-icon">
-                    <svg class="project-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" fill="currentColor" fill-opacity="0.2"/>
-                        <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+                    <svg class="project-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"
+                            fill="currentColor" fill-opacity="0.2" />
+                        <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
                     </svg>
                 </div>
                 <h3>EcoSync</h3>
@@ -4404,13 +4563,14 @@
 
             <div class="projects-box">
                 <div class="project-animated-icon">
-                    <svg class="project-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
-                        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
-                        <path d="M4 22h16"/>
-                        <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/>
-                        <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
-                        <path d="M18 2H6v7c0 6-6 10-6 10s-6-4-6-10V2z" fill="currentColor" fill-opacity="0.2"/>
+                    <svg class="project-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                        <path d="M4 22h16" />
+                        <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                        <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                        <path d="M18 2H6v7c0 6-6 10-6 10s-6-4-6-10V2z" fill="currentColor" fill-opacity="0.2" />
                     </svg>
                 </div>
                 <h3>SUST FTMS</h3>
@@ -4426,8 +4586,11 @@
 
             <div class="projects-box">
                 <div class="project-animated-icon">
-                    <svg class="project-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" fill="currentColor" fill-opacity="0.2"/>
+                    <svg class="project-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+                            fill="currentColor" fill-opacity="0.2" />
                     </svg>
                 </div>
                 <h3>HandyHire</h3>
@@ -4443,9 +4606,10 @@
 
             <div class="projects-box">
                 <div class="project-animated-icon">
-                    <svg class="project-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="currentColor" fill-opacity="0.2"/>
-                        <path d="M8 11h2.5l1.5 4 2-8 1.5 4H16"/>
+                    <svg class="project-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="currentColor" fill-opacity="0.2" />
+                        <path d="M8 11h2.5l1.5 4 2-8 1.5 4H16" />
                     </svg>
                 </div>
                 <h3>Connect</h3>
@@ -4461,12 +4625,13 @@
 
             <div class="projects-box">
                 <div class="project-animated-icon">
-                    <svg class="project-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="6" width="20" height="12" rx="2" fill="currentColor" fill-opacity="0.2"/>
-                        <path d="M6 12h4"/>
-                        <path d="M8 10v4"/>
-                        <circle cx="15" cy="13" r="1" fill="currentColor"/>
-                        <circle cx="18" cy="11" r="1" fill="currentColor"/>
+                    <svg class="project-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="6" width="20" height="12" rx="2" fill="currentColor" fill-opacity="0.2" />
+                        <path d="M6 12h4" />
+                        <path d="M8 10v4" />
+                        <circle cx="15" cy="13" r="1" fill="currentColor" />
+                        <circle cx="18" cy="11" r="1" fill="currentColor" />
                     </svg>
                 </div>
                 <h3>Survive-IT</h3>
@@ -4529,7 +4694,8 @@
         <div class="certifications-container">
             <div class="cert-card">
                 <div class="cert-badge">
-                    <img loading="lazy" decoding="async" src="resources/images/solutions-architect.png" alt="AWS Solutions Architect Associate">
+                    <img loading="lazy" decoding="async" src="resources/images/solutions-architect.png"
+                        alt="AWS Solutions Architect Associate">
                     <div class="cert-badge-overlay">
                         <i class='bx bx-badge-check'></i>
                     </div>
@@ -4551,7 +4717,8 @@
 
             <div class="cert-card">
                 <div class="cert-badge">
-                    <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg"
+                    <img loading="lazy" decoding="async"
+                        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg"
                         alt="KodeKloud Docker Training Certificate">
                     <div class="cert-badge-overlay">
                         <i class='bx bx-badge-check'></i>
@@ -4573,7 +4740,8 @@
 
             <div class="cert-card">
                 <div class="cert-badge">
-                    <img loading="lazy" decoding="async" src="https://images.credly.com/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png"
+                    <img loading="lazy" decoding="async"
+                        src="https://images.credly.com/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png"
                         alt="AWS Cloud Practitioner">
                     <div class="cert-badge-overlay">
                         <i class='bx bx-badge-check'></i>
@@ -4596,7 +4764,8 @@
 
             <div class="cert-card">
                 <div class="cert-badge">
-                    <img loading="lazy" decoding="async" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera.s3.amazonaws.com/media/coursera-logo-square.png"
+                    <img loading="lazy" decoding="async"
+                        src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera.s3.amazonaws.com/media/coursera-logo-square.png"
                         alt="Coursera Certificate">
                     <div class="cert-badge-overlay">
                         <i class='bx bx-badge-check'></i>
@@ -4618,7 +4787,8 @@
 
             <div class="cert-card">
                 <div class="cert-badge">
-                    <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/hackerrank.svg"
+                    <img loading="lazy" decoding="async"
+                        src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/hackerrank.svg"
                         alt="HackerRank Certificate">
                     <div class="cert-badge-overlay">
                         <i class='bx bx-badge-check'></i>
@@ -4933,6 +5103,9 @@
                             <span>Software Engineering</span>
                             <span>AI & Cloud</span>
                         </div>
+                        <p class="main-card-desc">
+                            I'm currently open for new opportunities and exciting projects. Whether you have a specific idea or just want to say hi, let's build something amazing together.
+                        </p>
                         <div class="email-wrapper">
                             <span class="email-address" id="contact-email">fahadpathan56@gmail.com</span>
                             <button type="button" class="btn-copy-email" data-copy-email="fahadpathan56@gmail.com">
@@ -4962,9 +5135,26 @@
                     </div>
                     <div class="email-cta-text">
                         <span>Send me an email</span>
-                        <i class='bx bx-right-arrow-alt'></i>
                     </div>
                 </a>
+
+                <!-- Social Links Card -->
+                <div class="bento-card social-card">
+                    <div class="social-card-header">
+                        <span class="pulse-dot-cool"></span>
+                        <span class="social-card-label">Let's Connect</span>
+                    </div>
+                    <div class="social-icons-row">
+                        <a target="_blank" href="https://github.com/fahadPathan7" class="social-icon-link github"
+                            aria-label="Github">
+                            <i class='bx bxl-github'></i>
+                        </a>
+                        <a target="_blank" href="https://www.linkedin.com/in/fahad-pathan-0126151a0/"
+                            class="social-icon-link linkedin" aria-label="LinkedIn">
+                            <i class='bx bxl-linkedin'></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
         <script>
@@ -4998,55 +5188,6 @@
         </script>
     </section>
 
-    <!-- Social Links Section -->
-    <section class="social">
-        <div class="wrapper">
-            <div class="icon fb">
-                <div class="tooltip">Facebook</div>
-                <span>
-                    <a target="_blank" href="https://www.facebook.com/fahadp005/">
-                        <i class='bx bxl-facebook'></i>
-                    </a>
-                </span>
-            </div>
-
-            <div class="icon instagram">
-                <div class="tooltip">Instagram</div>
-                <span>
-                    <a target="_blank" href="https://www.instagram.com/_fahad_pathan___/">
-                        <i class='bx bxl-instagram'></i>
-                    </a>
-                </span>
-            </div>
-
-            <div class="icon github">
-                <div class="tooltip">Github</div>
-                <span>
-                    <a target="_blank" href="https://github.com/fahadPathan7">
-                        <i class='bx bxl-github'></i>
-                    </a>
-                </span>
-            </div>
-
-            <div class="icon linkedin">
-                <div class="tooltip">LinkedIn</div>
-                <span>
-                    <a target="_blank" href="https://www.linkedin.com/in/fahad-pathan-0126151a0/">
-                        <i class='bx bxl-linkedin'></i>
-                    </a>
-                </span>
-            </div>
-
-            <div class="icon medium">
-                <div class="tooltip">Medium</div>
-                <span>
-                    <a target="_blank" href="https://medium.com/@fahadpathan56">
-                        <i class='bx bxl-medium'></i>
-                    </a>
-                </span>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer Section -->
     <footer class="footer">
