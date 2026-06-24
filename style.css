@@ -379,14 +379,14 @@ h6 {
     margin-bottom: 4rem;
 }
 
-.about .title h1 {
+.about .title h2 {
     font-size: 2.5rem;
     color: var(--text-color);
     position: relative;
     display: inline-block;
 }
 
-.about .title h1::after {
+.about .title h2::after {
     content: '';
     position: absolute;
     bottom: -10px;
@@ -443,7 +443,7 @@ h6 {
     margin-bottom: 1rem;
 }
 
-.skill-section h1 {
+.skill-section h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 4rem;
@@ -534,7 +534,7 @@ h6 {
     background-color: var(--bg-color) !important;
 }
 
-.projects h1 {
+.projects h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 4rem;
@@ -633,7 +633,7 @@ h6 {
     margin-bottom: 1rem;
 }
 
-.programming-section h1 {
+.programming-section h2 {
     font-size: 2.5rem;
     margin-bottom: 4rem;
     color: var(--text-color);
@@ -684,7 +684,7 @@ h6 {
     text-align: center;
 }
 
-.achievements h1 {
+.achievements h2 {
     font-size: 2.5rem;
     margin-bottom: 4rem;
     color: var(--text-color);

@@ -5,7 +5,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fahad's Portfolio</title>
+
+    <!-- Primary SEO Meta Tags -->
+    <title>Fahad Pathan — Software Engineer, AI Researcher & Product Builder</title>
+    <meta name="description" content="Fahad Pathan is a Software Engineer at Brain Station 23, AI researcher, and product builder from Bangladesh. Explore his portfolio, projects, research publications, certifications, and work experience.">
+    <meta name="keywords" content="Fahad Pathan, Fahad, Pathan, software engineer, AI researcher, portfolio, Brain Station 23, SUST, machine learning, deep learning, full stack developer, Bangladesh, product builder">
+    <meta name="author" content="Fahad Pathan">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://fahadpathan7.github.io/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fahadpathan7.github.io/">
+    <meta property="og:title" content="Fahad Pathan — Software Engineer, AI Researcher & Product Builder">
+    <meta property="og:description" content="Fahad Pathan is a Software Engineer at Brain Station 23, AI researcher, and product builder. Explore his portfolio, projects, research publications, and work experience.">
+    <meta property="og:image" content="https://fahadpathan7.github.io/resources/images/portfolio_pic.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Fahad Pathan — Portfolio">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fahad Pathan — Software Engineer, AI Researcher & Product Builder">
+    <meta name="twitter:description" content="Fahad Pathan is a Software Engineer, AI researcher, and product builder from Bangladesh. Explore his portfolio, research, and projects.">
+    <meta name="twitter:image" content="https://fahadpathan7.github.io/resources/images/portfolio_pic.png">
+
+    <!-- Structured Data: Person (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Fahad Pathan",
+        "url": "https://fahadpathan7.github.io/",
+        "image": "https://fahadpathan7.github.io/resources/images/portfolio_pic.png",
+        "jobTitle": "Software Engineer",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Brain Station 23"
+        },
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Shahjalal University of Science and Technology (SUST)"
+        },
+        "knowsAbout": ["Software Engineering", "Artificial Intelligence", "Machine Learning", "Deep Learning", "Cloud Computing", "AWS", "Product Development"],
+        "sameAs": [
+            "https://github.com/fahadPathan7",
+            "https://www.linkedin.com/in/fahad-pathan-0126151a0/"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Dhaka",
+            "addressCountry": "BD"
+        },
+        "email": "fahadpathan56@gmail.com",
+        "description": "Software Engineer at Brain Station 23, AI Researcher, and Product Builder from Bangladesh. Specializes in building scalable technologies combining software engineering, AI research, and product thinking."
+    }
+    </script>
+
+    <!-- Structured Data: Website (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Fahad Pathan Portfolio",
+        "url": "https://fahadpathan7.github.io/",
+        "description": "Personal portfolio of Fahad Pathan — Software Engineer, AI Researcher, and Product Builder",
+        "author": {
+            "@type": "Person",
+            "name": "Fahad Pathan"
+        }
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="resources/images/signature.png">
+    <link rel="apple-touch-icon" href="resources/images/signature.png">
 
     <link rel="preload" href="resources/images/portfolio_pic.png" as="image">
     <!-- Fonts -->
@@ -264,7 +339,7 @@
             text-align: center;
         }
 
-        .about .title h1 {
+        .about .title h2 {
             position: relative;
             display: inline-block;
             margin-bottom: 0.5rem;
@@ -3571,16 +3646,16 @@
         }
 
         /* Global Section Title Beautification */
-        .about .title h1,
-        .skill-section h1,
-        .education h1,
-        .experience h1,
-        .problem-solving h1,
-        .projects h1,
-        .achievements h1,
-        .certifications h1,
-        .research h1,
-        .languages h1 {
+        .about .title h2,
+        .skill-section h2,
+        .education h2,
+        .experience h2,
+        .problem-solving h2,
+        .projects h2,
+        .achievements h2,
+        .certifications h2,
+        .research h2,
+        .languages h2 {
             text-align: center !important;
             font-size: 2.6rem !important;
             font-weight: 800 !important;
@@ -3593,16 +3668,16 @@
             letter-spacing: -0.5px !important;
         }
 
-        .about .title h1::after,
-        .skill-section h1::after,
-        .education h1::after,
-        .experience h1::after,
-        .problem-solving h1::after,
-        .projects h1::after,
-        .achievements h1::after,
-        .certifications h1::after,
-        .research h1::after,
-        .languages h1::after {
+        .about .title h2::after,
+        .skill-section h2::after,
+        .education h2::after,
+        .experience h2::after,
+        .problem-solving h2::after,
+        .projects h2::after,
+        .achievements h2::after,
+        .certifications h2::after,
+        .research h2::after,
+        .languages h2::after {
             content: '' !important;
             position: absolute !important;
             bottom: 0 !important;
@@ -3759,11 +3834,12 @@
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <header>
+    <nav class="navbar" aria-label="Main navigation">
         <div class="navbar-brand">
-            <img src="resources/images/signature.png" alt="Fahad's signature">
+            <img src="resources/images/signature.png" alt="Fahad Pathan's signature logo">
         </div>
-        <button id="menu-toggle" class="menu-btn" aria-label="Menu">
+        <button id="menu-toggle" class="menu-btn" aria-label="Open navigation menu">
             <i class='bx bx-menu-alt-right'></i>
         </button>
         <div id="dropdown-menu" class="dropdown-menu" style="display: none;">
@@ -3783,7 +3859,9 @@
             </ul>
         </div>
     </nav>
+    </header>
 
+    <main>
     <!-- Hero Section -->
     <section id="home" class="home-page">
         <div class="intro">
@@ -3801,30 +3879,30 @@
             </div>
 
             <div class="hero-socials">
-                <a href="https://github.com/fahadPathan7" target="_blank" aria-label="GitHub"><i
+                <a href="https://github.com/fahadPathan7" target="_blank" aria-label="Visit Fahad Pathan's GitHub profile"><i
                         class='bx bxl-github'></i></a>
-                <a href="https://www.linkedin.com/in/fahad-pathan-0126151a0/" target="_blank" aria-label="LinkedIn"><i
+                <a href="https://www.linkedin.com/in/fahad-pathan-0126151a0/" target="_blank" aria-label="Visit Fahad Pathan's LinkedIn profile"><i
                         class='bx bxl-linkedin'></i></a>
-                <a href="https://mail.google.com/mail/?view=cm&to=fahadpathan56@gmail.com&su=Hello+from+your+portfolio" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class='bx bx-envelope'></i></a>
+                <a href="https://mail.google.com/mail/?view=cm&to=fahadpathan56@gmail.com&su=Hello+from+your+portfolio" target="_blank" rel="noopener noreferrer" aria-label="Send email to Fahad Pathan"><i class='bx bx-envelope'></i></a>
             </div>
         </div>
 
         <div class="images">
-            <img class="fahad-img" src="resources/images/portfolio_pic.png" alt="Fahad's image">
+            <img class="fahad-img" src="resources/images/portfolio_pic.png" alt="Fahad Pathan - Software Engineer and AI Researcher">
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
         <div class="title">
-            <h1>About Me</h1>
+            <h2>About Me</h2>
             <p class="subtitle-about">Passionate Engineer & Researcher</p>
         </div>
         <div class="content-section">
             <div class="image-section">
                 <div class="image-wrapper">
                     <img loading="lazy" decoding="async" src="resources/images/about_illustration.png"
-                        alt="Developer Workspace Illustration">
+                        alt="Fahad Pathan's developer workspace illustration">
                     <div class="image-badge">
                         <i class='bx bx-code-alt'></i>
                         <span>Always Learning</span>
@@ -3968,7 +4046,7 @@
     </style>
     <section id="skill-section" class="skill-section">
         <span class="text-gray">What I have learnt so far</span>
-        <h1>Familiar With</h1>
+        <h2>Familiar With</h2>
 
         <div class="box">
             <div class="vertical">
@@ -4211,7 +4289,7 @@
 
     <!-- Education Section -->
     <section id="education" class="education">
-        <h1>Education</h1>
+        <h2>Education</h2>
         <div class="education-container">
             <div class="education-card">
                 <div class="education-header">
@@ -4262,7 +4340,7 @@
 
     <!-- Work Experience Section -->
     <section id="experience" class="experience">
-        <h1>Work Experience</h1>
+        <h2>Work Experience</h2>
 
         <!-- Category Toggle Buttons -->
         <div class="experience-categories">
@@ -4482,7 +4560,7 @@
 
     <!-- Problem Solving Section -->
     <section id="problem-solving" class="problem-solving">
-        <h1>Problem Solving</h1>
+        <h2>Problem Solving</h2>
         <p class="section-description">Solved over 1000 programming problems on various online problem solving
             platforms.</p>
 
@@ -4554,7 +4632,7 @@
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
-        <h1>My Projects</h1>
+        <h2>My Projects</h2>
 
         <div class="projects-container">
             <div class="projects-box">
@@ -4663,7 +4741,7 @@
 
     <!-- Achievements Section -->
     <section id="achievements" class="achievements">
-        <h1>My Achievements</h1>
+        <h2>My Achievements</h2>
 
         <div class="achievements-container">
             <div class="achievements-box">
@@ -4706,7 +4784,7 @@
 
     <!-- Certifications Section -->
     <section id="certifications" class="certifications">
-        <h1>Certifications</h1>
+        <h2>Certifications</h2>
         <div class="certifications-container">
             <div class="cert-card">
                 <div class="cert-badge">
@@ -4827,7 +4905,7 @@
 
     <!-- Research Section -->
     <section id="research" class="research">
-        <h1>Research Experience</h1>
+        <h2>Research Experience</h2>
 
         <!-- Research Profiles Subsection -->
         <div class="research-subsection">
@@ -5051,7 +5129,7 @@
 
     <!-- Languages Section -->
     <section id="languages" class="languages">
-        <h1>Language Proficiency</h1>
+        <h2>Language Proficiency</h2>
         <div class="languages-container">
             <!-- Bengali -->
             <div class="lang-card">
@@ -5205,6 +5283,7 @@
         </script>
     </section>
 
+    </main>
 
     <!-- Footer Section -->
     <footer class="footer">
@@ -5212,6 +5291,7 @@
             <i class='bx bx-time-five'></i>
             Updated: June 2026
         </div>
+        <p style="text-align:center; color:#888; font-size:0.85rem; margin-top:0.5rem;">© 2026 Fahad Pathan. All rights reserved.</p>
     </footer>
 
     <script defer src="app.js"></script>

@@ -1,0 +1,6 @@
+# Robots.txt for fahadpathan7.github.io
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://fahadpathan7.github.io/sitemap.xml
