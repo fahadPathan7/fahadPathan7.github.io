@@ -39,19 +39,21 @@ const observerOptions = {
 const aboutObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      // Animate stat numbers
-      const statCards = entry.target.querySelectorAll('.stat-card');
-      statCards.forEach((card, index) => {
-        setTimeout(() => {
-          // Add entrance animation
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(30px)';
+      // Use requestAnimationFrame to batch DOM changes
+      requestAnimationFrame(() => {
+        // Animate stat numbers
+        const statCards = entry.target.querySelectorAll('.stat-card');
+        statCards.forEach((card, index) => {
           setTimeout(() => {
-            card.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-          }, 100);
-        }, index * 150);
+            // Add entrance animation with transform
+            requestAnimationFrame(() => {
+              card.style.cssText = 'opacity: 0; transform: translateY(30px);';
+              requestAnimationFrame(() => {
+                card.style.cssText = 'opacity: 1; transform: translateY(0); transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);';
+              });
+            });
+          }, index * 150);
+        });
       });
       
       // Only animate once
@@ -67,27 +69,26 @@ document.addEventListener('DOMContentLoaded', () => {
     aboutObserver.observe(aboutSection);
   }
   
-  // Add stagger animation to highlight boxes
-  const highlightBoxes = document.querySelectorAll('.highlight-box');
-  highlightBoxes.forEach((box, index) => {
-    box.style.opacity = '0';
-    box.style.transform = 'translateX(-30px)';
-    setTimeout(() => {
-      box.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
-      box.style.opacity = '1';
-      box.style.transform = 'translateX(0)';
-    }, 300 + (index * 200));
-  });
-  
-  // Add stagger animation to skill tags
-  const skillTags = document.querySelectorAll('.skill-tag');
-  skillTags.forEach((tag, index) => {
-    tag.style.opacity = '0';
-    tag.style.transform = 'scale(0.8)';
-    setTimeout(() => {
-      tag.style.transition = 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
-      tag.style.opacity = '1';
-      tag.style.transform = 'scale(1)';
-    }, 600 + (index * 100));
+  // Batch all animations to prevent layout thrashing
+  requestAnimationFrame(() => {
+    // Add stagger animation to highlight boxes
+    const highlightBoxes = document.querySelectorAll('.highlight-box');
+    highlightBoxes.forEach((box, index) => {
+      setTimeout(() => {
+        requestAnimationFrame(() => {
+          box.style.cssText = 'opacity: 1; transform: translateX(0); transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);';
+        });
+      }, 300 + (index * 200));
+    });
+    
+    // Add stagger animation to skill tags
+    const skillTags = document.querySelectorAll('.skill-tag');
+    skillTags.forEach((tag, index) => {
+      setTimeout(() => {
+        requestAnimationFrame(() => {
+          tag.style.cssText = 'opacity: 1; transform: scale(1); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);';
+        });
+      }, 600 + (index * 100));
+    });
   });
 });

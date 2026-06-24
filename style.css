@@ -25,6 +25,7 @@ body {
     color: var(--text-color);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
 /* Typography */
@@ -60,6 +61,7 @@ h6 {
     z-index: 10000;
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;
+    contain: layout style;
 }
 
 .navbar-brand {
@@ -70,6 +72,7 @@ h6 {
     height: 40px;
     width: auto;
     transition: transform 0.3s ease;
+    content-visibility: auto;
 }
 
 .navbar-brand img:hover {
@@ -129,6 +132,7 @@ h6 {
     background: linear-gradient(135deg, #eef2ff 0%, #faf5ff 40%, #f0f9ff 100%) !important;
     background-size: 200% 200%;
     animation: homeGradientMove 12s ease-in-out infinite alternate;
+    contain: layout style paint;
 }
 
 @keyframes homeGradientMove {
@@ -305,6 +309,7 @@ h6 {
     bottom: 0;
     right: 100px;
     z-index: 1;
+    contain: layout style;
 }
 
 /* Exciting dynamically morphing background blob */
@@ -357,11 +362,17 @@ h6 {
 
 .images img {
     height: 100%;
+    width: auto;
+    max-width: 100%;
     position: absolute;
     left: 50%;
     bottom: 0;
     transform: translate(-50%);
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    will-change: transform;
+    content-visibility: auto;
+    object-fit: contain;
+    aspect-ratio: 1905 / 2782;
 }
 
 .images:hover img {
@@ -416,6 +427,7 @@ h6 {
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    content-visibility: auto;
 }
 
 .about .image-section img:hover {
@@ -433,6 +445,8 @@ h6 {
 .skill-section {
     padding: var(--section-padding);
     background: var(--bg-color);
+    content-visibility: auto;
+    contain-intrinsic-size: auto 1200px;
 }
 
 .skill-section .text-gray {
@@ -518,6 +532,7 @@ h6 {
     height: 36px;
     width: auto;
     object-fit: contain;
+    content-visibility: auto;
 }
 
 .skill-section .vertical-icons p {
@@ -532,6 +547,8 @@ h6 {
 .projects {
     padding: var(--section-padding);
     background-color: var(--bg-color) !important;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 1500px;
 }
 
 .projects h2 {
@@ -682,6 +699,8 @@ h6 {
     padding: var(--section-padding);
     background-color: var(--bg-color);
     text-align: center;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 800px;
 }
 
 .achievements h2 {
@@ -901,19 +920,36 @@ textarea.input {
         align-items: center;
         min-height: 70vh;
         padding: 5rem 1rem 2rem 1rem;
+        flex-direction: column;
     }
 
     .images {
         width: 270px !important;
-        height: 270px !important;
+        height: 370px !important;
         display: block;
         position: static;
         margin: 0 auto;
+        contain: layout style;
+    }
+    
+    .images::before {
+        width: 280px;
+        height: 280px;
     }
 
     .intro {
         padding-right: 0;
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    
+    .intro h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    .intro p {
+        font-size: 0.9rem;
     }
 }
 
