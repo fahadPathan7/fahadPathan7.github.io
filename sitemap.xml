@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://fahadpathan7.github.io/</loc>
     <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <!-- Image Sitemap Extension -->
+    <image:image>
+      <image:loc>https://fahadpathan7.github.io/resources/images/portfolio_pic_com.png</image:loc>
+      <image:title>Fahad Pathan - Software Engineer and AI Researcher</image:title>
+      <image:caption>Fahad Pathan's Portfolio Profile Picture</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://fahadpathan7.github.io/resources/images/about_illustration.png</image:loc>
+      <image:title>Developer Workspace Illustration</image:title>
+    </image:image>
   </url>
 </urlset>

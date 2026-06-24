@@ -19,7 +19,7 @@
     <meta property="og:url" content="https://fahadpathan7.github.io/">
     <meta property="og:title" content="Fahad Pathan — Software Engineer, AI Researcher & Product Builder">
     <meta property="og:description" content="Fahad Pathan is a Software Engineer at Brain Station 23, AI researcher, and product builder. Explore his portfolio, projects, research publications, and work experience.">
-    <meta property="og:image" content="https://fahadpathan7.github.io/resources/images/portfolio_pic.png">
+    <meta property="og:image" content="https://fahadpathan7.github.io/resources/images/portfolio_pic_com.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="Fahad Pathan — Portfolio">
@@ -29,7 +29,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Fahad Pathan — Software Engineer, AI Researcher & Product Builder">
     <meta name="twitter:description" content="Fahad Pathan is a Software Engineer, AI researcher, and product builder from Bangladesh. Explore his portfolio, research, and projects.">
-    <meta name="twitter:image" content="https://fahadpathan7.github.io/resources/images/portfolio_pic.png">
+    <meta name="twitter:image" content="https://fahadpathan7.github.io/resources/images/portfolio_pic_com.png">
 
     <!-- Structured Data: Person (JSON-LD) -->
     <script type="application/ld+json">
@@ -38,7 +38,7 @@
         "@type": "Person",
         "name": "Fahad Pathan",
         "url": "https://fahadpathan7.github.io/",
-        "image": "https://fahadpathan7.github.io/resources/images/portfolio_pic.png",
+        "image": "https://fahadpathan7.github.io/resources/images/portfolio_pic_com.png",
         "jobTitle": "Software Engineer",
         "worksFor": {
             "@type": "Organization",
@@ -82,7 +82,7 @@
     <link rel="icon" type="image/png" href="resources/images/signature.png">
     <link rel="apple-touch-icon" href="resources/images/signature.png">
 
-    <link rel="preload" href="resources/images/portfolio_pic.png" as="image">
+    <link rel="preload" href="resources/images/portfolio_pic_com.png" as="image" fetchpriority="high">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -3888,7 +3888,7 @@
         </div>
 
         <div class="images">
-            <img class="fahad-img" src="resources/images/portfolio_pic.png" alt="Fahad Pathan - Software Engineer and AI Researcher">
+            <img class="fahad-img" src="resources/images/portfolio_pic_com.png" alt="Fahad Pathan - Software Engineer and AI Researcher" fetchpriority="high" loading="eager">
         </div>
     </section>
 
@@ -5266,19 +5266,26 @@
                 }
             });
 
-            // --- Cool Enhancements: Fade-in on Scroll ---
-            function revealOnScroll() {
+            // --- Cool Enhancements: Fade-in on Scroll (Optimized for Performance) ---
+            document.addEventListener('DOMContentLoaded', () => {
                 const revealEls = document.querySelectorAll('section, .projects-box, .cert-card, .research-card, .platform-card, .achievements-box, .education-card, .experience-box');
-                const windowHeight = window.innerHeight;
-                revealEls.forEach(el => {
-                    const top = el.getBoundingClientRect().top;
-                    if (top < windowHeight - 60) {
-                        el.classList.add('visible');
-                    }
+                
+                const revealObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            // Stop observing once visible to save CPU cycles
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    root: null,
+                    rootMargin: '0px 0px -60px 0px',
+                    threshold: 0
                 });
-            }
-            window.addEventListener('scroll', revealOnScroll);
-            window.addEventListener('load', revealOnScroll);
+
+                revealEls.forEach(el => revealObserver.observe(el));
+            });
             // --- End Cool Enhancements ---
         </script>
     </section>
