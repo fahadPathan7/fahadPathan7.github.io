@@ -4872,6 +4872,58 @@ textarea.input {
         .lang-card .ielts-score-item {
             padding: 0.6rem 0.7rem !important;
         }
+        /* Bento Social Buttons */
+        .bento-social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 28px;
+            font-size: 3.5rem;
+            text-decoration: none;
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            z-index: 1;
+        }
+
+        .bento-social-btn.github {
+            color: #24292e;
+        }
+
+        .bento-social-btn.linkedin {
+            color: #0a66c2;
+        }
+
+        .bento-social-btn i {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .bento-social-btn:hover {
+            transform: translateY(-6px);
+        }
+
+        .bento-social-btn.github:hover {
+            background: #24292e;
+            color: #ffffff;
+            box-shadow: 0 16px 32px rgba(36, 41, 46, 0.25);
+            border-color: rgba(36, 41, 46, 0.1);
+        }
+
+        .bento-social-btn.linkedin:hover {
+            background: #0a66c2;
+            color: #ffffff;
+            box-shadow: 0 16px 32px rgba(10, 102, 194, 0.25);
+            border-color: rgba(10, 102, 194, 0.1);
+        }
+
+        .bento-social-btn:hover i {
+            transform: scale(1.15);
+        }
     </style>
 </head>
 
@@ -6277,21 +6329,13 @@ textarea.input {
                 </a>
 
                 <!-- Social Links Card -->
-                <div class="bento-card social-card">
-                    <div class="social-card-header">
-                        <span class="pulse-dot-cool"></span>
-                        <span class="social-card-label">Let's Connect</span>
-                    </div>
-                    <div class="social-icons-row">
-                        <a target="_blank" href="https://github.com/fahadPathan7" class="social-icon-link github"
-                            aria-label="Github">
-                            <i class='bx bxl-github'></i>
-                        </a>
-                        <a target="_blank" href="https://www.linkedin.com/in/fahad-pathan-0126151a0/"
-                            class="social-icon-link linkedin" aria-label="LinkedIn">
-                            <i class='bx bxl-linkedin'></i>
-                        </a>
-                    </div>
+                <div class="social-card" style="padding: 0; background: none; border: none; box-shadow: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+                    <a target="_blank" href="https://github.com/fahadPathan7" class="bento-social-btn github" aria-label="Github">
+                        <i class='bx bxl-github'></i>
+                    </a>
+                    <a target="_blank" href="https://www.linkedin.com/in/fahad-pathan-0126151a0/" class="bento-social-btn linkedin" aria-label="LinkedIn">
+                        <i class='bx bxl-linkedin'></i>
+                    </a>
                 </div>
             </div>
         </div>
