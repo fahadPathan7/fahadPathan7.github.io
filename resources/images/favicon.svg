@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="fp-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#bg-grad)" />
+  
+  <path d="
+    M 44.5 55 h 45 v 18 h -27 v 16 h 17 v 18 h -17 v 38 h -18 v -90 z
+    M 104.5 55 h 25 a 26 26 0 0 1 26 26 a 26 26 0 0 1 -26 26 h -7 v 38 h -18 v -90 z
+    M 122.5 73 h 7 a 8 8 0 0 1 8 8 a 8 8 0 0 1 -8 8 h -7 v -16 z
+  " fill="url(#fp-grad)" fill-rule="evenodd" />
+</svg>

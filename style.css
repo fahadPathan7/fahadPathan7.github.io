@@ -932,7 +932,7 @@ textarea.input {
         margin: 0 auto;
         contain: layout style;
     }
-    
+
     .images::before {
         width: 280px;
         height: 280px;
@@ -943,12 +943,12 @@ textarea.input {
         margin-bottom: 2rem;
         text-align: center;
     }
-    
+
     .intro h1 {
         font-size: 2.5rem;
         line-height: 1.2;
     }
-    
+
     .intro p {
         font-size: 0.9rem;
     }
@@ -1070,4 +1070,96 @@ textarea.input {
 
 .certifications {
     background-color: var(--bg-color) !important;
+}
+
+/* --- Mobile Responsiveness Overrides --- */
+@media (max-width: 768px) {
+    :root {
+        --container-padding: 0 5%;
+        --section-padding: 4rem 0;
+    }
+
+    /* Research Section */
+    .research-profile-card {
+        flex-basis: auto !important;
+    }
+
+    /* Experience Section */
+    .experience-timeline {
+        display: none !important;
+    }
+
+    .header-main .company {
+        justify-content: center !important;
+    }
+
+    /* About Section */
+    .about .image-section {
+        display: none !important;
+    }
+
+    .about .content-section {
+        padding: 1.5rem 5% !important;
+        gap: 1.5rem !important;
+    }
+
+    .about .quick-stats {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 1rem !important;
+    }
+
+    .about .stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .about .stat-card {
+        padding: 1.5rem !important;
+    }
+
+    /* Contact Section */
+    .contact-me {
+        padding: 4rem 1rem !important;
+    }
+
+    .bento-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .main-card,
+    .location-card,
+    .email-cta-card,
+    .social-card {
+        grid-column: 1 / -1 !important;
+        grid-row: auto !important;
+    }
+
+    .main-card {
+        padding: 1.5rem !important;
+        min-height: auto !important;
+    }
+
+    .main-card h3 {
+        font-size: 1.75rem !important;
+    }
+
+    .email-wrapper {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        padding: 1rem !important;
+        gap: 1rem !important;
+    }
+
+    .email-address {
+        word-break: break-all !important;
+        font-size: 1rem !important;
+        text-align: center;
+    }
+
+    .btn-copy-email {
+        width: 100% !important;
+        justify-content: center !important;
+    }
 }
