@@ -303,11 +303,12 @@ h6 {
 }
 
 .images {
-    width: 45%;
-    height: 80%;
+    width: min(32vw, 420px);
+    height: min(66vh, 580px);
+    aspect-ratio: 1905 / 2782;
     position: absolute;
     bottom: 0;
-    right: 100px;
+    right: clamp(2.5rem, 7vw, 10rem);
     z-index: 1;
     contain: layout style;
 }
@@ -316,11 +317,11 @@ h6 {
 .images::before {
     content: '';
     position: absolute;
-    top: 40%;
+    top: 52%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 480px;
-    height: 480px;
+    width: min(145%, 480px);
+    aspect-ratio: 1 / 1;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), #a855f7);
     background-size: 200% 200%;
     border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
@@ -361,9 +362,9 @@ h6 {
 }
 
 .images img {
-    height: 100%;
+    height: 86%;
     width: auto;
-    max-width: 100%;
+    max-width: none;
     position: absolute;
     left: 50%;
     bottom: 0;
@@ -967,17 +968,18 @@ textarea.input {
 
 @media (min-width: 1201px) {
     .images {
-        width: 500px;
-        height: 500px;
+        width: clamp(300px, 27vw, 390px);
+        height: clamp(500px, 64vh, 600px);
         position: absolute;
         bottom: 0;
-        right: 200px;
+        right: clamp(4rem, 9vw, 10rem);
         margin: 0;
     }
 
     .images img {
-        width: 100%;
-        height: 100%;
+        height: 86%;
+        width: auto;
+        max-width: none;
         object-fit: contain;
     }
 
@@ -996,9 +998,10 @@ textarea.input {
 
 @media (max-width: 1200px) and (min-width: 769px) {
     .images {
-        width: 330px !important;
-        height: 330px !important;
+        width: clamp(280px, 30vw, 340px) !important;
+        height: clamp(480px, 56vh, 540px) !important;
         display: block;
+        right: clamp(2rem, 6vw, 4.5rem);
     }
 
     .home-page .intro h1 {
@@ -1025,8 +1028,9 @@ textarea.input {
 
 @media (min-width: 1200px) and (max-width: 1400px) {
     .images {
-        width: 320px !important;
-        height: 320px !important;
+        width: clamp(300px, 26vw, 360px) !important;
+        height: clamp(500px, 58vh, 560px) !important;
+        right: clamp(2.5rem, 7vw, 5.5rem);
     }
 
     .home-page .intro h1 {
