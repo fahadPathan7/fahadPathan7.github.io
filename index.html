@@ -2235,24 +2235,12 @@ textarea.input {
             margin-bottom: 0;
         }
 
-        .research-subsection h2 {
+        .research-subsection > h3 {
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 2.25rem;
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
             color: var(--text-color);
-            position: relative;
-        }
-
-        .research-subsection h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            border-radius: 3px;
+            font-weight: 700;
         }
 
         .research-profiles {
@@ -2386,9 +2374,9 @@ textarea.input {
                 margin-bottom: 3rem;
             }
 
-            .research-subsection h2 {
-                font-size: 1.8rem;
-                margin-bottom: 2rem;
+            .research-subsection > h3 {
+                font-size: 1.4rem;
+                margin-bottom: 1.5rem;
             }
 
             .research h1 {
@@ -2418,23 +2406,21 @@ textarea.input {
         .research-profile-card {
             position: relative;
             background: #ffffff;
-            padding: 1.35rem 1.8rem;
-            border-radius: 24px;
+            padding: 1.25rem 1.5rem;
+            border-radius: 20px;
             border: 1px solid rgba(0, 0, 0, 0.04);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            text-align: left;
             text-decoration: none;
             flex: 1;
-            flex-basis: 370px;
-            max-width: 390px;
-            min-height: 166px;
+            flex-basis: 340px;
+            max-width: 450px;
             cursor: pointer;
-            transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+            transition: all 0.3s ease;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
-            justify-content: space-between;
-            gap: 0.55rem;
+            gap: 1.25rem;
             isolation: isolate;
         }
 
@@ -2445,7 +2431,7 @@ textarea.input {
             border-radius: inherit;
             background: rgba(99, 102, 241, 0.03);
             opacity: 0;
-            transition: opacity 0.22s ease;
+            transition: opacity 0.3s ease;
             pointer-events: none;
             z-index: 0;
         }
@@ -2457,9 +2443,9 @@ textarea.input {
 
         .research-profile-card:hover,
         .research-profile-card:focus-visible {
-            transform: translateY(-6px);
+            transform: translateY(-4px);
             border-color: rgba(99, 102, 241, 0.1);
-            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
             outline: none;
         }
 
@@ -2476,76 +2462,71 @@ textarea.input {
         .research-profile-icon {
             width: 48px;
             height: 48px;
-            border-radius: 16px;
-            display: inline-flex;
+            flex-shrink: 0;
+            border-radius: 14px;
+            display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(99, 102, 241, 0.12);
-            box-shadow: 0 8px 18px rgba(99, 102, 241, 0.1);
-            transition: transform 0.22s ease;
+            background: rgba(99, 102, 241, 0.1);
+            transition: transform 0.3s ease;
         }
 
-        .research-profile-card:hover .research-profile-icon,
-        .research-profile-card:focus-visible .research-profile-icon {
-            transform: scale(1.05);
+        .research-profile-card:hover .research-profile-icon {
+            transform: scale(1.05) rotate(3deg);
         }
 
         .research-profile-icon i {
-            font-size: 1.9rem;
+            font-size: 1.8rem;
             color: var(--primary-color);
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
-        .research-profile-card h3 {
-            color: var(--text-color);
-            font-size: 1.32rem;
-            margin: 0;
+        .research-profile-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
         }
 
-        .research-profile-card p {
+        .research-profile-info h4 {
             color: var(--text-color);
-            opacity: 0.8;
+            font-size: 1.15rem;
             margin: 0;
-            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .research-profile-info p {
+            color: var(--text-color);
+            opacity: 0.7;
+            margin: 0;
+            font-size: 0.85rem;
         }
 
         .research-profile-action {
-            display: inline-flex;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(99, 102, 241, 0.08);
+            color: var(--primary-color);
+            display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.45rem;
-            min-height: 40px;
-            width: 100%;
-            margin-top: 0.1rem;
-            padding: 0.6rem 1rem;
-            border-radius: 12px;
-            color: #fff;
-            background: #6366f1;
-            font-size: 0.88rem;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-            box-shadow: none;
+            flex-shrink: 0;
             transition: all 0.3s ease;
         }
 
         .research-profile-action i {
-            font-size: 1.05rem;
-            line-height: 1;
-            transition: transform 0.22s ease;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
         }
 
-        .research-profile-card:hover .research-profile-action,
-        .research-profile-card:focus-visible .research-profile-action {
-            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.25);
-            background: #4f46e5;
+        .research-profile-card:hover .research-profile-action {
+            background: var(--primary-color);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
         }
 
-        .research-profile-card:hover .research-profile-action i,
-        .research-profile-card:focus-visible .research-profile-action i {
-            transform: translateX(3px);
+        .research-profile-card:hover .research-profile-action i {
+            transform: translateX(2px);
         }
 
         .research-container {
@@ -6004,18 +5985,19 @@ textarea.input {
 
         <!-- Research Profiles Subsection -->
         <div class="research-subsection">
-            <h2>Research Profiles</h2>
+            <h3>Research Profiles</h3>
             <div class="research-profiles">
                 <a href="https://scholar.google.com/citations?user=ADx2f10AAAAJ&hl=en" target="_blank"
                     rel="noopener noreferrer" class="research-profile-card" aria-label="Open Google Scholar profile">
                     <span class="research-profile-icon">
                         <i class='bx bxs-graduation'></i>
                     </span>
-                    <h3>Google Scholar</h3>
-                    <p>View my publications and citations</p>
+                    <div class="research-profile-info">
+                        <h4>Google Scholar</h4>
+                        <p>View my publications and citations</p>
+                    </div>
                     <span class="research-profile-action">
-                        View profile
-                        <i class='bx bx-link-external'></i>
+                        <i class='bx bx-right-arrow-alt'></i>
                     </span>
                 </a>
                 <a href="https://www.researchgate.net/profile/Fahad-Pathan?ev=prf_overview" target="_blank"
@@ -6023,11 +6005,12 @@ textarea.input {
                     <span class="research-profile-icon">
                         <i class='bx bx-book research-icon'></i>
                     </span>
-                    <h3>ResearchGate</h3>
-                    <p>Follow my research activities</p>
+                    <div class="research-profile-info">
+                        <h4>ResearchGate</h4>
+                        <p>Follow my research activities</p>
+                    </div>
                     <span class="research-profile-action">
-                        View profile
-                        <i class='bx bx-link-external'></i>
+                        <i class='bx bx-right-arrow-alt'></i>
                     </span>
                 </a>
             </div>
@@ -6035,7 +6018,7 @@ textarea.input {
 
         <!-- Research Publications Subsection -->
         <div class="research-subsection">
-            <h2>Research Publications</h2>
+            <h3>Research Publications</h3>
 
             <!-- Category Toggle Buttons -->
             <div class="research-categories">
