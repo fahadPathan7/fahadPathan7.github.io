@@ -1,19 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Fahad Pathan">
   <defs>
-    <linearGradient id="fp-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38bdf8" />
-      <stop offset="100%" stop-color="#2563eb" />
+    <!-- Brand gradient: indigo -> violet -> cyan (matches the design system) -->
+    <linearGradient id="fp-tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="52%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#06b6d4" />
     </linearGradient>
-    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0f172a" />
-      <stop offset="100%" stop-color="#1e293b" />
+    <!-- Top-down gloss for a subtle 3D pop -->
+    <linearGradient id="fp-sheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.42" />
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0" />
     </linearGradient>
+    <!-- Soft halo around the monogram -->
+    <filter id="fp-glow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="2.6" result="b" />
+      <feMerge>
+        <feMergeNode in="b" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
   </defs>
-  <rect width="200" height="200" rx="40" fill="url(#bg-grad)" />
-  
-  <path d="
-    M 44.5 55 h 45 v 18 h -27 v 16 h 17 v 18 h -17 v 38 h -18 v -90 z
-    M 104.5 55 h 25 a 26 26 0 0 1 26 26 a 26 26 0 0 1 -26 26 h -7 v 38 h -18 v -90 z
-    M 122.5 73 h 7 a 8 8 0 0 1 8 8 a 8 8 0 0 1 -8 8 h -7 v -16 z
-  " fill="url(#fp-grad)" fill-rule="evenodd" />
+
+  <rect width="200" height="200" rx="46" fill="url(#fp-tile)" />
+  <rect width="200" height="200" rx="46" fill="url(#fp-sheen)" />
+
+  <g filter="url(#fp-glow)" fill="#ffffff" fill-rule="evenodd">
+    <path d="M 44.5 55 h 45 v 18 h -27 v 16 h 17 v 18 h -17 v 38 h -18 v -90 z M 104.5 55 h 25 a 26 26 0 0 1 26 26 a 26 26 0 0 1 -26 26 h -7 v 38 h -18 v -90 z M 122.5 73 h 7 a 8 8 0 0 1 8 8 a 8 8 0 0 1 -8 8 h -7 v -16 z" />
+  </g>
 </svg>
