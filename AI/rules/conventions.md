@@ -79,28 +79,31 @@
 6. Media queries
 7. Utility classes
 
-### CSS Variables
+### Design System & Theme
+
+#### Colors (from style.css)
 ```css
 :root {
-  /* Colors */
-  --primary-color: #3498db;
-  --secondary-color: #2ecc71;
-  --text-color: #333;
-  --background-color: #fff;
-
-  /* Spacing */
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 48px;
-
-  /* Typography */
-  --font-size-base: 16px;
-  --font-size-lg: 18px;
-  --font-size-xl: 24px;
-  --font-size-xxl: 32px;
+  /* Brand Colors */
+  --primary-color: #6366f1;    /* Indigo */
+  --secondary-color: #8b5cf6;  /* Violet */
+  --accent-color: #06b6d4;     /* Cyan */
+  
+  /* Neutral Colors */
+  --text-color: #1e293b;       /* Slate 800 */
+  --bg-color: #fafbff;         /* Very Light Blue/Gray */
+  --surface-color: #f1f5f9;    /* Slate 100 */
+  --muted-color: #94a3b8;      /* Slate 400 */
 }
 ```
+
+#### Typography
+- **Headings (h1-h6)**: `'Space Grotesk', sans-serif`
+- **Body Text**: `'Inter', sans-serif`
+
+### Layout & Spacing
+- **Container Padding**: `0 8%`
+- **Section Padding**: `8% 0`
 
 ### Naming Conventions
 - Use kebab-case for class names: `.skill-card`, `.nav-link`
@@ -154,25 +157,30 @@ margin: 10px 20px 30px 40px; /* Use if all different */
 }
 ```
 
-### Responsive Design
+### Responsive Design Breakpoints
+We primarily use a desktop-first or mobile-first approach, adhering to these common max-width/min-width breakpoints:
+
 ```css
-/* Mobile First */
-.element {
-  width: 100%;
+/* Standard Desktop-down breakpoints */
+@media (max-width: 1200px) {
+  /* Large Tablets / Small Desktops */
 }
 
-/* Tablet */
-@media (min-width: 768px) {
-  .element {
-    width: 50%;
-  }
+@media (max-width: 992px) {
+  /* Tablets */
 }
 
-/* Desktop */
-@media (min-width: 1024px) {
-  .element {
-    width: 33.33%;
-  }
+@media (max-width: 768px) {
+  /* Large Mobile Devices */
+}
+
+@media (max-width: 576px) {
+  /* Small Mobile Devices */
+}
+
+/* For specific ranges or large screens */
+@media (min-width: 1201px) {
+  /* Large Desktops */
 }
 ```
 

@@ -22,6 +22,13 @@ Key sections:
 
 ---
 
+### 🤖 [AGENTS.md](../AGENTS.md)
+**Global AI Configuration**
+
+This file lives in the root directory and serves as the universal entry point for all AI agents (like Antigravity, Cursor, GitHub Copilot). It explicitly points agents to read this `AI/` directory to ensure they always adhere to the specific guidelines, design systems, color choices, and responsive breakpoints when working on the codebase.
+
+---
+
 ### 📝 [rules/conventions.md](rules/conventions.md)
 **Coding conventions and style guidelines**
 
