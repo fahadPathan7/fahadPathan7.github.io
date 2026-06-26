@@ -10,7 +10,7 @@ Personal portfolio site for **Fahad Pathan** (Software Engineer / AI researcher)
 - **Do not run git commands.** No commit, push, merge, rebase, branch. Don’t edit `.gitignore`/`.gitattributes`. Leave version control to the user.
 - **Don’t delete or rename files** without explicit instruction. Keep changes reversible.
 - **Make minimal, focused changes.** Don’t modify existing content (text, links, images, stats) unless asked. Match the surrounding code’s style.
-- **Analytics: Google Analytics (gtag.js) is the ONE approved exception.** Its external loader sits in `<head>` and its init/config lives in `app.js` (never inline — see [Known gotchas](#known-gotchas-learned-the-hard-way)). **No other analytics or visitor tracking** — no Meta/Facebook Pixel, Hotjar/Clarity, Sentry, or any other script that monitors visitors. **No new external libraries/CDNs** beyond the approved ones (Google Fonts, Boxicons, devicon on jsdelivr, Google Analytics via `googletagmanager.com` — see [Tech stack & deployment](#tech-stack--deployment)). If a task seems to need a new dependency, ask first or build it with the existing vanilla CSS/JS.
+- **Analytics: Google Analytics (gtag.js) is the ONE approved exception.** It's **lazy-loaded from `app.js`** after first paint — no GA tag in `<head>`, and never inline (see [Known gotchas](#known-gotchas-learned-the-hard-way)). **No other analytics or visitor tracking** — no Meta/Facebook Pixel, Hotjar/Clarity, Sentry, or any other script that monitors visitors. **No new external libraries/CDNs** beyond the approved ones (Google Fonts, Boxicons, devicon on jsdelivr, Google Analytics via `googletagmanager.com` — see [Tech stack & deployment](#tech-stack--deployment)). If a task seems to need a new dependency, ask first or build it with the existing vanilla CSS/JS.
 - **Ask first** for major design changes, new sections, or anything ambiguous.
 
 ## Tech stack & deployment
@@ -22,7 +22,7 @@ Personal portfolio site for **Fahad Pathan** (Software Engineer / AI researcher)
 | Deploy | Push to `main` — Pages builds automatically. No build step. |
 | Fonts | Google Fonts — `Inter` (body), `Space Grotesk` (headings) |
 | Icons | Boxicons (`unpkg.com/boxicons`) for UI icons; tech logos via `cdn.jsdelivr.net/gh/devicons/devicon@latest` |
-| Analytics | Google Analytics (gtag.js) — the approved exception. External loader in `<head>`, config in `app.js`. No other trackers. |
+| Analytics | Google Analytics (gtag.js) — the approved exception. Lazy-loaded from `app.js` after first paint (nothing in `<head>`). No other trackers. |
 
 ## Architecture — one source of truth per layer
 
@@ -32,7 +32,7 @@ This was recently consolidated. **Do not regress it:**
 - **`style.css`** — **the single stylesheet** (~5,000 lines). Linked once in `<head>`. Organized as: base/variables → components → section styles → media queries.
 - **`app.js`** — **the single script** (`defer`’d, wraps init in `DOMContentLoaded`). All interactivity lives here.
 
-> ⚠️ **No inline `<style>` blocks and no inline `<script>`/`onclick` in `index.html`.** Both previously caused stale-duplication bugs. Edit `style.css` / `app.js` instead. Wire DOM hooks with `data-*` attributes + `addEventListener`, not inline handlers. (Google Analytics follows this: only the external `<script src>` loader is in `<head>`; its config lives in `app.js` — never inline.)
+> ⚠️ **No inline `<style>` blocks and no inline `<script>`/`onclick` in `index.html`.** Both previously caused stale-duplication bugs. Edit `style.css` / `app.js` instead. Wire DOM hooks with `data-*` attributes + `addEventListener`, not inline handlers. (Google Analytics follows this: it's lazy-loaded from `app.js`, with no GA tag in `<head>` at all — never inline.)
 
 ### Page sections (in order)
 

@@ -121,7 +121,7 @@
 - ❌ Add build tools or frameworks (React, Vue, etc.) unless requested
 - ❌ Create new directories without user approval
 - ❌ Modify existing content without explicit instruction
-- ❌ Add analytics or tracking code **other than the approved Google Analytics (gtag.js)** — external loader in `<head>`, config in `app.js`. No other trackers.
+- ❌ Add analytics or tracking code **other than the approved Google Analytics (gtag.js)** — lazy-loaded from `app.js` after first paint. No other trackers.
 - ❌ Change the overall design system without consultation
 - ❌ Remove existing features or sections
 

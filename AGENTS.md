@@ -18,7 +18,7 @@ Welcome! You are assisting with the development of Fahad Pathan's personal portf
 
 3. **Tech Stack**:
    - **NO Frameworks**: This project uses purely HTML5, Vanilla CSS, and Vanilla JavaScript. Do not introduce frameworks like React, Vue, Tailwind, or Bootstrap unless explicitly told to.
-   - **Analytics**: Google Analytics (gtag.js) is the ONE approved analytics/tracking exception. Its external loader is in `<head>` of `index.html` and its config lives in `app.js` (no inline scripts). Do not add any other analytics or tracking.
+   - **Analytics**: Google Analytics (gtag.js) is the ONE approved analytics/tracking exception. It is **lazy-loaded from `app.js`** after first paint (no GA tag in `<head>`, no inline scripts) so it never blocks initial render. Do not add any other analytics or tracking.
    
 4. **Behavioral Guidelines**:
    - Make minimal, focused changes.

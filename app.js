@@ -3,13 +3,34 @@
 // Loaded with `defer`, so the DOM is fully parsed before this runs.
 // ============================================================
 
-// Google Analytics (gtag.js) — the ONE approved analytics exception (see CLAUDE.md).
-// The external loader tag lives in <head> of index.html; this init/config stays in JS
-// to honor the "no inline <script> in index.html" rule. Runs as soon as app.js executes.
-window.dataLayer = window.dataLayer || [];
-function gtag() { window.dataLayer.push(arguments); }
-gtag('js', new Date());
-gtag('config', 'G-8CN2080BH5');
+/* ---- Google Analytics (gtag.js) — lazy-loaded, never blocks first paint ----
+   The ONE approved analytics exception (see CLAUDE.md). Tracking is unchanged;
+   the gtag.js script + its config just load after the page is interactive
+   (on idle callback, or the first user interaction — whichever fires first). This
+   keeps the ~155 KB script and its long main-thread tasks off the critical path,
+   which is the single biggest mobile Performance win. No GA tag lives in index.html. */
+const GA_ID = 'G-8CN2080BH5';
+let gaLoaded = false;
+function loadGA() {
+    if (gaLoaded) return;
+    gaLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', GA_ID);
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+}
+const onIdle = window.requestIdleCallback
+    ? (cb) => window.requestIdleCallback(cb, { timeout: 3000 })
+    : (cb) => setTimeout(cb, 2000);
+if (document.readyState === 'complete') onIdle(loadGA);
+else window.addEventListener('load', () => onIdle(loadGA));
+['scroll', 'keydown', 'touchstart', 'pointerdown'].forEach((evt) =>
+    window.addEventListener(evt, loadGA, { once: true, passive: true })
+);
 
 document.addEventListener('DOMContentLoaded', () => {
     /* ---- Mobile navigation menu ---- */
