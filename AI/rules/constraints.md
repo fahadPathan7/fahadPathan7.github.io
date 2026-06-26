@@ -95,7 +95,7 @@
 
 1. **No External Dependencies**
    - Do not add npm packages or build tools unless explicitly requested
-   - Use CDN links only for trusted libraries (e.g., FontAwesome, Google Fonts)
+   - Use CDN links only for trusted libraries (e.g., FontAwesome, Google Fonts, Boxicons, devicon via jsdelivr); Google Analytics (gtag.js) is the one approved tracking exception
    - Keep the project as a simple static site
 
 2. **Contact Information**
@@ -121,7 +121,7 @@
 - ❌ Add build tools or frameworks (React, Vue, etc.) unless requested
 - ❌ Create new directories without user approval
 - ❌ Modify existing content without explicit instruction
-- ❌ Add analytics or tracking code
+- ❌ Add analytics or tracking code **other than the approved Google Analytics (gtag.js)** — external loader in `<head>`, config in `app.js`. No other trackers.
 - ❌ Change the overall design system without consultation
 - ❌ Remove existing features or sections
 
