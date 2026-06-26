@@ -4395,20 +4395,32 @@ textarea.input {
 
         /* Footer Styles */
         .footer {
-            padding: 2rem 1rem;
+            position: relative;
+            padding: 2.75rem 1rem 2.25rem;
             background: var(--surface-color);
             text-align: center;
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        /* On-brand gradient hairline separating the footer from the page. */
+        .footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
         }
 
         .last-updated {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            padding: 0.5rem 1.1rem;
+            background: #ffffff;
+            border: 1px solid rgba(99, 102, 241, 0.14);
+            border-radius: 999px;
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.10);
             color: var(--text-color);
             font-size: 0.9rem;
             font-family: var(--font-secondary);
@@ -4419,13 +4431,25 @@ textarea.input {
             font-size: 1.1rem;
         }
 
+        .footer-copyright {
+            margin: 0.9rem 0 0;
+            color: var(--muted-color);
+            font-size: 0.85rem;
+            font-family: var(--font-secondary);
+            text-align: center;
+        }
+
         @media (max-width: 768px) {
             .footer {
-                padding: 1.5rem 1rem;
+                padding: 2rem 1rem 1.75rem;
             }
 
             .last-updated {
                 font-size: 0.85rem;
+            }
+
+            .footer-copyright {
+                font-size: 0.8rem;
             }
         }
 
