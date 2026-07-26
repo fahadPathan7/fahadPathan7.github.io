@@ -87,7 +87,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelectorAll('.' + contentClass).forEach((c) => c.classList.remove('active'));
                 document.querySelectorAll('.' + btnClass).forEach((b) => b.classList.remove('active'));
                 const target = document.getElementById(categoryId);
-                if (target) target.classList.add('active');
+                if (target) {
+                    target.classList.add('active');
+                    // Instantly reveal all cards inside activated tab to prevent scroll/opacity delays
+                    target.querySelectorAll('.research-card, .experience-box, .cert-card, .projects-box').forEach((el) => {
+                        el.classList.add('visible');
+                    });
+                }
                 btn.classList.add('active');
             });
         });
@@ -95,8 +101,13 @@ document.addEventListener('DOMContentLoaded', () => {
     setupTabs('research-category-btn', 'research-category-content');
     setupTabs('experience-category-btn', 'experience-category-content');
 
+    // Ensure all active tab elements are marked visible on page load
+    document.querySelectorAll('.research-category-content.active .research-card, .experience-category-content.active .experience-box').forEach((el) => {
+        el.classList.add('visible');
+    });
+
     /* ---- About-section stat-card entrance animation (on scroll) ---- */
-    const observerOptions = { threshold: 0.3, rootMargin: '0px' };
+    const observerOptions = { threshold: 0.15, rootMargin: '0px 0px 50px 0px' };
     const aboutObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -142,6 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 observer.unobserve(entry.target); // animate once, then stop watching
             }
         });
-    }, { root: null, rootMargin: '0px 0px -60px 0px', threshold: 0 });
+    }, { root: null, rootMargin: '0px 0px 50px 0px', threshold: 0 });
     revealEls.forEach((el) => revealObserver.observe(el));
 });
