@@ -620,6 +620,37 @@ h6 {
     background: #4f46e5;
 }
 
+.projects-box .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+}
+
+.projects-box .project-links .btn {
+    flex: 1 1 0;
+    width: auto;
+    min-width: 8rem;
+}
+
+.projects-box .btn-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid rgba(99, 102, 241, 0.35);
+}
+
+/* the shared .btn shimmer overlay only covers the left 75% of the button,
+   which is invisible on the solid buttons but shows as a hard edge here */
+.projects-box .btn-secondary::before {
+    display: none;
+}
+
+.projects-box .btn-secondary:hover {
+    background: #eef2ff;
+    color: #4f46e5;
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.15);
+}
+
 .projects-box .tech-stack {
     display: flex;
     flex-wrap: wrap;
@@ -3582,6 +3613,14 @@ textarea.input {
             color: #e2e8f0;
         }
 
+        .phone-wrapper {
+            margin-top: 0.75rem;
+        }
+
+        .phone-wrapper .btn-copy-email {
+            text-decoration: none;
+        }
+
         .btn-copy-email {
             background: #ffffff;
             color: #0f172a;
@@ -4115,6 +4154,12 @@ textarea.input {
         .education-title p {
             color: var(--primary-color);
             font-weight: 500;
+        }
+
+        .education-title .education-institution {
+            color: var(--text-color);
+            opacity: 0.75;
+            margin-top: 0.35rem;
         }
 
         .education-details {
@@ -5179,6 +5224,10 @@ textarea.input {
                 border: 1px solid rgba(255, 255, 255, 0.15) !important;
                 width: 100% !important;
                 box-sizing: border-box !important;
+            }
+
+            .phone-wrapper {
+                margin-top: 0.85rem !important;
             }
 
             .email-address {
