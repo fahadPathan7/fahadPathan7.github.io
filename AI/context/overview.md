@@ -39,7 +39,6 @@ This is a **personal portfolio website** for Fahad Pathan, hosted at `fahadpatha
     │   ├── codechef.jpg
     │   ├── codeforces.png
     │   ├── leetcode.png
-    │   ├── stopstalk.png
     │   ├── github.png
     │   ├── [technology icons].png
     │   └── [contact icons].png
@@ -74,7 +73,7 @@ This is a **personal portfolio website** for Fahad Pathan, hosted at `fahadpatha
 - Visual representation with icons
 
 ### 4. Competitive Programming
-- Platform profiles (CodeChef, Codeforces, LeetCode, StopStalk)
+- Platform profiles (CodeChef, Codeforces, LeetCode)
 - Statistics and achievements
 - Direct links to profiles
 - Badges and rankings
@@ -154,7 +153,6 @@ This is a **personal portfolio website** for Fahad Pathan, hosted at `fahadpatha
 - CodeChef: [Username/ID]
 - Codeforces: [Username/ID]
 - LeetCode: [Username/ID]
-- StopStalk: [Username/ID]
 
 ### Work Experience
 - BS23: Software Engineer/Developer

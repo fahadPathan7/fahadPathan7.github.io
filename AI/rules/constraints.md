@@ -53,7 +53,7 @@
    - Keep icons matched to correct technologies
 
 3. **Competitive Programming**
-   - Maintain accurate platform links (CodeChef, Codeforces, LeetCode, StopStalk)
+   - Maintain accurate platform links (CodeChef, Codeforces, LeetCode)
    - Ensure usernames/IDs are correct
    - Update statistics only if provided by user
    - Keep badge/achievement images properly linked
