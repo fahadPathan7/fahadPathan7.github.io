@@ -27,7 +27,9 @@
     <meta property="og:title" content="Fahad Pathan — Software Engineer, AI Researcher & Product Builder">
     <meta property="og:description"
         content="Fahad Pathan is a Software Engineer, AI researcher, and product builder based in Turku, Finland. Explore his portfolio, projects, research publications, and work experience.">
-    <meta property="og:image" content="https://fahadpathan7.github.io/resources/images/portfolio_pic_com.webp">
+    <meta property="og:image" content="https://fahadpathan7.github.io/resources/images/og_card.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:alt" content="Fahad Pathan — Software Engineer, AI Researcher & Product Builder">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="Fahad Pathan — Portfolio">
@@ -38,7 +40,8 @@
     <meta name="twitter:title" content="Fahad Pathan — Software Engineer, AI Researcher & Product Builder">
     <meta name="twitter:description"
         content="Fahad Pathan is a Software Engineer, AI researcher, and product builder based in Turku, Finland. Explore his portfolio, research, and projects.">
-    <meta name="twitter:image" content="https://fahadpathan7.github.io/resources/images/portfolio_pic_com.webp">
+    <meta name="twitter:image" content="https://fahadpathan7.github.io/resources/images/og_card.jpg">
+    <meta name="twitter:image:alt" content="Fahad Pathan — Software Engineer, AI Researcher & Product Builder">
 
     <!-- Structured Data: Person (JSON-LD) -->
     <script type="application/ld+json">
@@ -94,7 +97,7 @@
     <link rel="preload" href="resources/images/favicon.svg" as="image" fetchpriority="high">
 
     <link rel="preload" as="image" href="resources/images/portfolio_pic_com_mobile.webp"
-        imagesrcset="resources/images/portfolio_pic_com_mobile.webp 500w, resources/images/portfolio_pic_com.webp 1900w"
+        imagesrcset="resources/images/portfolio_pic_com_mobile.webp 500w, resources/images/portfolio_pic_com_1000.webp 1000w, resources/images/portfolio_pic_com.webp 1900w"
         imagesizes="(max-width: 600px) 500px, 450px" fetchpriority="high">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -120,6 +123,8 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <!-- Navigation -->
     <header>
         <nav class="navbar" aria-label="Main navigation">
@@ -149,7 +154,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
         <!-- Hero Section -->
         <section id="home" class="home-page">
             <div class="intro">
@@ -157,21 +162,21 @@
                     <i class='bx bx-code-alt'></i> Welcome to my portfolio
                 </div>
                 <h1>Hi, I am<br><span>Fahad Pathan</span></h1>
-                <h2 class="hero-subtitle">Building Intelligent Products for a Smarter Future</h2>
+                <p class="hero-subtitle">Building Intelligent Products for a Smarter Future</p>
                 <p>I combine software engineering, AI research, and product thinking to build scalable technologies that
                     transform ideas into real-world impact.</p>
 
                 <div class="hero-actions">
-                    <a target="_blank"
+                    <a target="_blank" rel="noopener noreferrer"
                         href="https://drive.google.com/file/d/1mJ211MHSj7qwM-tjpfVy3wBa4tgpLH6T/view?usp=sharing"
                         class="cta-button">Download Resume</a>
                     <a href="#contact-me" class="btn-outline">Let's Connect</a>
                 </div>
 
                 <div class="hero-socials">
-                    <a href="https://github.com/fahadPathan7" target="_blank"
+                    <a href="https://github.com/fahadPathan7" target="_blank" rel="noopener noreferrer"
                         aria-label="Visit Fahad Pathan's GitHub profile"><i class='bx bxl-github'></i></a>
-                    <a href="https://www.linkedin.com/in/fahadpathan/" target="_blank"
+                    <a href="https://www.linkedin.com/in/fahadpathan/" target="_blank" rel="noopener noreferrer"
                         aria-label="Visit Fahad Pathan's LinkedIn profile"><i class='bx bxl-linkedin'></i></a>
                     <a href="https://mail.google.com/mail/?view=cm&to=fahadpathan56@gmail.com&su=Hello+from+your+portfolio"
                         target="_blank" rel="noopener noreferrer" aria-label="Send email to Fahad Pathan"><i
@@ -181,7 +186,7 @@
 
             <div class="images">
                 <img class="fahad-img" src="resources/images/portfolio_pic_com.webp"
-                    srcset="resources/images/portfolio_pic_com_mobile.webp 500w, resources/images/portfolio_pic_com.webp 1900w"
+                    srcset="resources/images/portfolio_pic_com_mobile.webp 500w, resources/images/portfolio_pic_com_1000.webp 1000w, resources/images/portfolio_pic_com.webp 1900w"
                     sizes="(max-width: 600px) 500px, 450px" alt="Fahad Pathan - Software Engineer and AI Researcher"
                     fetchpriority="high" loading="eager" width="1905" height="2782">
             </div>
@@ -195,16 +200,17 @@
             </div>
             <div class="content-section">
                 <div class="image-section">
-                    <div class="image-wrapper">
-                        <img loading="lazy" decoding="async" src="resources/images/about_illustration.webp"
-                            srcset="resources/images/about_illustration_mobile.webp 500w, resources/images/about_illustration.webp 1024w"
-                            sizes="(max-width: 600px) 500px, 1024px"
-                            alt="Fahad Pathan's developer workspace illustration" width="1024" height="1024">
-                        <div class="image-badge">
-                            <i class='bx bx-code-alt'></i>
-                            <span>Always Learning</span>
+                    <figure class="code-card" data-typing role="img"
+                        aria-label="Code snippet describing Fahad: a Software Engineer based in Turku, Finland, studying EDISS, building AI agents, RAG and distributed systems on AWS and Azure.">
+                        <div class="code-window">
+                            <div class="code-titlebar" aria-hidden="true">
+                                <span class="code-dots"><i></i><i></i><i></i></span>
+                                <span class="code-filename">about.ts</span>
+                                <span class="code-status"><span class="code-pulse"></span>Always Learning</span>
+                            </div>
+                            <pre class="code-body" aria-hidden="true"><code><span class="code-line"><span class="tk-k">const</span> <span class="tk-v">fahad</span> = {</span><span class="code-line">  <span class="tk-p">role</span>: <span class="tk-s">"Software Engineer"</span>,</span><span class="code-line">  <span class="tk-p">based</span>: <span class="tk-s">"Turku, Finland"</span>,</span><span class="code-line">  <span class="tk-p">studying</span>: <span class="tk-s">"EDISS"</span>,</span><span class="code-line">  <span class="tk-p">building</span>: [</span><span class="code-line">    <span class="tk-s">"AI agents"</span>, <span class="tk-s">"RAG"</span>,</span><span class="code-line">    <span class="tk-s">"distributed systems"</span>,</span><span class="code-line">  ],</span><span class="code-line">  <span class="tk-p">cloud</span>: [<span class="tk-s">"AWS"</span>, <span class="tk-s">"Azure"</span>],</span><span class="code-line">};</span><span class="code-line"> </span><span class="code-line"><span class="tk-v">fahad</span>.<span class="tk-f">ship</span>(<span class="tk-v">idea</span>);</span><span class="code-row"><span class="code-line"><span class="tk-c">// =&gt; practical, scalable</span></span><span class="code-caret"></span></span></code></pre>
                         </div>
-                    </div>
+                    </figure>
 
                     <div class="quick-stats">
                         <div class="quick-stat-item">
@@ -239,48 +245,33 @@
                     </div>
                 </div>
                 <div class="content">
-                    <div class="highlight-box">
-                        <i class='bx bxs-user'></i>
+                    <div class="highlight-box about-summary">
                         <div>
-                            <h3>Who I Am</h3>
-                            <p>I am a Software Engineer, Researcher, and Product Builder who enjoys taking on challenges
-                                and
-                                turning ambitious ideas into practical solutions. I love to explore new technologies,
-                                learn
-                                how things work, and step outside my comfort zone to keep growing. My work spans
-                                software
-                                engineering, artificial intelligence, research, and product development, giving me the
-                                opportunity to approach problems from different perspectives.</p>
+                            <p class="about-lead">I'm a <strong>Software Engineer</strong> with nearly two years of
+                                professional experience building software products at <strong>Brain Station 23</strong>.
+                                My experience spans software development, distributed systems, cloud technologies, and
+                                AI-powered applications.</p>
+                            <p>I've worked with <strong>Go, TypeScript, Python</strong>, and modern cloud technologies,
+                                building microservices, gRPC-based systems, payment integrations, and RAG-powered
+                                applications across <strong>AWS and Azure</strong>.</p>
+                            <p>Currently, I'm pursuing an <strong>Erasmus Mundus Joint Master's</strong> degree in
+                                Engineering of Data-intensive Intelligent Software Systems (EDISS) at
+                                <strong>Åbo Akademi University</strong>.</p>
+                            <p>I enjoy solving engineering problems, learning new technologies, and turning ideas into
+                                practical, scalable products.</p>
+                            <ul class="about-tags" aria-label="Focus areas">
+                                <li><i class='bx bx-server' aria-hidden="true"></i> Distributed Systems</li>
+                                <li><i class='bx bx-cloud' aria-hidden="true"></i> Cloud</li>
+                                <li><i class='bx bx-bot' aria-hidden="true"></i> AI Agents</li>
+                                <li><i class='bx bx-data' aria-hidden="true"></i> RAG &amp; LLMs</li>
+                            </ul>
                         </div>
                     </div>
-
-                    <div class="highlight-box">
-                        <i class='bx bxs-rocket'></i>
-                        <div>
-                            <h3>What Drives Me</h3>
-                            <p>I enjoy solving problems that do not have straightforward answers. Challenges motivate me
-                                to
-                                think differently, experiment with new ideas, and take risks that lead to growth.
-                                Whether I
-                                am building software, conducting research, or creating products, I focus on building
-                                solutions that are simple, scalable, and useful. More than titles or technologies, I
-                                value
-                                curiosity, adaptability, and continuous learning.</p>
-                        </div>
-                    </div>
-
                 </div>
             </div>
 
             <div class="stats-section">
                 <div class="stats-grid">
-                    <div class="stat-card" data-stat="publications">
-                        <div class="stat-number">5</div>
-                        <div class="stat-label">Research Publications</div>
-                        <div class="stat-progress">
-                            <div class="stat-progress-bar"></div>
-                        </div>
-                    </div>
                     <div class="stat-card" data-stat="certifications">
                         <div class="stat-number">2</div>
                         <div class="stat-label">AWS Certifications</div>
@@ -298,6 +289,13 @@
                     <div class="stat-card" data-stat="experience">
                         <div class="stat-number">2+</div>
                         <div class="stat-label">Years Experience</div>
+                        <div class="stat-progress">
+                            <div class="stat-progress-bar"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card" data-stat="publications">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Research Publications</div>
                         <div class="stat-progress">
                             <div class="stat-progress-bar"></div>
                         </div>
@@ -407,7 +405,7 @@
                     <div class="vertical-icons">
                         <div class="icon">
                             <img width="36" height="36" loading="lazy" decoding="async"
-                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg"
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original.svg"
                                 alt="AWS">
                             <p>AWS</p>
                         </div>
@@ -566,64 +564,85 @@
         <!-- Education Section -->
         <section id="education" class="education">
             <h2>Education</h2>
-            <div class="education-container">
-                <div class="education-card">
-                    <div class="education-header">
-                        <i class='bx bxs-graduation'></i>
-                        <div class="education-title">
-                            <h3>M.Sc. in Engineering of Data-intensive Intelligent Software Systems</h3>
-                            <p>Erasmus Mundus Joint Master &mdash; EDISS</p>
-                            <p class="education-institution">Åbo Akademi University</p>
+            <!-- Category Toggle Buttons -->
+            <div class="education-categories">
+                <button class="education-category-btn active" data-category="edu-university">
+                    <i class='bx bxs-graduation'></i>
+                    University
+                </button>
+                <button class="education-category-btn" data-category="edu-school">
+                    <i class='bx bxs-school'></i>
+                    School &amp; College
+                </button>
+            </div>
+
+            <!-- University -->
+            <div id="edu-university" class="education-category-content active">
+                <div class="education-container education-container--featured">
+                    <div class="education-card education-card--featured">
+                        <span class="education-badge"><i class='bx bx-radio-circle-marked'></i>Current</span>
+                        <div class="education-header">
+                            <i class='bx bxs-graduation'></i>
+                            <div class="education-title">
+                                <h3>M.Sc. in Engineering of Data-intensive Intelligent Software Systems</h3>
+                                <p>Erasmus Mundus Joint Master &mdash; EDISS</p>
+                                <p class="education-institution">Åbo Akademi University</p>
+                            </div>
+                        </div>
+                        <div class="education-details">
+                            <span class="year"><i class='bx bx-calendar'></i>2026 - Present</span>
+                            <span class="location"><i class='bx bx-map'></i>Turku, Finland</span>
                         </div>
                     </div>
-                    <div class="education-details">
-                        <span class="year"><i class='bx bx-calendar'></i>2026 - Present</span>
-                        <span class="location"><i class='bx bx-map'></i>Turku, Finland</span>
+
+                    <div class="education-card education-card--featured">
+                        <div class="education-header">
+                            <i class='bx bxs-graduation'></i>
+                            <div class="education-title">
+                                <h3>B.Sc. in Software Engineering</h3>
+                                <p>Shahjalal University of Science and Technology</p>
+                            </div>
+                        </div>
+                        <div class="education-details">
+                            <span class="year"><i class='bx bx-calendar'></i>2020 - 2025</span>
+                            <span class="location"><i class='bx bx-map'></i>Sylhet, Bangladesh</span>
+                            <span class="grade"><i class='bx bx-medal'></i>CGPA: 3.73/4.00</span>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="education-card">
-                    <div class="education-header">
-                        <i class='bx bxs-graduation'></i>
-                        <div class="education-title">
-                            <h3>B.Sc. in Software Engineering</h3>
-                            <p>Shahjalal University of Science and Technology</p>
+            <!-- School & College -->
+            <div id="edu-school" class="education-category-content">
+                <div class="education-container education-container--featured">
+                    <div class="education-card education-card--featured">
+                        <div class="education-header">
+                            <i class='bx bxs-school'></i>
+                            <div class="education-title">
+                                <h3>Higher Secondary School Certificate</h3>
+                                <p>Notre Dame College</p>
+                            </div>
+                        </div>
+                        <div class="education-details">
+                            <span class="year"><i class='bx bx-calendar'></i>2017 - 2019</span>
+                            <span class="location"><i class='bx bx-map'></i>Dhaka, Bangladesh</span>
+                            <span class="grade"><i class='bx bx-medal'></i>GPA: 5.00/5.00</span>
                         </div>
                     </div>
-                    <div class="education-details">
-                        <span class="year"><i class='bx bx-calendar'></i>2020 - 2025</span>
-                        <span class="location"><i class='bx bx-map'></i>Sylhet, Bangladesh</span>
-                        <span class="grade"><i class='bx bx-medal'></i>CGPA: 3.73/4.00</span>
-                    </div>
-                </div>
 
-                <div class="education-card">
-                    <div class="education-header">
-                        <i class='bx bxs-school'></i>
-                        <div class="education-title">
-                            <h3>Higher Secondary School Certificate</h3>
-                            <p>Notre Dame College</p>
+                    <div class="education-card education-card--featured">
+                        <div class="education-header">
+                            <i class='bx bxs-school'></i>
+                            <div class="education-title">
+                                <h3>Secondary School Certificate</h3>
+                                <p>Motijheel Govt. Boys' High School</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="education-details">
-                        <span class="year"><i class='bx bx-calendar'></i>2017 - 2019</span>
-                        <span class="location"><i class='bx bx-map'></i>Dhaka, Bangladesh</span>
-                        <span class="grade"><i class='bx bx-medal'></i>GPA: 5.00/5.00</span>
-                    </div>
-                </div>
-
-                <div class="education-card">
-                    <div class="education-header">
-                        <i class='bx bxs-school'></i>
-                        <div class="education-title">
-                            <h3>Secondary School Certificate</h3>
-                            <p>Motijheel Govt. Boys' High School</p>
+                        <div class="education-details">
+                            <span class="year"><i class='bx bx-calendar'></i>2015 - 2017</span>
+                            <span class="location"><i class='bx bx-map'></i>Dhaka, Bangladesh</span>
+                            <span class="grade"><i class='bx bx-medal'></i>GPA: 5.00/5.00</span>
                         </div>
-                    </div>
-                    <div class="education-details">
-                        <span class="year"><i class='bx bx-calendar'></i>2015 - 2017</span>
-                        <span class="location"><i class='bx bx-map'></i>Dhaka, Bangladesh</span>
-                        <span class="grade"><i class='bx bx-medal'></i>GPA: 5.00/5.00</span>
                     </div>
                 </div>
             </div>
@@ -640,7 +659,7 @@
                     Brain Station 23
                 </button>
                 <button class="experience-category-btn" data-category="amirl">
-                    <i class='bx bx-flask'></i>
+                    <i class='bx bx-test-tube'></i>
                     AMIR Lab
                 </button>
             </div>
@@ -680,10 +699,16 @@
                                 <div class="tech-stack">
                                     <span>Go</span>
                                     <span>Python</span>
+                                    <span>TypeScript</span>
                                     <span>gRPC</span>
+                                    <span>Microservices</span>
+                                    <span>Payment Gateway</span>
+                                    <span>AI Agents</span>
+                                    <span>RAG</span>
+                                    <span>MCP</span>
                                     <span>Docker</span>
                                     <span>AWS</span>
-                                    <span>Distributed Architecture</span>
+                                    <span>Azure</span>
                                 </div>
                             </div>
                         </div>
@@ -721,7 +746,9 @@
                                 <div class="tech-stack">
                                     <span>Go</span>
                                     <span>gRPC</span>
-                                    <span>Distributed Architecture</span>
+                                    <span>Microservices</span>
+                                    <span>Payment Gateway</span>
+                                    <span>AWS</span>
                                 </div>
                             </div>
                         </div>
@@ -867,12 +894,13 @@
                     </div>
                     <div class="platform-details">
                         <div class="handles">
-                            <a href="https://codeforces.com/profile/PhoenixBlaze" target="_blank">PhoenixBlaze</a>
-                            <a href="https://codeforces.com/profile/CoderX7" target="_blank">CoderX7</a>
+                            <a href="https://codeforces.com/profile/PhoenixBlaze" target="_blank" rel="noopener noreferrer">PhoenixBlaze</a>
+                            <a href="https://codeforces.com/profile/CoderX7" target="_blank" rel="noopener noreferrer">CoderX7</a>
                         </div>
                         <div class="rating">
                             <i class='bx bx-line-chart'></i>
-                            <span>Max Rating: 1386</span>
+                            <span>Max Rating</span>
+                            <strong>1386</strong>
                         </div>
                     </div>
                 </div>
@@ -886,11 +914,12 @@
                     </div>
                     <div class="platform-details">
                         <div class="handles">
-                            <a href="https://www.codechef.com/users/fahad005" target="_blank">fahad005</a>
+                            <a href="https://www.codechef.com/users/fahad005" target="_blank" rel="noopener noreferrer">fahad005</a>
                         </div>
                         <div class="rating">
                             <i class='bx bx-line-chart'></i>
-                            <span>Max Rating: 1709</span>
+                            <span>Max Rating</span>
+                            <strong>1709</strong>
                         </div>
                     </div>
                 </div>
@@ -904,7 +933,7 @@
                     </div>
                     <div class="platform-details">
                         <div class="handles">
-                            <a href="https://leetcode.com/u/fahadpathan56/" target="_blank">fahadpathan56</a>
+                            <a href="https://leetcode.com/u/fahadpathan56/" target="_blank" rel="noopener noreferrer">fahadpathan56</a>
                         </div>
                     </div>
                 </div>
@@ -963,7 +992,7 @@
                         <span>Socket.io</span>
                         <span>MongoDB</span>
                     </div>
-                    <a target="_blank" href="https://github.com/fahadPathan7/EcoSync" class="btn">View Project</a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/fahadPathan7/EcoSync" class="btn">View Project</a>
                 </div>
 
                 <div class="projects-box">
@@ -987,7 +1016,7 @@
                         <span>MySQL</span>
                         <span>JWT</span>
                     </div>
-                    <a target="_blank" href="https://github.com/fahadPathan7/SUST-FTMS-Backend" class="btn">View
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/fahadPathan7/SUST-FTMS-Backend" class="btn">View
                         Project</a>
                 </div>
 
@@ -1008,7 +1037,7 @@
                         <span>MySQL</span>
                         <span>HTML/CSS</span>
                     </div>
-                    <a target="_blank" href="https://github.com/fahadPathan7/HandyHire" class="btn">View Project</a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/fahadPathan7/HandyHire" class="btn">View Project</a>
                 </div>
 
                 <div class="projects-box">
@@ -1028,7 +1057,7 @@
                         <span>Firebase</span>
                         <span>Android Studio</span>
                     </div>
-                    <a target="_blank" href="https://github.com/fahadPathan7/Connect" class="btn">View Project</a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/fahadPathan7/Connect" class="btn">View Project</a>
                 </div>
 
                 <div class="projects-box">
@@ -1048,7 +1077,7 @@
                         <span>Java</span>
                         <span>LibGDX</span>
                     </div>
-                    <a target="_blank" href="https://github.com/fahadPathan7/Survive-It" class="btn">View Project</a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/fahadPathan7/Survive-It" class="btn">View Project</a>
                 </div>
             </div>
         </section>
@@ -1071,7 +1100,7 @@
                         real-time
                         AQI value of air from smartphone-captured images.</p>
                     <div class="achievement-links">
-                        <a href="https://www.prothomalo.com/amp/story/education/campus/pdbkx8hxp4" target="_blank"
+                        <a href="https://www.prothomalo.com/amp/story/education/campus/pdbkx8hxp4" target="_blank" rel="noopener noreferrer"
                             class="verify-btn">
                             See Details
                         </a>
@@ -1089,7 +1118,7 @@
                     <p class="achievement-desc">Presented "InterviewMate", an AI-based interview preparation platform
                         designed to support Bangladeshi undergraduate students.</p>
                     <div class="achievement-links">
-                        <a href="https://www.uihp.org/contents/10" target="_blank" class="verify-btn">
+                        <a href="https://www.uihp.org/contents/10" target="_blank" rel="noopener noreferrer" class="verify-btn">
                             See Details
                         </a>
                     </div>
@@ -1116,31 +1145,8 @@
                             <span><i class='bx bx-calendar'></i>Issued August 2025</span>
                             <span><i class='bx bx-time'></i>Valid until August 2028</span>
                         </div>
-                        <a href="https://www.credly.com/badges/f4de4258-da70-427c-9c74-019a30cd6142" target="_blank"
+                        <a href="https://www.credly.com/badges/f4de4258-da70-427c-9c74-019a30cd6142" target="_blank" rel="noopener noreferrer"
                             class="verify-btn">
-                            View Certificate
-                            <i class='bx bx-link-external'></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="cert-card">
-                    <div class="cert-badge">
-                        <img width="36" height="36" loading="lazy" decoding="async"
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
-                            alt="KodeKloud Docker Training Certificate">
-                        <div class="cert-badge-overlay">
-                            <i class='bx bx-badge-check'></i>
-                        </div>
-                    </div>
-                    <div class="cert-content">
-                        <h3>Docker Training Course for the Absolute Beginner</h3>
-                        <p>KodeKloud</p>
-                        <div class="cert-meta">
-                            <span><i class='bx bx-calendar'></i>Issued September 13, 2025</span>
-                        </div>
-                        <a href="https://learn.kodekloud.com/certificate/1851a17d-e5ba-4964-879a-aa055eb3b8c6"
-                            target="_blank" class="verify-btn">
                             View Certificate
                             <i class='bx bx-link-external'></i>
                         </a>
@@ -1164,7 +1170,53 @@
                             <span><i class='bx bx-time'></i>Valid until May 2028</span>
                         </div>
                         <a href="https://www.credly.com/badges/78534719-93b5-4780-9a44-6dddac8b119a/public_url"
-                            target="_blank" class="verify-btn">
+                            target="_blank" rel="noopener noreferrer" class="verify-btn">
+                            View Certificate
+                            <i class='bx bx-link-external'></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-badge">
+                        <img width="36" height="36" loading="lazy" decoding="async"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
+                            alt="KodeKloud Docker Training Certificate">
+                        <div class="cert-badge-overlay">
+                            <i class='bx bx-badge-check'></i>
+                        </div>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Docker Training Course for the Absolute Beginner</h3>
+                        <p>KodeKloud</p>
+                        <div class="cert-meta">
+                            <span><i class='bx bx-calendar'></i>Issued September 13, 2025</span>
+                        </div>
+                        <a href="resources/images/cert_kodekloud_docker.webp"
+                            target="_blank" rel="noopener noreferrer" class="verify-btn">
+                            View Certificate
+                            <i class='bx bx-link-external'></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-badge">
+                        <img width="120" height="120" loading="lazy" decoding="async"
+                            src="resources/images/kodekloud_logo.webp"
+                            alt="KodeKloud RAG and MCP Fundamentals Certificate">
+                        <div class="cert-badge-overlay">
+                            <i class='bx bx-badge-check'></i>
+                        </div>
+                    </div>
+                    <div class="cert-content">
+                        <h3>RAG &amp; MCP Fundamentals: A Hands-On Crash Course</h3>
+                        <p>KodeKloud (freeCodeCamp)</p>
+                        <div class="cert-meta">
+                            <span><i class='bx bx-calendar'></i>Issued October 27, 2026</span>
+                        </div>
+                        <a href="resources/images/cert_kodekloud_rag_mcp.webp"
+                            target="_blank" rel="noopener noreferrer" class="verify-btn">
                             View Certificate
                             <i class='bx bx-link-external'></i>
                         </a>
@@ -1187,7 +1239,7 @@
                             <span><i class='bx bx-calendar'></i>Issued October 2023</span>
                         </div>
                         <a href="https://www.coursera.org/account/accomplishments/certificate/UVX4WNQZCPKD"
-                            target="_blank" class="verify-btn">
+                            target="_blank" rel="noopener noreferrer" class="verify-btn">
                             View Certificate
                             <i class='bx bx-link-external'></i>
                         </a>
@@ -1209,7 +1261,7 @@
                         <div class="cert-meta">
                             <span><i class='bx bx-calendar'></i>Issued May 2024</span>
                         </div>
-                        <a href="https://www.hackerrank.com/certificates/d79fef038a4c" target="_blank"
+                        <a href="https://www.hackerrank.com/certificates/d79fef038a4c" target="_blank" rel="noopener noreferrer"
                             class="verify-btn">
                             View Certificate
                             <i class='bx bx-link-external'></i>
@@ -1281,39 +1333,6 @@
                                 <i class='bx bx-check-circle'></i>
                                 Published
                             </div>
-                            <h3>Advances in Alzheimer's disease diagnosis with machine learning and deep learning
-                                techniques:
-                                a comprehensive review</h3>
-                            <div class="research-meta">
-                                <span class="venue">
-                                    <i class='bx bx-book'></i>
-                                    Artificial Intelligence Review (Springer Nature)
-                                </span>
-                                <span class="year">
-                                    <i class='bx bx-calendar'></i>
-                                    2026
-                                </span>
-                            </div>
-                            <div class="research-card-footer">
-                                <div class="research-tags">
-                                    <span>Survey</span>
-                                    <span>Machine Learning</span>
-                                    <span>Deep Learning</span>
-                                    <span>Medical Imaging</span>
-                                </div>
-                                <a href="https://link.springer.com/article/10.1007/s10462-025-11476-4" target="_blank"
-                                    class="paper-link">
-                                    <i class='bx bx-link-external'></i>
-                                    View Paper
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="research-card">
-                            <div class="research-status accepted">
-                                <i class='bx bx-check-circle'></i>
-                                Published
-                            </div>
                             <h3>XLTLDisNet: A Novel and Lightweight Approach to Identify Tomato Leaf Diseases with
                                 Transparency
                             </h3>
@@ -1334,7 +1353,7 @@
                                     <span>Disease Detection</span>
                                     <span>XAI</span>
                                 </div>
-                                <a href="https://www.cell.com/heliyon/fulltext/S2405-8440(25)00955-7" target="_blank"
+                                <a href="https://www.cell.com/heliyon/fulltext/S2405-8440(25)00955-7" target="_blank" rel="noopener noreferrer"
                                     class="paper-link">
                                     <i class='bx bx-link-external'></i>
                                     View Paper
@@ -1362,12 +1381,12 @@
                             </div>
                             <div class="research-card-footer">
                                 <div class="research-tags">
-                                    <span>Survey</span>
+                                    <span>Review</span>
                                     <span>Deep Learning</span>
                                     <span>Agriculture</span>
                                 </div>
                                 <a href="https://www.sciencedirect.com/science/article/pii/S258972172500025X"
-                                    target="_blank" class="paper-link">
+                                    target="_blank" rel="noopener noreferrer" class="paper-link">
                                     <i class='bx bx-link-external'></i>
                                     View Paper
                                 </a>
@@ -1403,7 +1422,7 @@
                                     <span>Image Segmentation</span>
                                     <span>XAI</span>
                                 </div>
-                                <a href="https://ieeexplore.ieee.org/abstract/document/11491783" target="_blank"
+                                <a href="https://ieeexplore.ieee.org/abstract/document/11491783" target="_blank" rel="noopener noreferrer"
                                     class="paper-link">
                                     <i class='bx bx-link-external'></i>
                                     View Paper
@@ -1435,7 +1454,7 @@
                                     <span>Deep Learning</span>
                                     <span>XAI</span>
                                 </div>
-                                <a href="https://ieeexplore.ieee.org/abstract/document/11021956" target="_blank"
+                                <a href="https://ieeexplore.ieee.org/abstract/document/11021956" target="_blank" rel="noopener noreferrer"
                                     class="paper-link">
                                     <i class='bx bx-link-external'></i>
                                     View Paper
@@ -1529,12 +1548,6 @@
                                 </button>
                             </div>
                             <p class="copy-status" aria-live="polite"></p>
-                            <div class="email-wrapper phone-wrapper">
-                                <span class="email-address">+358 41 580 2254</span>
-                                <a class="btn-copy-email" href="tel:+358415802254">
-                                    <i class='bx bx-phone'></i> Call
-                                </a>
-                            </div>
                         </div>
                     </div>
 
@@ -1562,11 +1575,11 @@
 
                     <!-- Social Links Card -->
                     <div class="social-card">
-                        <a target="_blank" href="https://github.com/fahadPathan7" class="bento-social-btn github"
+                        <a target="_blank" rel="noopener noreferrer" href="https://github.com/fahadPathan7" class="bento-social-btn github"
                             aria-label="Github">
                             <i class='bx bxl-github'></i>
                         </a>
-                        <a target="_blank" href="https://www.linkedin.com/in/fahadpathan/"
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/fahadpathan/"
                             class="bento-social-btn linkedin" aria-label="LinkedIn">
                             <i class='bx bxl-linkedin'></i>
                         </a>
@@ -1582,7 +1595,7 @@
     <footer class="footer">
         <div class="last-updated">
             <i class='bx bx-time-five'></i>
-            Updated: August 2026
+            Updated: November 2026
         </div>
         <p class="footer-copyright">© 2026 Fahad Pathan. All rights reserved.</p>
     </footer>

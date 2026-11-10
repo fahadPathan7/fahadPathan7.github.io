@@ -60,6 +60,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 setMenu(false);
             }
         });
+
+        // Close on Escape and hand focus back to the toggle button.
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && dropdown.style.display === 'block') {
+                setMenu(false);
+                menuBtn.focus();
+            }
+        });
     }
 
     /* ---- Copy contact email to clipboard ---- */
@@ -90,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (target) {
                     target.classList.add('active');
                     // Instantly reveal all cards inside activated tab to prevent scroll/opacity delays
-                    target.querySelectorAll('.research-card, .experience-box, .cert-card, .projects-box').forEach((el) => {
+                    target.querySelectorAll('.research-card, .experience-box, .cert-card, .projects-box, .education-card').forEach((el) => {
                         el.classList.add('visible');
                     });
                 }
@@ -100,11 +108,74 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     setupTabs('research-category-btn', 'research-category-content');
     setupTabs('experience-category-btn', 'experience-category-content');
+    setupTabs('education-category-btn', 'education-category-content');
 
     // Ensure all active tab elements are marked visible on page load
     document.querySelectorAll('.research-category-content.active .research-card, .experience-category-content.active .experience-box').forEach((el) => {
         el.classList.add('visible');
     });
+
+    // Without IntersectionObserver, nothing would ever get .visible — so reveal
+    // everything up front instead of leaving the page blank.
+    if (!('IntersectionObserver' in window)) {
+        document.querySelectorAll('section, .projects-box, .cert-card, .research-card, .platform-card, .achievements-box, .education-card, .experience-box')
+            .forEach((el) => el.classList.add('visible'));
+        return;
+    }
+
+    /* ---- Work Experience: tenure labels + current-role marker ----
+       Reads each "MMM YYYY - MMM YYYY|CURRENT" date and appends e.g. "· 1 yr 1 mo",
+       counting both the start and end month (LinkedIn-style). */
+    const MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+    const toIndex = (str) => {
+        const m = str.trim().toUpperCase().match(/^([A-Z]{3})\s+(\d{4})$/);
+        return m && MONTHS.includes(m[1]) ? Number(m[2]) * 12 + MONTHS.indexOf(m[1]) : null;
+    };
+    document.querySelectorAll('.experience .duration').forEach((el) => {
+        const [startStr, endStr = ''] = el.textContent.split(/\s+-\s+/);
+        const isCurrent = /current|present/i.test(endStr);
+        const now = new Date();
+        const start = toIndex(startStr);
+        const end = isCurrent ? now.getFullYear() * 12 + now.getMonth() : toIndex(endStr);
+        if (start === null || end === null || end < start) return;
+        const total = end - start + 1;
+        const yrs = Math.floor(total / 12);
+        const mos = total % 12;
+        const parts = [];
+        if (yrs) parts.push(yrs + (yrs === 1 ? ' yr' : ' yrs'));
+        if (mos) parts.push(mos + (mos === 1 ? ' mo' : ' mos'));
+        const label = document.createElement('span');
+        label.className = 'duration-length';
+        label.textContent = '· ' + parts.join(' ');
+        el.appendChild(label);
+        if (isCurrent) {
+            el.closest('.experience-box')?.querySelector('.timeline-dot')?.classList.add('is-current');
+        }
+    });
+
+    /* ---- About-section code card: type the snippet line by line once in view ----
+       Lines stay fully visible if JS is off or the visitor prefers reduced motion. */
+    const codeCard = document.querySelector('[data-typing]');
+    if (codeCard && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const CHAR_MS = 28;
+        const LINE_PAUSE_MS = 90;
+        let delay = 200;
+        codeCard.querySelectorAll('.code-line').forEach((line) => {
+            const chars = Math.max(line.textContent.length, 1);
+            line.style.setProperty('--chars', chars);
+            line.style.setProperty('--dur', chars * CHAR_MS + 'ms');
+            line.style.setProperty('--delay', delay + 'ms');
+            delay += chars * CHAR_MS + LINE_PAUSE_MS;
+        });
+        codeCard.classList.add('is-ready');
+        const typingObserver = new IntersectionObserver((entries) => {
+            if (!entries[0].isIntersecting) return;
+            typingObserver.disconnect();
+            codeCard.classList.add('is-typing');
+            setTimeout(() => codeCard.classList.add('is-done'), delay);
+        }, { threshold: 0.4 });
+        typingObserver.observe(codeCard);
+    }
 
     /* ---- About-section stat-card entrance animation (on scroll) ---- */
     const observerOptions = { threshold: 0.15, rootMargin: '0px 0px 50px 0px' };
